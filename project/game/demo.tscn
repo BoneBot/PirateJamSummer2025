@@ -30,8 +30,9 @@ shape = SubResource("RectangleShape2D_rxm3l")
 stream = ExtResource("3_hd0ch")
 
 [node name="DemoPlayer" type="CharacterBody2D" parent="."]
-position = Vector2(359, 304)
+position = Vector2(145, 575)
 scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="DemoPlayer"]
 texture = ExtResource("1_pqa7q")
