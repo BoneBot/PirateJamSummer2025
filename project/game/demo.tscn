@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://b42i5xcb14tan"]
+[gd_scene load_steps=6 format=3 uid="uid://b42i5xcb14tan"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://game/demo.gd" id="1_hs3yx"]
+[ext_resource type="Texture2D" uid="uid://oxi7lfyvyjm1" path="res://art/icon.svg" id="1_pqa7q"]
+[ext_resource type="AudioStream" uid="uid://cb7v7eyerrrq0" path="res://audio/effects/ding.mp3" id="3_hd0ch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxm3l"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n11qf"]
+size = Vector2(128, 128)
+
+[node name="Demo" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_hs3yx")
+player = NodePath("DemoPlayer")
+
+[node name="DemoGoal" type="Area2D" parent="."]
+position = Vector2(931, 122)
+scale = Vector2(2.53272, 2.53272)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="DemoGoal"]
+scale = Vector2(0.515, 0.5)
+texture = ExtResource("1_pqa7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DemoGoal"]
+shape = SubResource("RectangleShape2D_rxm3l")
+
+[node name="Ding" type="AudioStreamPlayer" parent="DemoGoal"]
+stream = ExtResource("3_hd0ch")
+
+[node name="DemoPlayer" type="CharacterBody2D" parent="."]
+position = Vector2(359, 304)
+scale = Vector2(0.5, 0.5)
+
+[node name="Icon" type="Sprite2D" parent="DemoPlayer"]
+texture = ExtResource("1_pqa7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DemoPlayer"]
+shape = SubResource("RectangleShape2D_n11qf")
+
+[connection signal="body_entered" from="DemoGoal" to="." method="_on_demo_goal_body_entered"]
