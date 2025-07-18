@@ -15,7 +15,7 @@ script = ExtResource("1_hs3yx")
 player = NodePath("DemoPlayer")
 
 [node name="DemoGoal" type="Area2D" parent="."]
-position = Vector2(931, 122)
+position = Vector2(545, 93)
 scale = Vector2(2.53272, 2.53272)
 metadata/_edit_group_ = true
 
@@ -30,7 +30,7 @@ shape = SubResource("RectangleShape2D_rxm3l")
 stream = ExtResource("3_hd0ch")
 
 [node name="DemoPlayer" type="CharacterBody2D" parent="."]
-position = Vector2(145, 575)
+position = Vector2(64, 306)
 scale = Vector2(0.5, 0.5)
 metadata/_edit_group_ = true
 
