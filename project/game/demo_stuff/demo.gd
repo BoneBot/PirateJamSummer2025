@@ -60,6 +60,7 @@ func _on_demo_goal_body_entered(_body: Node2D) -> void:
 	ding_sound.play()
 	print("You found the goal!")
 
+
 func _on_chest_1_interact() -> void:
 	print("You opened chest 1!")
 	await dialogue_manager.start_dialogue("chest_1", chest_1_dialogue_state)

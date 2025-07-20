@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxt2kq60nakfn"]
+
+[ext_resource type="Script" path="res://game/player/player.gd" id="1_nxhj6"]
+[ext_resource type="Texture2D" uid="uid://3jqq575eakua" path="res://art/Placeholders/Kid Sprite Placeholder.png" id="1_sdh0h"]
+[ext_resource type="Script" path="res://game/common/interact_range.gd" id="2_4edn2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuqfn"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4tqe"]
+size = Vector2(28, 18)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nxhj6")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_sdh0h")
+region_enabled = true
+region_rect = Rect2(16, 7, 32, 50)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wuqfn")
+
+[node name="InteractRange" type="Area2D" parent="."]
+position = Vector2(0, 18)
+script = ExtResource("2_4edn2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("RectangleShape2D_m4tqe")
+debug_color = Color(0.279673, 0.631412, 1.92523e-07, 0.42)
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
