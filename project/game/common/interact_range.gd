@@ -11,7 +11,7 @@ func _ready() -> void:
 	area_entered.connect(_on_interact_range_area_entered)
 	area_exited.connect(_on_interact_range_area_exited)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
 		if current_interactions:
 			can_interact = false

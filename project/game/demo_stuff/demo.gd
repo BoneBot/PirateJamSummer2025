@@ -6,8 +6,9 @@ extends Node2D
 @onready var player := $DemoPlayer
 @onready var player_sprite := $DemoPlayer/Sprite2D
 @onready var player_interact_range := $DemoPlayer/InteractRange
-@onready var chest := $Chest
-@onready var chest_interactable := $Chest/Interactable
+@onready var chest_1_interactable := $Chest1/Interactable
+@onready var chest_2_interactable := $Chest2/Interactable
+@onready var dialogue_manager := $DialogueManager
 
 const SPEED := 200		# Max walking speed (px/s)
 const PLAYER_INTERACT_OFFSETS := {
@@ -17,9 +18,13 @@ const PLAYER_INTERACT_OFFSETS := {
 	"left": Vector2(-32, 0),
 }
 
+var chest_1_dialogue_state = 0
+var chest_2_dialogue_state = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	chest_interactable.interact = _on_chest_interact
+	chest_1_interactable.interact = _on_chest_1_interact
+	chest_2_interactable.interact = _on_chest_2_interact
 
 
 func _process(_delta: float) -> void:
@@ -55,6 +60,18 @@ func _on_demo_goal_body_entered(_body: Node2D) -> void:
 	ding_sound.play()
 	print("You found the goal!")
 
-func _on_chest_interact() -> void:
+func _on_chest_1_interact() -> void:
+	print("You opened chest 1!")
+	await dialogue_manager.start_dialogue("chest_1", chest_1_dialogue_state)
+	if chest_1_dialogue_state == 0:
+		ding_sound.play()
+	if chest_1_dialogue_state < 2:
+		chest_1_dialogue_state += 1
+
+
+func _on_chest_2_interact() -> void:
+	print("You opened chest 2!")
+	if chest_2_dialogue_state == 0:
+		await dialogue_manager.start_dialogue("chest_2", 0)
+		chest_2_dialogue_state += 1
 	ding_sound.play()
-	print("You opened the chest!")

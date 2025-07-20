@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b42i5xcb14tan"]
+[gd_scene load_steps=15 format=3 uid="uid://b42i5xcb14tan"]
 
 [ext_resource type="Script" path="res://game/demo_stuff/demo.gd" id="1_hs3yx"]
 [ext_resource type="Texture2D" uid="uid://oxi7lfyvyjm1" path="res://art/icon.svg" id="1_pqa7q"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://game/common/interact_range.gd" id="6_4ueff"]
 [ext_resource type="Texture2D" uid="uid://cqy2m0ixg5103" path="res://art/demo_stuff/DemoChest.png" id="6_fg5kh"]
 [ext_resource type="Script" path="res://game/common/interactable.gd" id="8_y5ijc"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="9_hugel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxm3l"]
 size = Vector2(60, 60)
@@ -49,6 +50,7 @@ shape = SubResource("RectangleShape2D_rxm3l")
 
 [node name="DemoPlayer" type="CharacterBody2D" parent="."]
 position = Vector2(64, 306)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="DemoPlayer"]
 texture = ExtResource("5_xsk2e")
@@ -64,21 +66,43 @@ script = ExtResource("6_4ueff")
 shape = SubResource("RectangleShape2D_5myc7")
 debug_color = Color(0.279673, 0.631412, 1.92523e-07, 0.42)
 
-[node name="Chest" type="StaticBody2D" parent="."]
-position = Vector2(555, 251)
+[node name="Chest1" type="StaticBody2D" parent="."]
+position = Vector2(344, 268)
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Chest"]
+[node name="Sprite2D" type="Sprite2D" parent="Chest1"]
 texture = ExtResource("6_fg5kh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest1"]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_wjxdq")
 
-[node name="Interactable" type="Area2D" parent="Chest"]
+[node name="Interactable" type="Area2D" parent="Chest1"]
 script = ExtResource("8_y5ijc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest1/Interactable"]
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_rbkie")
+
+[node name="Chest2" type="StaticBody2D" parent="."]
+position = Vector2(482, 267)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Chest2"]
+texture = ExtResource("6_fg5kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest2"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_wjxdq")
+
+[node name="Interactable" type="Area2D" parent="Chest2"]
+script = ExtResource("8_y5ijc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest2/Interactable"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_rbkie")
+
+[node name="DialogueManager" parent="." instance=ExtResource("9_hugel")]
+dialogue_path = "res://game/ui/dialogue_text/demo_dialogue.json"
 
 [connection signal="body_entered" from="DemoGoal" to="." method="_on_demo_goal_body_entered"]

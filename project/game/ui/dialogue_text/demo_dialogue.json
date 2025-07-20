@@ -1,0 +1,46 @@
+ {
+    "chest_1": {
+        "0": [
+            {
+                "speaker": "guy",
+                "text": "What's in here?"
+            },
+            {
+                "speaker": "chest",
+                "text": "Tee hee! You found me!"
+            },
+            {
+                "speaker": "chest",
+                "text": "Here, have a ding!"
+            }
+        ],
+        "1": [
+            {
+                "speaker": "guy",
+                "text": "Why can you talk???"
+            },
+            {
+                "speaker": "chest",
+                "text": "Don't worry about that, tee hee!"
+            }
+        ],
+        "2": [
+            {
+                "speaker": "chest",
+                "text": "Tee hee!"
+            }
+        ]
+    },
+    "chest_2": {
+        "0": [
+            {
+                "speaker": "guy",
+                "text": "Um... hello?"
+            },
+            {
+                "speaker": "",
+                "text": "This chest seems much less chatty."
+            }
+        ]
+    }
+}
