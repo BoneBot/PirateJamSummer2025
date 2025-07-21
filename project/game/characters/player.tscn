@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxt2kq60nakfn"]
 
-[ext_resource type="Script" path="res://game/player/player.gd" id="1_nxhj6"]
+[ext_resource type="Script" path="res://game/characters/player.gd" id="1_nxhj6"]
 [ext_resource type="Texture2D" uid="uid://3jqq575eakua" path="res://art/Placeholders/Kid Sprite Placeholder.png" id="1_sdh0h"]
 [ext_resource type="Script" path="res://game/common/interact_range.gd" id="2_4edn2"]
 
@@ -11,6 +11,9 @@ size = Vector2(28, 18)
 size = Vector2(28, 18)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 9
+motion_mode = 1
 script = ExtResource("1_nxhj6")
 
 [node name="Sprite" type="Sprite2D" parent="."]

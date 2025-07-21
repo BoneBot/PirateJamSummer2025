@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckyw3xmol7iso"]
+[gd_scene load_steps=9 format=3 uid="uid://ckyw3xmol7iso"]
 
-[ext_resource type="Script" path="res://game/common/level.gd" id="1_cu5ws"]
+[ext_resource type="Script" path="res://game/map/levels/bedroom.gd" id="1_gfn1s"]
 [ext_resource type="Texture2D" uid="uid://wmrv0ujv2s7c" path="res://art/demo_stuff/DemoBackground.png" id="2_wcblf"]
-[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/player/player.tscn" id="3_jiuq5"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="3_jiuq5"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="4_s2dnn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p1h2a"]
 normal = Vector2(1, 0)
@@ -16,9 +17,7 @@ normal = Vector2(-1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w84ai"]
 
 [node name="Bedroom" type="Node2D"]
-script = ExtResource("1_cu5ws")
-camera_bounds_pos = Vector2(-16, -19)
-camera_bounds_size = Vector2(960, 540)
+script = ExtResource("1_gfn1s")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-16, -19)
@@ -27,28 +26,37 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Boundaries" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Left" type="StaticBody2D" parent="Boundaries"]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
 shape = SubResource("WorldBoundaryShape2D_p1h2a")
 
 [node name="Top" type="StaticBody2D" parent="Boundaries"]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
 shape = SubResource("WorldBoundaryShape2D_qd7eo")
 
 [node name="Right" type="StaticBody2D" parent="Boundaries"]
 position = Vector2(928, 506)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
 shape = SubResource("WorldBoundaryShape2D_sbkek")
 
 [node name="Down" type="StaticBody2D" parent="Boundaries"]
 position = Vector2(928, 506)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
 shape = SubResource("WorldBoundaryShape2D_w84ai")
 
+[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_s2dnn")]
+position = Vector2(164, 168)
+target = NodePath("../Player")
+
 [node name="Player" parent="." instance=ExtResource("3_jiuq5")]
-position = Vector2(305, 161)
+position = Vector2(333, 188)
