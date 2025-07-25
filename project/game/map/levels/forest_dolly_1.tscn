@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccukhny0e1iho"]
+
+[ext_resource type="Script" path="res://game/map/levels/forest_dolly_1.gd" id="1_bwr08"]
+
+[node name="ForestDolly1" type="Node2D"]
+script = ExtResource("1_bwr08")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 158.0
+offset_top = 195.0
+offset_right = 406.0
+offset_bottom = 218.0
+text = "welcome to forest dolly level 1 :)"

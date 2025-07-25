@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var follow_speed:float = 200		# Speed of the toy (px/s)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if (target.position - position).length() > follow_distance:
 		velocity = (target.position - position).normalized() * follow_speed
 	else:

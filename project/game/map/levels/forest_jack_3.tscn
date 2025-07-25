@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceeqycqpfk6jd"]
+
+[ext_resource type="Script" path="res://game/map/levels/forest_jack_3.gd" id="1_kxhni"]
+
+[node name="ForestJack3" type="Node2D"]
+script = ExtResource("1_kxhni")

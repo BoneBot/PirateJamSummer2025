@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckyw3xmol7iso"]
+[gd_scene load_steps=10 format=3 uid="uid://ckyw3xmol7iso"]
 
 [ext_resource type="Script" path="res://game/map/levels/bedroom.gd" id="1_gfn1s"]
 [ext_resource type="Texture2D" uid="uid://wmrv0ujv2s7c" path="res://art/demo_stuff/DemoBackground.png" id="2_wcblf"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/components/forest_exit.tscn" id="3_cmsbq"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="3_jiuq5"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="4_s2dnn"]
 
@@ -54,9 +55,16 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
 shape = SubResource("WorldBoundaryShape2D_w84ai")
 
+[node name="Components" type="Node2D" parent="."]
+
+[node name="ForestExit" parent="Components" instance=ExtResource("3_cmsbq")]
+position = Vector2(548, 119)
+
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_s2dnn")]
 position = Vector2(164, 168)
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("3_jiuq5")]
 position = Vector2(333, 188)
+
+[connection signal="body_entered" from="Components/ForestExit" to="." method="_on_forest_exit_body_entered"]
