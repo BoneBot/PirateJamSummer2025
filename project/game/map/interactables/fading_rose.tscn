@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjnhxuf3e0307"]
+
+[ext_resource type="Script" path="res://game/map/interactables/fading_rose.gd" id="1_1vaas"]
+[ext_resource type="Script" path="res://game/common/interactable.gd" id="1_j0n40"]
+[ext_resource type="Texture2D" uid="uid://dc5k02o35tupp" path="res://art/Placeholders/EnvironmentSpritesPlaceholder.png" id="2_ja3ig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfxa5"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2p4lp"]
+radius = 100.0
+
+[sub_resource type="Animation" id="Animation_x0j8j"]
+resource_name = "fade"
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interactable:is_interactable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.916667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ffn44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interactable:is_interactable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mx4i6"]
+_data = {
+"RESET": SubResource("Animation_ffn44"),
+"fade": SubResource("Animation_x0j8j")
+}
+
+[node name="FadingRose" type="Node2D"]
+script = ExtResource("1_1vaas")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2, 7)
+texture = ExtResource("2_ja3ig")
+region_enabled = true
+region_rect = Rect2(212, 269, 26, 38)
+
+[node name="Interactable" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_j0n40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_yfxa5")
+
+[node name="Visibility" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility"]
+shape = SubResource("CircleShape2D_2p4lp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mx4i6")
+}
+
+[connection signal="body_entered" from="Visibility" to="." method="_on_visibility_body_entered"]
+[connection signal="body_exited" from="Visibility" to="." method="_on_visibility_body_exited"]
