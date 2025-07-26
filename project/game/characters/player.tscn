@@ -266,6 +266,8 @@ shape = SubResource("RectangleShape2D_wuqfn")
 
 [node name="InteractRange" type="Area2D" parent="."]
 position = Vector2(0, 18)
+collision_layer = 0
+collision_mask = 8
 script = ExtResource("2_4edn2")
 metadata/_edit_group_ = true
 

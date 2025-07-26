@@ -5,13 +5,20 @@ extends Node2D
 ## Multiplier for the fade duration. E.g. if set to 2, the fade animation plays twice as fast.
 @export var fade_speed_scale := 1.0
 
+## Emitted when the rose is interacted with.
+signal rose_interacted
+
 @onready var sprite := $Sprite
 @onready var interactable := $Interactable
 @onready var animation_player := $AnimationPlayer
 
+var has_interacted := false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	interactable.interact = _on_fading_rose_interact
+	
 	if fades:
 		sprite.modulate = Color(sprite.modulate, 0)
 		interactable.is_interactable = false
@@ -19,17 +26,20 @@ func _ready() -> void:
 	animation_player.speed_scale = fade_speed_scale
 
 
-func _on_visibility_body_entered(body: Node2D) -> void:
+func _on_visibility_body_entered(_body: Node2D) -> void:
 	if fades:
 		animation_player.play("fade")
 		#animation_player.play("fade", -1, fade_speed_scale)
 
 
-func _on_visibility_body_exited(body: Node2D) -> void:
+func _on_visibility_body_exited(_body: Node2D) -> void:
 	if fades:
 		animation_player.play_backwards("fade")
 		#animation_player.play("fade", -1, -fade_speed_scale)
 
 
 func _on_fading_rose_interact() -> void:
-	print("You touched the rose!")
+	if not has_interacted:
+		print("You touched the rose!")
+		rose_interacted.emit()
+	has_interacted = true
