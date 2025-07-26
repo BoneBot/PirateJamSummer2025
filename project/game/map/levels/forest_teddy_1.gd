@@ -1,6 +1,10 @@
 extends Node2D
 
+
+## Emitted when the level is exited. Contains the name of the next level to load.
 signal level_exited(next_level:String)
+
+@onready var vine_door: StaticBody2D = $Components/VineDoor
 
 var total_num_roses:int
 var rose_count := 0
@@ -21,5 +25,7 @@ func _on_forest_exit_body_entered(_body: Node2D) -> void:
 
 func _on_rose_interacted() -> void:
 	rose_count += 1
+	# All roses found
 	if rose_count == total_num_roses:
 		print("All roses found!")
+		vine_door.open_door()

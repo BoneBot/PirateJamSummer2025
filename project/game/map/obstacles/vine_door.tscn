@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://mkoy0yv4trc6"]
+
+[ext_resource type="Script" path="res://game/map/obstacles/vine_door.gd" id="1_bmd33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqo3o"]
+size = Vector2(56, 65)
+
+[node name="VineDoor" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_bmd33")
+
+[node name="Sprite" type="Label" parent="."]
+offset_left = -11.0
+offset_right = 52.0
+offset_bottom = 23.0
+rotation = -1.5708
+text = "LOCKED"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32.5)
+shape = SubResource("RectangleShape2D_xqo3o")
