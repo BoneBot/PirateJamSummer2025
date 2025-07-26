@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 		interact_range.position = PLAYER_INTERACT_OFFSETS[facing]
 	
 	# Update animation
-	var animation := _get_new_animation(facing)
+	var animation := _get_new_animation()
 	if animation != animation_player.current_animation:
 		animation_player.play(animation)
 
@@ -64,7 +64,7 @@ func set_camera_limits(pos:Vector2, size:Vector2):
 	camera.limit_bottom = pos.y + size.y
 
 
-func _get_new_animation(facing: String) -> String:
+func _get_new_animation() -> String:
 	var new_animation: String
 	
 	# Determine next animation
