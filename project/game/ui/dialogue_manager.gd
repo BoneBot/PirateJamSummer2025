@@ -91,11 +91,15 @@ func _next_dialogue():
 func _set_portrait(speaker:String, emotion:String) -> void:
 	# Check if we already have a portrait resource for the given speaker and emotion
 	if not (speaker in portrait_textures and emotion in portrait_textures[speaker]):
-		_get_portrait_texture(speaker, emotion)
+		if not _get_portrait_texture(speaker, emotion):
+			# Failed to get portrait texture
+			return
 	
 	portrait.texture = portrait_textures[speaker][emotion]
 
 
+# Loads the image resource for a portrait texture and adds it to the portrait_textures dict
+# Returns true if the load was successful, false otherwise
 func _get_portrait_texture(speaker:String, emotion:String) -> bool:
 	# Attempt to find the portrait resource for the given speaker and emotion
 	var new_texture = load(portrait_directory + "/%s_%s.png" % [speaker, emotion])
