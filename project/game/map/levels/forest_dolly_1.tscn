@@ -8,21 +8,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoxb4"]
 size = Vector2(50, 56)
 
-[sub_resource type="Animation" id="Animation_2miqn"]
-resource_name = "fade_to_black"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_3itlt"]
 length = 0.001
 tracks/0/type = "value"
@@ -38,6 +23,21 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_2miqn"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mgu7v"]
 _data = {
 "RESET": SubResource("Animation_3itlt"),
@@ -45,9 +45,11 @@ _data = {
 }
 
 [node name="ForestDolly1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bwr08")
 
 [node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Sentry" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
 position = Vector2(326, 73)

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="7_adyi6"]
 
 [node name="ForestTeddy1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_i7m7p")
 
 [node name="Player" parent="." instance=ExtResource("2_lhq3y")]
@@ -19,6 +20,7 @@ position = Vector2(34, 234)
 target = NodePath("../Player")
 
 [node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="ForestExit" parent="Components" instance=ExtResource("4_b8xtx")]
 position = Vector2(410, 77)

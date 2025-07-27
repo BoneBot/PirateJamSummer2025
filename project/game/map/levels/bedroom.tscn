@@ -17,6 +17,7 @@ normal = Vector2(-1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w84ai"]
 
 [node name="Bedroom" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_gfn1s")
 
 [node name="Background" type="Sprite2D" parent="."]
