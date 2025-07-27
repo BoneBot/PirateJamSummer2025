@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccukhny0e1iho"]
+
+[ext_resource type="Script" path="res://game/map/levels/forest_dolly_1.gd" id="1_bwr08"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_h84bs"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_85l45"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_inr1c"]
+[ext_resource type="PackedScene" uid="uid://dx3kx0dnsorh8" path="res://game/map/obstacles/sentry.tscn" id="4_4r5f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoxb4"]
+size = Vector2(50, 56)
+
+[sub_resource type="Animation" id="Animation_3itlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2miqn"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgu7v"]
+_data = {
+"RESET": SubResource("Animation_3itlt"),
+"fade_to_black": SubResource("Animation_2miqn")
+}
+
+[node name="ForestDolly1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bwr08")
+
+[node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Sentry" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
+position = Vector2(277, 43)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_uoxb4")
+
+[node name="Sentry2" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
+position = Vector2(445, 40)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry2"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_uoxb4")
+
+[node name="Sentry3" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
+position = Vector2(368, 260)
+rotation = -3.14159
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry3"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_uoxb4")
+
+[node name="ForestExit" parent="." instance=ExtResource("3_85l45")]
+position = Vector2(522, 164)
+
+[node name="ResetPoint" type="Marker2D" parent="."]
+position = Vector2(111, 123)
+
+[node name="Player" parent="." instance=ExtResource("2_h84bs")]
+position = Vector2(188, 180)
+
+[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_inr1c")]
+position = Vector2(143, 206)
+target = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_mgu7v")
+}
+
+[connection signal="body_entered" from="ForestExit" to="." method="_on_forest_exit_body_entered"]

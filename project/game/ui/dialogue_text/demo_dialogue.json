@@ -1,9 +1,10 @@
- {
+{
     "chest_1": {
         "0": [
             {
-                "speaker": "guy",
-                "text": "What's in here?"
+                "speaker": "placeholder",
+                "text": "What's in here?",
+                "emotion": "neutral"
             },
             {
                 "speaker": "chest",
@@ -16,8 +17,9 @@
         ],
         "1": [
             {
-                "speaker": "guy",
-                "text": "Why can you talk???"
+                "speaker": "placeholder",
+                "text": "Why can you talk???",
+                "emotion": "neutral"
             },
             {
                 "speaker": "chest",
@@ -34,12 +36,39 @@
     "chest_2": {
         "0": [
             {
-                "speaker": "guy",
-                "text": "Um... hello?"
+                "speaker": "placeholder",
+                "text": "Um... hello?",
+                "emotion": "happy"
             },
             {
                 "speaker": "",
                 "text": "This chest seems much less chatty."
+            },
+            {
+                "speaker": "placeholder",
+                "text": "Should I... kick it?",
+                "emotion": "neutral",
+                "options": [
+                    "Yes",
+                    "No"
+                ]
+            }
+        ],
+        "1": [
+            {
+                "speaker": "",
+                "text": "You kick the chest. Now your toe hurts."
+            },
+            {
+                "speaker": "placeholder",
+                "text": "Oww...",
+                "emotion": "neutral"
+            }
+        ],
+        "2": [
+            {
+                "speaker": "",
+                "text": "You don't kick the chest."
             }
         ]
     }

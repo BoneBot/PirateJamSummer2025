@@ -8,7 +8,7 @@ extends Node2D
 @onready var player_interact_range := $DemoPlayer/InteractRange
 @onready var chest_1_interactable := $Chest1/Interactable
 @onready var chest_2_interactable := $Chest2/Interactable
-@onready var dialogue_manager := $DialogueManager
+@onready var dialogue_manager := $CanvasLayer/DialogueManager
 
 const SPEED := 200		# Max walking speed (px/s)
 const PLAYER_INTERACT_OFFSETS := {
@@ -60,6 +60,7 @@ func _on_demo_goal_body_entered(_body: Node2D) -> void:
 	ding_sound.play()
 	print("You found the goal!")
 
+
 func _on_chest_1_interact() -> void:
 	print("You opened chest 1!")
 	await dialogue_manager.start_dialogue("chest_1", chest_1_dialogue_state)
@@ -72,6 +73,12 @@ func _on_chest_1_interact() -> void:
 func _on_chest_2_interact() -> void:
 	print("You opened chest 2!")
 	if chest_2_dialogue_state == 0:
-		await dialogue_manager.start_dialogue("chest_2", 0)
+		var result = await dialogue_manager.start_dialogue("chest_2", 0)
+		if result == 0:
+			await dialogue_manager.start_dialogue("chest_2", 1)
+		elif result == 1:
+			await dialogue_manager.start_dialogue("chest_2", 2)
+		else:
+			print("Didn't get a valid dialogue result: %d" % result)
 		chest_2_dialogue_state += 1
 	ding_sound.play()

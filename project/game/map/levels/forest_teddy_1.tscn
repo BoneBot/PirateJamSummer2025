@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cq1fnh4s2evgm"]
+
+[ext_resource type="Script" path="res://game/map/levels/forest_teddy_1.gd" id="1_i7m7p"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_lhq3y"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_r4o1w"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="4_b8xtx"]
+[ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush.tscn" id="5_layg7"]
+[ext_resource type="PackedScene" uid="uid://cjnhxuf3e0307" path="res://game/map/interactables/fading_rose.tscn" id="6_8gp2q"]
+[ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="7_adyi6"]
+
+[node name="ForestTeddy1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_i7m7p")
+
+[node name="Player" parent="." instance=ExtResource("2_lhq3y")]
+position = Vector2(127, 167)
+
+[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_r4o1w")]
+position = Vector2(34, 234)
+target = NodePath("../Player")
+
+[node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ForestExit" parent="Components" instance=ExtResource("4_b8xtx")]
+position = Vector2(565, 183)
+
+[node name="Bush" parent="Components" instance=ExtResource("5_layg7")]
+position = Vector2(396, 256)
+metadata/_edit_group_ = true
+
+[node name="FadingRose" parent="Components/Bush" groups=["roses"] instance=ExtResource("6_8gp2q")]
+position = Vector2(-23, -21)
+
+[node name="FadingRose" parent="Components" groups=["roses"] instance=ExtResource("6_8gp2q")]
+position = Vector2(200, 264)
+
+[node name="FadingRose2" parent="Components" groups=["roses"] instance=ExtResource("6_8gp2q")]
+position = Vector2(250, 117)
+
+[node name="VineDoor" parent="Components" instance=ExtResource("7_adyi6")]
+position = Vector2(512, 216)
+
+[connection signal="body_entered" from="Components/ForestExit" to="." method="_on_forest_exit_body_entered"]

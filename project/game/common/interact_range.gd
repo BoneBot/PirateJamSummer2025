@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
-		if current_interactions:
+		if current_interactions and current_interactions[0].is_interactable:
 			can_interact = false
 			await current_interactions[0].interact.call()
 			can_interact = true
