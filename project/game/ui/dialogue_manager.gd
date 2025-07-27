@@ -1,7 +1,5 @@
 extends Control
 
-## The dialogue configuration file path.
-@export_file("*.json") var dialogue_config_file
 ## The path to the dialogue file for this specific scene
 @export_file("*.json") var dialogue_file
 ## The directory containing all character portraits
@@ -29,28 +27,11 @@ var in_progress = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Parse dialogue config file
-	dialogue_config = JSON.parse_string(FileAccess.get_file_as_string(dialogue_config_file))
-	if dialogue_config == null:
-		print("ERROR: Unable to parse dialogue config file at: %s" % dialogue_config_file)
-		return
-	
 	# Parse scene dialogue file
 	dialogue = JSON.parse_string(FileAccess.get_file_as_string(dialogue_file))
 	if dialogue == null:
 		print("ERROR: Unable to parse scene dialogue at: %s" % dialogue_file)
 		return
-	
-	# Parse character portrait files
-	_get_portrait_textures()
-
-
-# Populates the portrait_textures Dictionary from the contents of the dialogue_config
-func _get_portrait_textures() -> void:
-	for character in dialogue_config["speakers"]:
-		portrait_textures[character] = {}
-		for emotion in dialogue_config["speakers"][character]["emotions"]:
-			portrait_textures[character][emotion] = load(portrait_directory + "/%s_%s.png" % [character, emotion])
 
 
 # Handles input events
@@ -108,11 +89,24 @@ func _next_dialogue():
 
 # Sets the current dialogue portrait based on the speaker and emotion
 func _set_portrait(speaker:String, emotion:String) -> void:
-	if speaker not in portrait_textures:
-		print("WARN: No portraits for speaker %s" % speaker)
-		return
-	elif emotion not in portrait_textures[speaker]:
-		print("WARN: No emotion %s for speaker %s" % [emotion, speaker])
-		return
+	# Check if we already have a portrait resource for the given speaker and emotion
+	if not (speaker in portrait_textures and emotion in portrait_textures[speaker]):
+		_get_portrait_texture(speaker, emotion)
 	
 	portrait.texture = portrait_textures[speaker][emotion]
+
+
+func _get_portrait_texture(speaker:String, emotion:String) -> bool:
+	# Attempt to find the portrait resource for the given speaker and emotion
+	var new_texture = load(portrait_directory + "/%s_%s.png" % [speaker, emotion])
+	if new_texture == null:
+		# No texture found
+		print("WARN: Could not load portrait with emotion %s for speaker %s" % [emotion, speaker])
+		return false
+	
+	# Add to list of portrait textures
+	if speaker not in portrait_textures:
+		portrait_textures[speaker] = {}
+	portrait_textures[speaker][emotion] = new_texture
+	
+	return true
