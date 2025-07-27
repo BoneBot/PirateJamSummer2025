@@ -8,7 +8,7 @@ extends Node2D
 @onready var player_interact_range := $DemoPlayer/InteractRange
 @onready var chest_1_interactable := $Chest1/Interactable
 @onready var chest_2_interactable := $Chest2/Interactable
-@onready var dialogue_manager := $DialogueManager
+@onready var dialogue_manager := $CanvasLayer/DialogueManager
 
 const SPEED := 200		# Max walking speed (px/s)
 const PLAYER_INTERACT_OFFSETS := {

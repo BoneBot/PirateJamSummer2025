@@ -1,11 +1,34 @@
 extends Node2D
 
 
+@onready var player: CharacterBody2D = $Player
+@onready var toy: CharacterBody2D = $Toy
+@onready var reset_point: Marker2D = $ResetPoint
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for sentry in get_tree().get_nodes_in_group("sentries"):
+		sentry.body_entered.connect(_on_sentry_triggered)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+# Reset the player position to the reset point
+func _reset_player() -> void:
+	var toy_offset = player.position - toy.position
+	# Pause scene
+	get_tree().paused = true
+	# Fade to black
+	animation_player.play("fade_to_black")
+	await animation_player.animation_finished
+	# Change positions
+	player.position = reset_point.position
+	toy.position = player.position - toy_offset
+	# Fade back in
+	animation_player.play_backwards("fade_to_black")
+	# Unpause scene
+	get_tree().paused = false
+
+
+func _on_sentry_triggered(_body: Node2D) -> void:
+	_reset_player()
