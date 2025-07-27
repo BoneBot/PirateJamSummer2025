@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 ## The path to the dialogue file for this specific scene
 @export_file("*.json") var dialogue_file

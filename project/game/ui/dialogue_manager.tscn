@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" path="res://game/ui/dialogue_manager.gd" id="1_4qhdc"]
 
-[node name="DialogueManager" type="Control"]
+[node name="DialogueManager" type="CanvasLayer"]
 process_mode = 2
-layout_mode = 3
-anchors_preset = 0
 script = ExtResource("1_4qhdc")
 
 [node name="TextBox" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_top = 280.0
 offset_right = 640.0
