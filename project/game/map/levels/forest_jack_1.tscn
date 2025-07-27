@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://6oyki3ks7u4l"]
+
+[ext_resource type="Script" path="res://game/map/levels/forest_jack_1.gd" id="1_qp3s0"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_3qudn"]
+[ext_resource type="PackedScene" uid="uid://dd0kl255gfdkd" path="res://game/map/interactables/boulder.tscn" id="2_jganh"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_opt1u"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="4_ull83"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="6_0wnkg"]
+
+[node name="ForestJack1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_qp3s0")
+
+[node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Boulder" parent="Components" instance=ExtResource("2_jganh")]
+position = Vector2(306, 163)
+
+[node name="Boulder2" parent="Components" instance=ExtResource("2_jganh")]
+position = Vector2(371, 219)
+
+[node name="Boulder3" parent="Components" instance=ExtResource("2_jganh")]
+position = Vector2(372, 106)
+
+[node name="Boulder4" parent="Components" instance=ExtResource("2_jganh")]
+position = Vector2(435, 160)
+
+[node name="ForestExit" parent="." instance=ExtResource("6_0wnkg")]
+position = Vector2(372, 164)
+
+[node name="Player" parent="." instance=ExtResource("2_3qudn")]
+position = Vector2(169, 107)
+
+[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_opt1u")]
+position = Vector2(122, 144)
+target = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("4_ull83")]
+dialogue_file = "res://game/ui/dialogue_text/forest_jack_1.json"
+portrait_directory = "res://art/Placeholders"
+
+[connection signal="body_entered" from="ForestExit" to="." method="_on_forest_exit_body_entered"]

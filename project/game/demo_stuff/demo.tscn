@@ -30,6 +30,7 @@ script = ExtResource("1_hs3yx")
 
 [node name="Ding" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hd0ch")
+volume_db = -10.0
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_1os8c")
@@ -66,8 +67,15 @@ script = ExtResource("6_4ueff")
 shape = SubResource("RectangleShape2D_5myc7")
 debug_color = Color(0.279673, 0.631412, 1.92523e-07, 0.42)
 
+[node name="Camera" type="Camera2D" parent="DemoPlayer"]
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
+
 [node name="Chest1" type="StaticBody2D" parent="."]
 position = Vector2(344, 268)
+collision_mask = 0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Chest1"]
@@ -102,7 +110,10 @@ script = ExtResource("8_y5ijc")
 position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_rbkie")
 
-[node name="DialogueManager" parent="." instance=ExtResource("9_hugel")]
-dialogue_path = "res://game/ui/dialogue_text/demo_dialogue.json"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("9_hugel")]
+dialogue_file = "res://game/ui/dialogue_text/demo_dialogue.json"
+portrait_directory = "res://art/Placeholders"
 
 [connection signal="body_entered" from="DemoGoal" to="." method="_on_demo_goal_body_entered"]
