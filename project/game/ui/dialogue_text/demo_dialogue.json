@@ -1,9 +1,10 @@
- {
+{
     "chest_1": {
         "0": [
             {
-                "speaker": "guy",
-                "text": "What's in here?"
+                "speaker": "placeholder",
+                "text": "What's in here?",
+                "emotion": "neutral"
             },
             {
                 "speaker": "chest",
@@ -16,8 +17,9 @@
         ],
         "1": [
             {
-                "speaker": "guy",
-                "text": "Why can you talk???"
+                "speaker": "placeholder",
+                "text": "Why can you talk???",
+                "emotion": "neutral"
             },
             {
                 "speaker": "chest",
@@ -34,8 +36,9 @@
     "chest_2": {
         "0": [
             {
-                "speaker": "guy",
-                "text": "Um... hello?"
+                "speaker": "placeholder",
+                "text": "Um... hello?",
+                "emotion": "neutral"
             },
             {
                 "speaker": "",

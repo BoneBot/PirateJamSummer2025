@@ -104,6 +104,8 @@ position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_rbkie")
 
 [node name="DialogueManager" parent="." instance=ExtResource("9_hugel")]
-dialogue_path = "res://game/ui/dialogue_text/demo_dialogue.json"
+dialogue_config_file = "res://game/ui/dialogue_text/demo_dialogue_config.json"
+dialogue_file = "res://game/ui/dialogue_text/demo_dialogue.json"
+portrait_directory = "res://art/Placeholders"
 
 [connection signal="body_entered" from="DemoGoal" to="." method="_on_demo_goal_body_entered"]
