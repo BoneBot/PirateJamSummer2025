@@ -8,7 +8,7 @@
 size = Vector2(28, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4tqe"]
-size = Vector2(28, 18)
+size = Vector2(28, 27)
 
 [sub_resource type="Animation" id="Animation_83xsu"]
 length = 0.001
@@ -277,14 +277,17 @@ region_rect = Rect2(16, 7, 32, 50)
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_wuqfn")
 
-[node name="InteractRange" type="Area2D" parent="."]
-position = Vector2(0, 27)
+[node name="InteractPivot" type="Marker2D" parent="."]
+position = Vector2(0, 9)
+
+[node name="InteractRange" type="Area2D" parent="InteractPivot"]
+position = Vector2(0, 14)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("2_4edn2")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractPivot/InteractRange"]
 shape = SubResource("RectangleShape2D_m4tqe")
 debug_color = Color(0.279673, 0.631412, 1.92523e-07, 0.42)
 

@@ -44,7 +44,7 @@ func _load_level(level_name:String) -> void:
 		next_level_scene = load(path)
 		current_level = next_level_scene.instantiate()
 		_connect_level_signals(current_level)
-		world.add_child(current_level)
+		world.call_deferred("add_child", current_level)
 	else:
 		# Level scene not found
 		print("ERROR: Could not find level scene located at: " + path)

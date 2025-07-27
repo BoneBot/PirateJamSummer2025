@@ -2,17 +2,17 @@ extends CharacterBody2D
 
 
 @onready var sprite := $Sprite
-@onready var interact_range := $InteractRange
+@onready var interact_pivot := $InteractPivot
 @onready var camera := $Camera
 @onready var animation_player := $AnimationPlayer
 
 
 const SPEED := 200					# Max walking speed (px/s)
-const PLAYER_INTERACT_OFFSETS := {	# Offset positions for the interact range
-	"down": Vector2(0, 27),
-	"up": Vector2(0, -9),
-	"right": Vector2(28, 9),
-	"left": Vector2(-28, 9),
+const PLAYER_INTERACT_ROTATIONS := {
+	"down": 0,
+	"left": 90,
+	"up": 180,
+	"right": 270,
 }
 
 var facing := "down"		# The direction the player is currently facing. Can be "up", "down", "left", or "right".
@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
 		facing_changed = true
 	
 	if facing_changed:
-		interact_range.position = PLAYER_INTERACT_OFFSETS[facing]
+		interact_pivot.rotation_degrees = PLAYER_INTERACT_ROTATIONS[facing]
 	
 	# Update animation
 	var animation := _get_new_animation()
