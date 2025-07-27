@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd0kl255gfdkd"]
+[gd_scene load_steps=10 format=3 uid="uid://dd0kl255gfdkd"]
 
 [ext_resource type="Script" path="res://game/map/interactables/boulder.gd" id="1_hiptf"]
 [ext_resource type="Texture2D" uid="uid://dc5k02o35tupp" path="res://art/Placeholders/EnvironmentSpritesPlaceholder.png" id="1_mdy7j"]
@@ -8,16 +8,19 @@
 size = Vector2(62, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6b35"]
-size = Vector2(32, 7)
+size = Vector2(62, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk5e8"]
-size = Vector2(32, 7)
+size = Vector2(62, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e17dm"]
-size = Vector2(7, 38)
+size = Vector2(2, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0504"]
-size = Vector2(7, 38)
+size = Vector2(2, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt7tr"]
+size = Vector2(62, 52)
 
 [node name="Boulder" type="RigidBody2D"]
 collision_mask = 3
@@ -33,44 +36,49 @@ region_rect = Rect2(273, 196, 63, 52)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x7we8")
 
-[node name="InteractRegions" type="Node2D" parent="."]
+[node name="ContactRegions" type="Node2D" parent="."]
 
-[node name="InteractUp" type="Area2D" parent="InteractRegions"]
-collision_layer = 8
-collision_mask = 0
-script = ExtResource("3_8p86d")
+[node name="ContactUp" type="Area2D" parent="ContactRegions"]
+collision_layer = 0
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRegions/InteractUp"]
-position = Vector2(0, -22.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactUp"]
+position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_n6b35")
-debug_color = Color(0.0886739, 0.648804, 9.62615e-07, 0.42)
+debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 
-[node name="InteractDown" type="Area2D" parent="InteractRegions"]
-collision_layer = 8
-collision_mask = 0
-script = ExtResource("3_8p86d")
+[node name="ContactDown" type="Area2D" parent="ContactRegions"]
+collision_layer = 0
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRegions/InteractDown"]
-position = Vector2(0, 23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactDown"]
+position = Vector2(0, 27)
 shape = SubResource("RectangleShape2D_yk5e8")
-debug_color = Color(0.0886739, 0.648804, 9.62615e-07, 0.42)
+debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 
-[node name="InteractLeft" type="Area2D" parent="InteractRegions"]
-collision_layer = 8
-collision_mask = 0
-script = ExtResource("3_8p86d")
+[node name="ContactLeft" type="Area2D" parent="ContactRegions"]
+collision_layer = 0
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRegions/InteractLeft"]
-position = Vector2(-27, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactLeft"]
+position = Vector2(-32, 0)
 shape = SubResource("RectangleShape2D_e17dm")
-debug_color = Color(0.0886739, 0.648804, 9.62615e-07, 0.42)
+debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 
-[node name="InteractRight" type="Area2D" parent="InteractRegions"]
+[node name="ContactRight" type="Area2D" parent="ContactRegions"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactRight"]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_a0504")
+debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
+
+[node name="BoulderInteractable" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("3_8p86d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRegions/InteractRight"]
-position = Vector2(27, 0)
-shape = SubResource("RectangleShape2D_a0504")
-debug_color = Color(0.0886739, 0.648804, 9.62615e-07, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoulderInteractable"]
+shape = SubResource("RectangleShape2D_nt7tr")
+debug_color = Color(0.27634, 0.631894, 0, 0.42)

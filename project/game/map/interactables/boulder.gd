@@ -1,33 +1,35 @@
 extends RigidBody2D
 
 
-@onready var interact_up: Interactable = $InteractRegions/InteractUp
-@onready var interact_down: Interactable = $InteractRegions/InteractDown
-@onready var interact_left: Interactable = $InteractRegions/InteractLeft
-@onready var interact_right: Interactable = $InteractRegions/InteractRight
+## Whether or not the boulder can be pushed. When set to false, it cannot be pushed.
+@export var can_push := true
+
+@onready var boulder_interactable: Interactable = $BoulderInteractable
+@onready var contact_up: Area2D = $ContactRegions/ContactUp
+@onready var contact_down: Area2D = $ContactRegions/ContactDown
+@onready var contact_left: Area2D = $ContactRegions/ContactLeft
+@onready var contact_right: Area2D = $ContactRegions/ContactRight
 
 # The impulse applied each time the boulder is pushed
 const PUSH_IMPULSE := 200
 
 
 func _ready() -> void:
-	interact_up.interact = _on_interact_up
-	interact_down.interact = _on_interact_down
-	interact_left.interact = _on_interact_left
-	interact_right.interact = _on_interact_right
+	boulder_interactable.interact = _on_boulder_interacted
 
 
-func _on_interact_up() -> void:
-	apply_central_impulse(Vector2(0, PUSH_IMPULSE))
-
-
-func _on_interact_down() -> void:
-	apply_central_impulse(Vector2(0, -PUSH_IMPULSE))
-
-
-func _on_interact_left() -> void:
-	apply_central_impulse(Vector2(PUSH_IMPULSE, 0))
-
-
-func _on_interact_right() -> void:
-	apply_central_impulse(Vector2(-PUSH_IMPULSE, 0))
+func _on_boulder_interacted() -> void:
+	if not can_push:
+		return
+	
+	var impulse := Vector2(0, 0)
+	if contact_up.has_overlapping_bodies():
+		impulse.y += PUSH_IMPULSE
+	elif contact_down.has_overlapping_bodies():
+		impulse.y -= PUSH_IMPULSE
+	elif contact_left.has_overlapping_bodies():
+		impulse.x += PUSH_IMPULSE
+	elif contact_right.has_overlapping_bodies():
+		impulse.x -= PUSH_IMPULSE
+	
+	apply_central_impulse(impulse)
