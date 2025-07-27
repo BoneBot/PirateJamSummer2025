@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 ## Target for the toy to follow
-@export var target: CharacterBody2D
+@export var target: Node2D
 ## Distance from the target the toy will follow at (px)
 @export var follow_distance := 40.0
 ## Speed of the toy (px/s)
@@ -24,7 +24,6 @@ func _physics_process(_delta: float) -> void:
 	if dist_to_target > follow_distance:
 		# Check if outside the catch up range
 		if not ghost_mode and dist_to_target > catch_up_distance:
-			print("Catch up time!")
 			ghost_mode = true
 			collision.disabled = true
 		# Move towards target
@@ -35,7 +34,6 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		# Re-enable collision after catching up
 		if ghost_mode:
-			print("All caught up!")
 			ghost_mode = false
 			collision.disabled = false
 	

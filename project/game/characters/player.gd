@@ -9,10 +9,10 @@ extends CharacterBody2D
 
 const SPEED := 200					# Max walking speed (px/s)
 const PLAYER_INTERACT_OFFSETS := {	# Offset positions for the interact range
-	"down": Vector2(0, 18),
-	"up": Vector2(0, -18),
-	"right": Vector2(28, 0),
-	"left": Vector2(-28, 0),
+	"down": Vector2(0, 27),
+	"up": Vector2(0, -9),
+	"right": Vector2(28, 9),
+	"left": Vector2(-28, 9),
 }
 
 var facing := "down"		# The direction the player is currently facing. Can be "up", "down", "left", or "right".
