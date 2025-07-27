@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://baupxuhlutjnh"]
+[gd_scene load_steps=3 format=3 uid="uid://baupxuhlutjnh"]
 
 [ext_resource type="Script" path="res://game/ui/dialogue_manager.gd" id="1_4qhdc"]
+[ext_resource type="Theme" uid="uid://cdbw1gs1jmner" path="res://game/ui/themes/dialogue_option.tres" id="2_de1yc"]
 
 [node name="DialogueManager" type="Control"]
 process_mode = 2
+visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_4qhdc")
 
 [node name="TextBox" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 280.0
@@ -43,9 +44,52 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Dialogue"
 scroll_active = false
 
-[node name="Portrait" type="TextureRect" parent="TextBox"]
+[node name="Portrait" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -1.0
-offset_top = -281.0
+offset_top = -1.0
 offset_right = 239.0
-offset_bottom = -1.0
+offset_bottom = 279.0
+
+[node name="OptionBox" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 459.0
+offset_top = 120.0
+offset_right = 640.0
+offset_bottom = 280.0
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionBox/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Option0" type="Label" parent="OptionBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_de1yc")
+text = "Option 1"
+
+[node name="Option1" type="Label" parent="OptionBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_de1yc")
+text = "Option 2"
+
+[node name="Option2" type="Label" parent="OptionBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_de1yc")
+text = "Option 3"
+
+[node name="Option3" type="Label" parent="OptionBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_de1yc")
+text = "Option 4"

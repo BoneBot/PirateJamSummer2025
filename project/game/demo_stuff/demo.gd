@@ -73,6 +73,12 @@ func _on_chest_1_interact() -> void:
 func _on_chest_2_interact() -> void:
 	print("You opened chest 2!")
 	if chest_2_dialogue_state == 0:
-		await dialogue_manager.start_dialogue("chest_2", 0)
+		var result = await dialogue_manager.start_dialogue("chest_2", 0)
+		if result == 0:
+			await dialogue_manager.start_dialogue("chest_2", 1)
+		elif result == 1:
+			await dialogue_manager.start_dialogue("chest_2", 2)
+		else:
+			print("Didn't get a valid dialogue result: %d" % result)
 		chest_2_dialogue_state += 1
 	ding_sound.play()

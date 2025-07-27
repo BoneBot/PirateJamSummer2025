@@ -30,6 +30,7 @@ script = ExtResource("1_hs3yx")
 
 [node name="Ding" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hd0ch")
+volume_db = -10.0
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_1os8c")

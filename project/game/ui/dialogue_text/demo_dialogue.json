@@ -43,6 +43,32 @@
             {
                 "speaker": "",
                 "text": "This chest seems much less chatty."
+            },
+            {
+                "speaker": "placeholder",
+                "text": "Should I... kick it?",
+                "emotion": "neutral",
+                "options": [
+                    "Yes",
+                    "No"
+                ]
+            }
+        ],
+        "1": [
+            {
+                "speaker": "",
+                "text": "You kick the chest. Now your toe hurts."
+            },
+            {
+                "speaker": "placeholder",
+                "text": "Oww...",
+                "emotion": "neutral"
+            }
+        ],
+        "2": [
+            {
+                "speaker": "",
+                "text": "You don't kick the chest."
             }
         ]
     }
