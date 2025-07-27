@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccukhny0e1iho"]
+[gd_scene load_steps=10 format=3 uid="uid://ccukhny0e1iho"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_dolly_1.gd" id="1_bwr08"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_h84bs"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_85l45"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_inr1c"]
 [ext_resource type="PackedScene" uid="uid://dx3kx0dnsorh8" path="res://game/map/obstacles/sentry.tscn" id="4_4r5f8"]
 
@@ -52,25 +53,32 @@ script = ExtResource("1_bwr08")
 y_sort_enabled = true
 
 [node name="Sentry" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
-position = Vector2(326, 73)
+position = Vector2(277, 43)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry"]
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_uoxb4")
 
 [node name="Sentry2" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
-position = Vector2(460, 91)
+position = Vector2(445, 40)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry2"]
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_uoxb4")
 
 [node name="Sentry3" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
-position = Vector2(429, 208)
+position = Vector2(368, 260)
+rotation = -3.14159
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry3"]
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_uoxb4")
+
+[node name="ForestExit" parent="." instance=ExtResource("3_85l45")]
+position = Vector2(522, 164)
 
 [node name="ResetPoint" type="Marker2D" parent="."]
 position = Vector2(111, 123)
@@ -91,9 +99,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_mgu7v")
 }
+
+[connection signal="body_entered" from="ForestExit" to="." method="_on_forest_exit_body_entered"]

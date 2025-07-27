@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func _on_forest_exit_body_entered(_body: Node2D) -> void:
-	level_exited.emit("forest_dolly_1")
+	level_exited.emit("bedroom")
 
 
 func _on_rose_interacted() -> void:

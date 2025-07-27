@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckyw3xmol7iso"]
+[gd_scene load_steps=10 format=3 uid="uid://ckyw3xmol7iso"]
 
 [ext_resource type="Script" path="res://game/map/levels/bedroom.gd" id="1_gfn1s"]
 [ext_resource type="Texture2D" uid="uid://wmrv0ujv2s7c" path="res://art/demo_stuff/DemoBackground.png" id="2_wcblf"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="3_jiuq5"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="4_s2dnn"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="5_imofy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p1h2a"]
 normal = Vector2(1, 0)
@@ -61,3 +62,8 @@ target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("3_jiuq5")]
 position = Vector2(333, 188)
+
+[node name="ForestExit" parent="." instance=ExtResource("5_imofy")]
+position = Vector2(498, 185)
+
+[connection signal="body_entered" from="ForestExit" to="." method="_on_forest_exit_body_entered"]

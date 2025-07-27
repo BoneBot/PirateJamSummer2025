@@ -40,6 +40,6 @@ func _on_visibility_body_exited(_body: Node2D) -> void:
 
 func _on_fading_rose_interact() -> void:
 	if not has_interacted:
-		print("You touched the rose!")
+		sprite.self_modulate = Color(1, 0, 0)
 		rose_interacted.emit()
 	has_interacted = true

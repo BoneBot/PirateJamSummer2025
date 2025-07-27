@@ -23,7 +23,7 @@ target = NodePath("../Player")
 y_sort_enabled = true
 
 [node name="ForestExit" parent="Components" instance=ExtResource("4_b8xtx")]
-position = Vector2(410, 77)
+position = Vector2(565, 183)
 
 [node name="Bush" parent="Components" instance=ExtResource("5_layg7")]
 position = Vector2(396, 256)
@@ -33,12 +33,12 @@ metadata/_edit_group_ = true
 position = Vector2(-23, -21)
 
 [node name="FadingRose" parent="Components" groups=["roses"] instance=ExtResource("6_8gp2q")]
-position = Vector2(158, 295)
+position = Vector2(200, 264)
 
 [node name="FadingRose2" parent="Components" groups=["roses"] instance=ExtResource("6_8gp2q")]
-position = Vector2(289, 63)
+position = Vector2(250, 117)
 
 [node name="VineDoor" parent="Components" instance=ExtResource("7_adyi6")]
-position = Vector2(545, 217)
+position = Vector2(512, 216)
 
 [connection signal="body_entered" from="Components/ForestExit" to="." method="_on_forest_exit_body_entered"]

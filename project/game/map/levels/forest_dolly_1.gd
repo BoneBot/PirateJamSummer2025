@@ -6,6 +6,9 @@ extends Node2D
 @onready var reset_point: Marker2D = $ResetPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+## Emitted when the level is exited. Contains the name of the next level to load.
+signal level_exited(next_level:String)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,3 +35,7 @@ func _reset_player() -> void:
 
 func _on_sentry_triggered(_body: Node2D) -> void:
 	_reset_player()
+
+
+func _on_forest_exit_body_entered(_body: Node2D) -> void:
+	level_exited.emit("forest_jack_1")
