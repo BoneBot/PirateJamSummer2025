@@ -1,10 +1,255 @@
 {
-    "rose": {
+    "start": {
         "0": [
             {
-                "speaker": "",
-                "text": "A luscious red rose",
-                "portrait": ""
+                "speaker": "sol",
+                "text": "Hey, Dolly?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Yes Sol?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Do you know where we are?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "I believe we're in the forest, keeping busy and out of the way while dad fixes the car tire.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Right, but do you know where we are in the forest?",
+                "emotion": "unamused"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh, well we should be...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Um...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh dear, I don't see the pathway we came from.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Are we lost?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, I think we are.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "What?! Oh no no no! Mom and dad will be worried sick!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "How are we going to get back to them?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well... I guess we'll just have to find our way back out.",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "sol",
+                "text": "It can't be too hard, right?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh, but what if we get more lost? Or one of us gets hurt? I don't want my face to get chipped... Or yours, for that matter.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well, we can't just stay in one spot right? Then we'll never have a chance of getting out.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Well, I suppose you have a point... But we'll be careful, right?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Of course we will.",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh, good! Then let's continue on.",
+                "emotion": "happy"
+            }
+        ]
+    },
+    "area": {
+        "0": [
+            {
+                "speaker": "dolly",
+                "text": "Wait! Wait!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Huh?! What is it?",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Don't walk any further! There's something over there! If we walk any further, it'll see us!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Where? I don't see it.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "See the glowing eyes, right between the branches? Look a little closer...",
+                "emotion": "nervous"
+            }
+        ],
+        "1": [
+            {
+                "speaker": "sol",
+                "text": "Woah, you're right! What is that?",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Well, I can't be completely sure without seeing more than the eyes, but my guess is it's a wild forest squirrel.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "While similar in appearance to the squirrels we typically see at home, they have a much more aggressive nature and are very territorial. They will run towards anything they see to scare it off. We definitely don't want it to see us!",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yikes, definitely not!",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "But that's good to know! Where did you learn that?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "I... may glance through some of the books on your shelf from time to time. There's a particularly fascinating encyclopedia of animals. I hope that's alright. I didn't exactly ask...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Of course it's alright! You saved us from getting chased by a forest squirrel.",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh! Well, yes, I suppose you're right. I'm happy I could help.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "C'mon, let's keep going. And avoid any forest squirrels we see on the way, of course.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Yes, let's continue.",
+                "emotion": "happy"
+            }
+        ]
+    },
+    "exit": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "Look, the forest gets brighter up ahead. I think this is a way out!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh goodie! And not a scratch on us!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, not a scratch. We wouldn't want those delicate faces of yours to get damaged, now, would we?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Aaahhh!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Eep!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "Who are you?",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "shadow",
+                "text": "I am but a humble denizen of this forest. I couldn't help but notice that you two seem... lost.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, y-y-yes, we are a little lost. But we're on our way back to my parents. Right, Dolly?",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Meep!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "S-s-she means \"yes\".",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Ah, splendid. We wouldn't want you two stuck out here alone.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "I would encourage you to hurry, though. There's only so much sunlight in the day, and the forest is not the most... welcoming... place at night.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Right, well then we should probably be going now.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, yes. Hurry along. Time is ticking... ha ha...",
+                "emotion": "neutral"
             }
         ]
     }

@@ -1,0 +1,95 @@
+{
+    "speaker": "sol",
+    "text": "Hey, Dolly?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "dolly",
+    "text": "Yes Sol?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "sol",
+    "text": "Do you know where we are?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "dolly",
+    "text": "I believe we're in the forest, keeping busy and out of the way while dad fixes the car tire.",
+    "emotion": "neutral"
+},
+{
+    "speaker": "sol",
+    "text": "Right, but do you know where we are in the forest?",
+    "emotion": "unamused"
+},
+{
+    "speaker": "dolly",
+    "text": "Oh, well we should be...",
+    "emotion": "neutral"
+},
+{
+    "speaker": "dolly",
+    "text": "Um...",
+    "emotion": "neutral"
+},
+{
+    "speaker": "dolly",
+    "text": "Oh dear, I don't see the pathway we came from.",
+    "emotion": "nervous"
+},
+{
+    "speaker": "dolly",
+    "text": "Are we lost?",
+    "emotion": "nervous"
+},
+{
+    "speaker": "sol",
+    "text": "Um, I think we are.",
+    "emotion": "nervous"
+},
+{
+    "speaker": "dolly",
+    "text": "What?! Oh no no no! Mom and dad will be worried sick!",
+    "emotion": "nervous"
+},
+{
+    "speaker": "dolly",
+    "text": "How are we going to get back to them?",
+    "emotion": "nervous"
+},
+{
+    "speaker": "sol",
+    "text": "Well... I guess we'll just have to find our way back out.",
+    "emotion": "determined"
+},
+{
+    "speaker": "sol",
+    "text": "It can't be too hard, right?",
+    "emotion": "happy"
+},
+{
+    "speaker": "dolly",
+    "text": "Oh, but what if we get more lost? Or one of us gets hurt? I don't want my face to get chipped... Or yours, for that matter.",
+    "emotion": "nervous"
+},
+{
+    "speaker": "sol",
+    "text": "Well, we can't just stay in one spot right? Then we'll never have a chance of getting out.",
+    "emotion": "happy"
+},
+{
+    "speaker": "dolly",
+    "text": "Well, I suppose you have a point... But we'll be careful, right?",
+    "emotion": "nervous"
+},
+{
+    "speaker": "sol",
+    "text": "Of course we will.",
+    "emotion": "laughing"
+},
+{
+    "speaker": "dolly",
+    "text": "Oh, good! Then let's continue on.",
+    "emotion": "happy"
+},
