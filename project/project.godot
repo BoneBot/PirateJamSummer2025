@@ -13,7 +13,7 @@ config_version=5
 config/name="PirateJamSummer2025"
 run/main_scene="res://game/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://art/icon.svg"
+config/icon="res://art/demo_stuff/icon.svg"
 
 [display]
 

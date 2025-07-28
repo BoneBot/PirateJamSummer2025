@@ -1,20 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://uxjeys74s857"]
 
-[ext_resource type="Texture2D" uid="uid://dc5k02o35tupp" path="res://art/Placeholders/EnvironmentSpritesPlaceholder.png" id="1_a8j3p"]
+[ext_resource type="Texture2D" uid="uid://bxi35idbqwxp8" path="res://art/Background Assets/Single Bush.png" id="1_egdss"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bcxtv"]
-radius = 11.0
-height = 48.0
+radius = 12.0
+height = 56.0
 
-[node name="Bush" type="StaticBody2D"]
+[node name="BushSingle" type="StaticBody2D"]
 collision_mask = 0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_a8j3p")
-region_enabled = true
+position = Vector2(0, -12)
+texture = ExtResource("1_egdss")
 region_rect = Rect2(350, 277, 50, 45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bcxtv")

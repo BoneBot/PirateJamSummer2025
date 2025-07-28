@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_lhq3y"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_r4o1w"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="4_b8xtx"]
-[ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush.tscn" id="5_layg7"]
+[ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush_single.tscn" id="5_layg7"]
 [ext_resource type="PackedScene" uid="uid://cjnhxuf3e0307" path="res://game/map/interactables/fading_rose.tscn" id="6_8gp2q"]
 [ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="7_adyi6"]
 

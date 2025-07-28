@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfs7qkxlas2oe"]
+
+[ext_resource type="Texture2D" uid="uid://bcnwlcrcjs6ne" path="res://art/Background Assets/modular bush foward middle.png" id="1_agd12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni2mu"]
+size = Vector2(54, 64)
+
+[node name="BushForwardMiddle" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_agd12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ni2mu")
