@@ -46,10 +46,8 @@ scroll_active = false
 
 [node name="Portrait" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 239.0
-offset_bottom = 279.0
+offset_right = 240.0
+offset_bottom = 280.0
 
 [node name="OptionBox" type="Control" parent="."]
 anchors_preset = 0

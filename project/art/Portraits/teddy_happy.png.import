@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkeolwqexf1cs"
-path="res://.godot/imported/teddy_neutral.png-bb8883593c820eaad2867849dafbee33.ctex"
+path="res://.godot/imported/teddy_happy.png-dceec092820f40c97041e82971a2565b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Portraits/teddy_neutral.png"
-dest_files=["res://.godot/imported/teddy_neutral.png-bb8883593c820eaad2867849dafbee33.ctex"]
+source_file="res://art/Portraits/teddy_happy.png"
+dest_files=["res://.godot/imported/teddy_happy.png-dceec092820f40c97041e82971a2565b.ctex"]
 
 [params]
 

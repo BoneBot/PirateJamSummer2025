@@ -1,6 +1,6 @@
 import json
-import os
 import re
+import os
 
 def convert_to_json(plain_text):
     # Pattern matches lines like: SPEAKER (emotion): dialogue
@@ -8,6 +8,9 @@ def convert_to_json(plain_text):
     output = []
 
     for line in plain_text.strip().split('\n'):
+        line = line.strip()
+        if not line:
+            continue  # Skip empty lines
         match = pattern.match(line)
         if match:
             speaker, emotion, text = match.groups()
@@ -16,43 +19,55 @@ def convert_to_json(plain_text):
                 "text": text.strip(),
                 "emotion": emotion.strip().lower()
             }
-            output.append(entry)
         else:
-            print(f"Skipping line (format issue): {line}")
+            # Treat as narration if not matching speaker format
+            entry = {
+                "text": line
+            }
+        output.append(entry)
 
     return output
 
 # Example usage
 if __name__ == "__main__":
     plain_text = """
-SOL (neutral): Hey, Dolly? 
+You investigate the flower closer. It's a rose with the brightest red petals you've ever seen. 
 
-DOLLY (neutral): Yes Sol? 
+SOL (surprised): Wow, that's... beautiful. I didn't even notice it before. 
 
-SOL (neutral): Do you know where we are? 
-DOLLY (neutral): I believe we're in the forest, keeping busy and out of the way while dad fixes the car tire. 
-SOL (unamused): Right, but do you know where we are in the forest? 
-DOLLY (neutral): Oh, well we should be... 
-DOLLY (neutral): Um... 
-DOLLY (nervous): Oh dear, I don't see the pathway we came from. 
-DOLLY (nervous): Are we lost? 
-SOL (nervous): Um, I think we are. 
-DOLLY (nervous): What?! Oh no no no! Mom and dad will be worried sick! 
-DOLLY (nervous): How are we going to get back to them? 
-SOL (determined): Well... I guess we'll just have to find our way back out. 
-SOL (happy): It can't be too hard, right? 
-DOLLY (nervous): Oh, but what if we get more lost? Or one of us gets hurt? I don't want my face to get chipped... Or yours, for that matter. 
-SOL (happy): Well, we can't just stay in one spot right? Then we'll never have a chance of getting out. 
-DOLLY (nervous): Well, I suppose you have a point... But we'll be careful, right? 
-SOL (laughing): Of course we will. 
-DOLLY (happy): Oh, good! Then let's continue on. 
+TEDDY (happy): Isn't it? Aaahhh, I love the forest. It's so much more colorful than the bed, haha! 
+
+TEDDY (sleepy): Ahh, bed... sleepy... zzz... 
+
+SOL (determined): What- hey, hey! Teddy! 
+
+TEDDY (surprised): zzz... UP, I'm up! I'm not asleep! 
+
+SOL (laughing): Ha ha! You almost fell asleep standing up! 
+
+TEDDY (concerned): Ha ha... Yeah, um, I almost did. 
+
+SOL (neutral): Do you think mom would like the rose? 
+
+TEDDY (happy): Well of course she would! We should bring it to her! 
+
+SOL (happy): Yeah, she would. 
+
+You try to pluck the rose. As your fingers brush the petals, you hear a creaking of vines shifting from the other end of the clearing. 
+
+SOL (neutral): Did you hear that? 
+
+TEDDY (happy): Hmm? 
+
+SOL (surprised): I think the rose loosened those vines over there. 
+
+SOL (happy): Maybe there's more! And maybe if we find them, we can get through the vines! 
+
+TEDDY (happy): Yes, genius! Let's go look for more. 
+
 """
 
     json_output = convert_to_json(plain_text)
-
-    # Print each JSON object separately
-    # for item in json_output:
-    #     print(json.dumps(item, indent=4) + ',')
 
     # Define path to temp.txt in current directory
     output_path = os.path.join(os.path.dirname(__file__), "temp.txt")

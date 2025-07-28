@@ -1,95 +1,81 @@
 {
-    "speaker": "sol",
-    "text": "Hey, Dolly?",
-    "emotion": "neutral"
-},
-{
-    "speaker": "dolly",
-    "text": "Yes Sol?",
-    "emotion": "neutral"
+    "text": "You investigate the flower closer. It's a rose with the brightest red petals you've ever seen."
 },
 {
     "speaker": "sol",
-    "text": "Do you know where we are?",
-    "emotion": "neutral"
+    "text": "Wow, that's... beautiful. I didn't even notice it before.",
+    "emotion": "surprised"
 },
 {
-    "speaker": "dolly",
-    "text": "I believe we're in the forest, keeping busy and out of the way while dad fixes the car tire.",
-    "emotion": "neutral"
+    "speaker": "teddy",
+    "text": "Isn't it? Aaahhh, I love the forest. It's so much more colorful than the bed, haha!",
+    "emotion": "happy"
 },
 {
-    "speaker": "sol",
-    "text": "Right, but do you know where we are in the forest?",
-    "emotion": "unamused"
-},
-{
-    "speaker": "dolly",
-    "text": "Oh, well we should be...",
-    "emotion": "neutral"
-},
-{
-    "speaker": "dolly",
-    "text": "Um...",
-    "emotion": "neutral"
-},
-{
-    "speaker": "dolly",
-    "text": "Oh dear, I don't see the pathway we came from.",
-    "emotion": "nervous"
-},
-{
-    "speaker": "dolly",
-    "text": "Are we lost?",
-    "emotion": "nervous"
+    "speaker": "teddy",
+    "text": "Ahh, bed... sleepy... zzz...",
+    "emotion": "sleepy"
 },
 {
     "speaker": "sol",
-    "text": "Um, I think we are.",
-    "emotion": "nervous"
-},
-{
-    "speaker": "dolly",
-    "text": "What?! Oh no no no! Mom and dad will be worried sick!",
-    "emotion": "nervous"
-},
-{
-    "speaker": "dolly",
-    "text": "How are we going to get back to them?",
-    "emotion": "nervous"
-},
-{
-    "speaker": "sol",
-    "text": "Well... I guess we'll just have to find our way back out.",
+    "text": "What- hey, hey! Teddy!",
     "emotion": "determined"
 },
 {
-    "speaker": "sol",
-    "text": "It can't be too hard, right?",
-    "emotion": "happy"
-},
-{
-    "speaker": "dolly",
-    "text": "Oh, but what if we get more lost? Or one of us gets hurt? I don't want my face to get chipped... Or yours, for that matter.",
-    "emotion": "nervous"
+    "speaker": "teddy",
+    "text": "zzz... UP, I'm up! I'm not asleep!",
+    "emotion": "surprised"
 },
 {
     "speaker": "sol",
-    "text": "Well, we can't just stay in one spot right? Then we'll never have a chance of getting out.",
-    "emotion": "happy"
-},
-{
-    "speaker": "dolly",
-    "text": "Well, I suppose you have a point... But we'll be careful, right?",
-    "emotion": "nervous"
-},
-{
-    "speaker": "sol",
-    "text": "Of course we will.",
+    "text": "Ha ha! You almost fell asleep standing up!",
     "emotion": "laughing"
 },
 {
-    "speaker": "dolly",
-    "text": "Oh, good! Then let's continue on.",
+    "speaker": "teddy",
+    "text": "Ha ha... Yeah, um, I almost did.",
+    "emotion": "concerned"
+},
+{
+    "speaker": "sol",
+    "text": "Do you think mom would like the rose?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "teddy",
+    "text": "Well of course she would! We should bring it to her!",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Yeah, she would.",
+    "emotion": "happy"
+},
+{
+    "text": "You try to pluck the rose. As your fingers brush the petals, you hear a creaking of vines shifting from the other end of the clearing."
+},
+{
+    "speaker": "sol",
+    "text": "Did you hear that?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "teddy",
+    "text": "Hmm?",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "I think the rose loosened those vines over there.",
+    "emotion": "surprised"
+},
+{
+    "speaker": "sol",
+    "text": "Maybe there's more! And maybe if we find them, we can get through the vines!",
+    "emotion": "happy"
+},
+{
+    "speaker": "teddy",
+    "text": "Yes, genius! Let's go look for more.",
     "emotion": "happy"
 },

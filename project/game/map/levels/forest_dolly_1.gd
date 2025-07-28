@@ -14,6 +14,7 @@ signal level_exited(next_level:String)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.set_camera_limits(Vector2(0, 0), Vector2(640, 360))
+	
 	for sentry in get_tree().get_nodes_in_group("sentries"):
 		sentry.body_entered.connect(_on_sentry_triggered)
 	
