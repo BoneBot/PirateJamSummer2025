@@ -16,6 +16,9 @@ func _ready() -> void:
 	player.set_camera_limits(Vector2(0, 0), Vector2(640, 360))
 	for sentry in get_tree().get_nodes_in_group("sentries"):
 		sentry.body_entered.connect(_on_sentry_triggered)
+	
+	# Trigger starting dialogue
+	await dialogue_manager.start_dialogue("start", 0)
 
 
 # Reset the player position to the reset point
