@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cdr7oh13wgny"]
+[gd_scene load_steps=20 format=3 uid="uid://cdr7oh13wgny"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_teddy_2.gd" id="1_6a830"]
 [ext_resource type="Texture2D" uid="uid://dkyoabcf4c8cm" path="res://art/Background Assets/forest_m.png" id="2_785fb"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="11_kgb43"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="12_tfbea"]
 [ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="13_f0vuw"]
+[ext_resource type="PackedScene" uid="uid://dqcfv4th66b2w" path="res://game/characters/shadow.tscn" id="14_pbnsf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxcjf"]
 normal = Vector2(1, 0)
@@ -150,6 +151,10 @@ position = Vector2(439, 396)
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("12_tfbea")]
 position = Vector2(388, 411)
 target = NodePath(".")
+
+[node name="Shadow" parent="." instance=ExtResource("14_pbnsf")]
+visible = false
+position = Vector2(414, 174)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

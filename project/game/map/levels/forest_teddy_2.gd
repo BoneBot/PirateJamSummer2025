@@ -5,6 +5,7 @@ extends Node2D
 @onready var vine_door: StaticBody2D = $Components/VineDoor
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
+@onready var shadow: Node2D = $Shadow
 @onready var dialogue_manager: Control = $CanvasLayer/DialogueManager
 
 ## Emitted when the level is exited. Contains the name of the next level to load.
@@ -41,7 +42,9 @@ func _on_rose_interacted() -> void:
 	# All roses found
 	if rose_count == total_num_roses:
 		vine_door.open_door()
+		shadow.visible = true
 		await dialogue_manager.start_dialogue("rose", 1)
+		shadow.visible = false
 	else:
 		await dialogue_manager.start_dialogue("rose", 0)
 

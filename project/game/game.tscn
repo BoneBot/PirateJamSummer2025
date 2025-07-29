@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgnshj6oxg3fr"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_e5fdu"]
-[ext_resource type="PackedScene" uid="uid://cdr7oh13wgny" path="res://game/map/levels/forest_teddy_2.tscn" id="2_ayed4"]
+[ext_resource type="PackedScene" uid="uid://ckyw3xmol7iso" path="res://game/map/levels/bedroom.tscn" id="2_wj8ts"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_e5fdu")
-starting_level = ExtResource("2_ayed4")
+starting_level = ExtResource("2_wj8ts")
 level_directory = "res://game/map/levels"
 
 [node name="World" type="Node" parent="."]

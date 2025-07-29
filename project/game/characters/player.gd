@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var camera := $Camera
 @onready var animation_player := $AnimationPlayer
 
+@export var can_move := true
 
 const SPEED := 200					# Max walking speed (px/s)
 const PLAYER_INTERACT_ROTATIONS := {
@@ -50,9 +51,12 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	# Handle walking
-	var h_dir := Input.get_axis("left", "right")
-	var v_dir := Input.get_axis("up", "down")
-	velocity = Vector2(h_dir, v_dir).normalized() * SPEED
+	if can_move:
+		var h_dir := Input.get_axis("left", "right")
+		var v_dir := Input.get_axis("up", "down")
+		velocity = Vector2(h_dir, v_dir).normalized() * SPEED
+	else:
+		velocity = Vector2.ZERO
 	
 	move_and_slide()
 

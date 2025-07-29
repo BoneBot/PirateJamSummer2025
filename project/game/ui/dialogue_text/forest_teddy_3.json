@@ -188,18 +188,16 @@
                 "speaker": "shadow",
                 "text": "Oh, and I almost forgot. A gift, for your dear mother.",
                 "emotion": "neutral"
-            },
-            {
-                "text": "A rose appears in front of the Shadow."
-            },
+            }
+        ],
+        "1": [
             {
                 "speaker": "shadow",
                 "text": "Do come back again soon, ha ha...",
                 "emotion": "neutral"
-            },
-            {
-                "text": "The Shadow vanishes."
-            },
+            }
+        ],
+        "2": [
             {
                 "speaker": "teddy",
                 "text": "Aww, he even got us a rose for mom!",

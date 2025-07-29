@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxp3lwgbkjxbs"]
+
+[ext_resource type="Texture2D" uid="uid://dc5k02o35tupp" path="res://art/Placeholders/EnvironmentSpritesPlaceholder.png" id="2_0pr7b"]
+
+[node name="FakeRose" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2, 7)
+texture = ExtResource("2_0pr7b")
+region_enabled = true
+region_rect = Rect2(212, 269, 26, 38)

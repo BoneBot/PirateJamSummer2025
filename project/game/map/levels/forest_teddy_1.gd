@@ -7,6 +7,7 @@ signal level_exited(next_level:String)
 @onready var background: Sprite2D = $Background
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
+@onready var shadow: Node2D = $Shadow
 @onready var dialogue_manager: Control = $CanvasLayer/DialogueManager
 @onready var vine_door: StaticBody2D = $Components/VineDoor
 @onready var teddy_rose: Node2D = $Components/BushSingle/FadingRose
@@ -50,7 +51,9 @@ func _on_rose_interacted() -> void:
 	# All roses found
 	elif rose_count == total_num_roses:
 		vine_door.open_door()
+		shadow.visible = true
 		await dialogue_manager.start_dialogue("rose", 2)
+		shadow.visible = false
 	else:
 		await dialogue_manager.start_dialogue("rose", 1)
 
