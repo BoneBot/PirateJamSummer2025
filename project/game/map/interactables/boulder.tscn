@@ -1,26 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://dd0kl255gfdkd"]
 
 [ext_resource type="Script" path="res://game/map/interactables/boulder.gd" id="1_hiptf"]
-[ext_resource type="Texture2D" uid="uid://dc5k02o35tupp" path="res://art/Placeholders/EnvironmentSpritesPlaceholder.png" id="1_mdy7j"]
+[ext_resource type="Texture2D" uid="uid://c380sgipplnwr" path="res://art/Background Assets/pushable_block.png" id="2_o61vt"]
 [ext_resource type="Script" path="res://game/common/interactable.gd" id="3_8p86d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7we8"]
-size = Vector2(62, 52)
+size = Vector2(28, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6b35"]
-size = Vector2(62, 2)
+size = Vector2(28, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk5e8"]
-size = Vector2(62, 2)
+size = Vector2(28, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e17dm"]
-size = Vector2(2, 52)
+size = Vector2(2, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0504"]
-size = Vector2(2, 52)
+size = Vector2(2, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt7tr"]
-size = Vector2(62, 52)
+size = Vector2(28, 28)
 
 [node name="Boulder" type="RigidBody2D"]
 collision_mask = 3
@@ -29,8 +29,7 @@ linear_damp = 5.0
 script = ExtResource("1_hiptf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mdy7j")
-region_enabled = true
+texture = ExtResource("2_o61vt")
 region_rect = Rect2(273, 196, 63, 52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,7 +42,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactUp"]
-position = Vector2(0, -27)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_n6b35")
 debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 
@@ -52,7 +51,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactDown"]
-position = Vector2(0, 27)
+position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_yk5e8")
 debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 
@@ -61,7 +60,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactLeft"]
-position = Vector2(-32, 0)
+position = Vector2(-15, 0)
 shape = SubResource("RectangleShape2D_e17dm")
 debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 
@@ -70,7 +69,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactRegions/ContactRight"]
-position = Vector2(32, 0)
+position = Vector2(15, 0)
 shape = SubResource("RectangleShape2D_a0504")
 debug_color = Color(0.577807, 0.552922, 7.70092e-07, 0.42)
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cq1fnh4s2evgm"]
+[gd_scene load_steps=16 format=3 uid="uid://cq1fnh4s2evgm"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_teddy_1.gd" id="1_i7m7p"]
+[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_bcnua"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_lhq3y"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_r4o1w"]
 [ext_resource type="PackedScene" uid="uid://bud0dm577h017" path="res://game/map/interactables/dialogue_area.tscn" id="4_33mel"]
@@ -28,30 +29,37 @@ size = Vector2(8, 334)
 y_sort_enabled = true
 script = ExtResource("1_i7m7p")
 
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_bcnua")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="Boundaries" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
 shape = SubResource("WorldBoundaryShape2D_5peh0")
 
 [node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
 shape = SubResource("WorldBoundaryShape2D_jqw50")
 
 [node name="Right" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(640, 360)
+position = Vector2(616, 360)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
 shape = SubResource("WorldBoundaryShape2D_mjei2")
 
 [node name="Down" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(640, 360)
+position = Vector2(616, 360)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
@@ -61,20 +69,20 @@ shape = SubResource("WorldBoundaryShape2D_p0ybf")
 y_sort_enabled = true
 
 [node name="ForestExit" parent="Components" instance=ExtResource("4_b8xtx")]
-position = Vector2(517, 18)
+position = Vector2(557, 88)
 
 [node name="VineDoor" parent="Components" instance=ExtResource("7_adyi6")]
-position = Vector2(518, 58)
+position = Vector2(558, 111)
 
 [node name="DialogueArea" parent="Components" instance=ExtResource("4_33mel")]
-position = Vector2(187, 180)
+position = Vector2(187, 204)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/DialogueArea"]
 shape = SubResource("RectangleShape2D_s21nm")
 
 [node name="BushSingle" parent="Components" instance=ExtResource("5_layg7")]
-position = Vector2(330, 329)
+position = Vector2(314, 329)
 metadata/_edit_group_ = true
 
 [node name="FadingRose" parent="Components/BushSingle" groups=["roses"] instance=ExtResource("6_8gp2q")]
@@ -82,7 +90,7 @@ position = Vector2(-23, -21)
 fades = false
 
 [node name="BushSingle2" parent="Components" instance=ExtResource("5_layg7")]
-position = Vector2(287, 79)
+position = Vector2(394, 132)
 metadata/_edit_group_ = true
 
 [node name="FadingRose" parent="Components/BushSingle2" groups=["roses"] instance=ExtResource("6_8gp2q")]
@@ -90,7 +98,7 @@ position = Vector2(-23, -11)
 fades = false
 
 [node name="BushSingle3" parent="Components" instance=ExtResource("5_layg7")]
-position = Vector2(555, 203)
+position = Vector2(562, 314)
 metadata/_edit_group_ = true
 
 [node name="FadingRose2" parent="Components/BushSingle3" groups=["roses"] instance=ExtResource("6_8gp2q")]

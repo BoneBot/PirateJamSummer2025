@@ -1,39 +1,85 @@
-[gd_scene load_steps=7 format=3 uid="uid://6oyki3ks7u4l"]
+[gd_scene load_steps=12 format=3 uid="uid://6oyki3ks7u4l"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_jack_1.gd" id="1_qp3s0"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_3qudn"]
 [ext_resource type="PackedScene" uid="uid://dd0kl255gfdkd" path="res://game/map/interactables/boulder.tscn" id="2_jganh"]
+[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_r3cgq"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_opt1u"]
 [ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="4_ull83"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="6_0wnkg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mbbae"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7k8hg"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3py6e"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_csdmp"]
 
 [node name="ForestJack1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_qp3s0")
 
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_r3cgq")
+centered = false
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_mbbae")
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_7k8hg")
+
+[node name="Right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(616, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_3py6e")
+
+[node name="Down" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(616, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
+shape = SubResource("WorldBoundaryShape2D_csdmp")
+
 [node name="Components" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Boulder" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(306, 163)
+position = Vector2(596, 229)
 
 [node name="Boulder2" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(371, 219)
+position = Vector2(554, 216)
 
 [node name="Boulder3" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(372, 106)
+position = Vector2(589, 139)
 
 [node name="Boulder4" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(435, 160)
+position = Vector2(553, 176)
 
 [node name="ForestExit" parent="." instance=ExtResource("6_0wnkg")]
-position = Vector2(372, 164)
+position = Vector2(601, 187)
 
 [node name="Player" parent="." instance=ExtResource("2_3qudn")]
-position = Vector2(169, 107)
+position = Vector2(130, 201)
 
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_opt1u")]
-position = Vector2(122, 144)
+position = Vector2(80, 211)
 target = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

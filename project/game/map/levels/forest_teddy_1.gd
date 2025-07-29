@@ -4,6 +4,7 @@ extends Node2D
 ## Emitted when the level is exited. Contains the name of the next level to load.
 signal level_exited(next_level:String)
 
+@onready var background: Sprite2D = $Background
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
 @onready var dialogue_manager: Control = $CanvasLayer/DialogueManager
@@ -23,7 +24,7 @@ var dialogue_state := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player.set_camera_limits(Vector2(0, 0), Vector2(640, 360))
+	player.set_camera_limits(background.position, background.texture.get_size())
 	
 	total_num_roses = len(get_tree().get_nodes_in_group("roses"))
 	for rose in get_tree().get_nodes_in_group("roses"):

@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://ccukhny0e1iho"]
+[gd_scene load_steps=20 format=3 uid="uid://ccukhny0e1iho"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_dolly_1.gd" id="1_bwr08"]
+[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_e1g65"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_h84bs"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_85l45"]
 [ext_resource type="Texture2D" uid="uid://bg7uokk4gm7aw" path="res://art/Placeholders/EnemyFOVCone.png" id="3_85wjt"]
@@ -66,30 +67,34 @@ y_sort_enabled = true
 script = ExtResource("1_bwr08")
 
 [node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_e1g65")
+centered = false
 
 [node name="Boundaries" type="Node2D" parent="."]
 
 [node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
 shape = SubResource("WorldBoundaryShape2D_3imgb")
 
 [node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
 shape = SubResource("WorldBoundaryShape2D_gq2to")
 
 [node name="Right" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(640, 360)
+position = Vector2(616, 360)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
 shape = SubResource("WorldBoundaryShape2D_ydwr4")
 
 [node name="Down" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(640, 360)
+position = Vector2(616, 360)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
@@ -132,7 +137,7 @@ position = Vector2(-64, 0)
 position = Vector2(64, 0)
 
 [node name="DialogueArea" parent="Components" instance=ExtResource("6_buvpi")]
-position = Vector2(182, 179)
+position = Vector2(182, 199)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/DialogueArea"]
@@ -148,7 +153,7 @@ position = Vector2(77, 191)
 position = Vector2(84, 148)
 
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_inr1c")]
-position = Vector2(39, 174)
+position = Vector2(56, 184)
 target = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
