@@ -31,39 +31,41 @@ def convert_to_json(plain_text):
 # Example usage
 if __name__ == "__main__":
     plain_text = """
-You investigate the flower closer. It's a rose with the brightest red petals you've ever seen. 
+SOL (scared): What?! There are so many roses! How are we going to find our way out? 
 
-SOL (surprised): Wow, that's... beautiful. I didn't even notice it before. 
+TEDDY (happy): Ooohhh, pretty! 
 
-TEDDY (happy): Isn't it? Aaahhh, I love the forest. It's so much more colorful than the bed, haha! 
+SOL (determined): Teddy, we need to find the right roses to get out of here! How are we going to tell the right ones apart? 
 
-TEDDY (sleepy): Ahh, bed... sleepy... zzz... 
+TEDDY (concerned): Hmm? Well- 
 
-SOL (determined): What- hey, hey! Teddy! 
+SOL (nervous): And what if we never find the right roses? What if we don't find mom and dad again? 
 
-TEDDY (surprised): zzz... UP, I'm up! I'm not asleep! 
+TEDDY (happy): Hey, Sol- 
 
-SOL (laughing): Ha ha! You almost fell asleep standing up! 
+SOL (scared): Then we'll be stuck here forever and ever with no way out and-
 
-TEDDY (concerned): Ha ha... Yeah, um, I almost did. 
+TEDDY (surprised): Sol! 
 
-SOL (neutral): Do you think mom would like the rose? 
+SOL (nervous): Yeah? 
 
-TEDDY (happy): Well of course she would! We should bring it to her! 
+TEDDY (happy): It'll all be ok. We'll find our way back. 
 
-SOL (happy): Yeah, she would. 
+SOL (neutral): You... really think so? 
 
-You try to pluck the rose. As your fingers brush the petals, you hear a creaking of vines shifting from the other end of the clearing. 
+TEDDY (happy): Sure! We made it this far, right? We just had to slow down, stop, and think for a little bit, yeah? 
 
-SOL (neutral): Did you hear that? 
+SOL (neutral): Yeah, we just had to stop... 
 
-TEDDY (happy): Hmm? 
+SOL (unamused): ...and smell the roses... 
 
-SOL (surprised): I think the rose loosened those vines over there. 
+SOL (unamused): Oh man, that was so corny! 
 
-SOL (happy): Maybe there's more! And maybe if we find them, we can get through the vines! 
+TEDDY (happy): Aww, no it wasn't, it was sweet! Like the smell of roses! 
 
-TEDDY (happy): Yes, genius! Let's go look for more. 
+TEDDY (happy): Or like apple pie... 
+
+SOL (laughing): Mmm... apple pie... ha ha! 
 
 """
 

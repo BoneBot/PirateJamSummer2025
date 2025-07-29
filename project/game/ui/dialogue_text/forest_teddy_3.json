@@ -1,0 +1,225 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "What?! There are so many roses! How are we going to find our way out?",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Ooohhh, pretty!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Teddy, we need to find the right roses to get out of here! How are we going to tell the right ones apart?",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hmm? Well-",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "And what if we never find the right roses? What if we don't find mom and dad again?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hey, Sol-",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Then we'll be stuck here forever and ever with no way out and-",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Sol!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "teddy",
+                "text": "It'll all be ok. We'll find our way back.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "You... really think so?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Sure! We made it this far, right? We just had to slow down, stop, and think for a little bit, yeah?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah, we just had to stop...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "...and smell the roses...",
+                "emotion": "unamused"
+            },
+            {
+                "speaker": "sol",
+                "text": "Oh man, that was so corny!",
+                "emotion": "unamused"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Aww, no it wasn't, it was sweet! Like the smell of roses!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Or like apple pie...",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Mmm... apple pie... ha ha!",
+                "emotion": "laughing"
+            }
+        ]
+    },
+    "vine_door": {
+        "0": [
+            {
+                "text": "You see a glimmer of light through the branches, but the way is blocked by thorny vines. Wouldn't want to go in there."
+            }
+        ]
+    },
+    "rose": {
+        "0": [
+            {
+                "text": "You gently brush the rose's petals, soft as velvet. You hear the vines shift a little further."
+            }
+        ],
+        "1": [
+            {
+                "text": "You gently brush the rose's petals, soft as velvet. You hear the vines shift and creak, and a pathway forward appears."
+            },
+            {
+                "speaker": "sol",
+                "text": "That was the last one! I can see the exit!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Great job! Let's go!",
+                "emotion": "happy"
+            }
+        ]
+    },
+    "exit": {
+        "0": [
+            {
+                "speaker": "shadow",
+                "text": "Ah, leaving already?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yes, we are!",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Yeah!",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "shadow",
+                "text": "And... how did you like the surprise?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "The... surprise?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Oh, we loved it! Your roses are really beautiful!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Ah, wonderful. I'm so glad you enjoyed them.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Yeah! Your forest is really pretty. All of the butterflies and the flowers and the leaves, everything!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Oh, you even noticed the leaves? That was a... recent addition.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Well they looked swell. I hope we can come back and see the forest again sometime!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "...wut...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, yes, that would be quite lovely. It was a pleasure having you both.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Oh, and I almost forgot. A gift, for your dear mother.",
+                "emotion": "neutral"
+            },
+            {
+                "text": "A rose appears in front of the Shadow."
+            },
+            {
+                "speaker": "shadow",
+                "text": "Do come back again soon, ha ha...",
+                "emotion": "neutral"
+            },
+            {
+                "text": "The Shadow vanishes."
+            },
+            {
+                "speaker": "teddy",
+                "text": "Aww, he even got us a rose for mom!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Teddy, don't pick that up. It's probably cursed, or something, I don't know.",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "sol",
+                "text": "Let's just get back to the car.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Okie dokie!",
+                "emotion": "happy"
+            }
+        ]
+    }
+}

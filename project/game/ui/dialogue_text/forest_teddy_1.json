@@ -1,56 +1,56 @@
 {
     "start": {
         "0": [
-                {
-                    "speaker": "sol",
-                    "text": "Um, Teddy?",
-                    "emotion": "neutral"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Hmm...?",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Do you know where we are?",
-                    "emotion": "neutral"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Mmm... No, not really. I've just been following this butterfly. See the wings? They change colors in the light!",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Um, that's nice, but do you think we might be a little, well, lost?",
-                    "emotion": "neutral"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Huh, I guess we are.",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "W-what?! Then we need to get back to the car! To mom, to dad!",
-                    "emotion": "nervous"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Hey, hey, we will, don't worry. We just gotta go back the way we came, right?",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Right, right. I think we came from... that way.",
-                    "emotion": "neutral"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Well then, lead the way!",
-                    "emotion": "happy"
-                }
+            {
+                "speaker": "sol",
+                "text": "Um, Teddy?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hmm...?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Do you know where we are?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Mmm... No, not really. I've just been following this butterfly. See the wings? They change colors in the light!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, that's nice, but do you think we might be a little, well, lost?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Huh, I guess we are.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "W-what?! Then we need to get back to the car! To mom, to dad!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hey, hey, we will, don't worry. We just gotta go back the way we came, right?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Right, right. I think we came from... that way.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Well then, lead the way!",
+                "emotion": "happy"
+            }
         ]
     },
     "teddy": {
@@ -86,87 +86,87 @@
     },
     "rose": {
         "0": [
-                {
-                    "text": "You investigate the flower closer. It's a rose with the brightest red petals you've ever seen."
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Wow, that's... beautiful. I didn't even notice it before.",
-                    "emotion": "surprised"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Isn't it? Aaahhh, I love the forest. It's so much more colorful than the bed, haha!",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Ahh, bed... sleepy... zzz...",
-                    "emotion": "sleepy"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "What- hey, hey! Teddy!",
-                    "emotion": "determined"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "zzz... UP, I'm up! I'm not asleep!",
-                    "emotion": "surprised"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Ha ha! You almost fell asleep standing up!",
-                    "emotion": "laughing"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Ha ha... Yeah, um, I almost did.",
-                    "emotion": "concerned"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Do you think mom would like the rose?",
-                    "emotion": "neutral"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Well of course she would! We should bring it to her!",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Yeah, she would.",
-                    "emotion": "happy"
-                },
-                {
-                    "text": "You try to pluck the rose. As your fingers brush the petals, you hear a creaking of vines shifting from the other end of the clearing."
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Did you hear that?",
-                    "emotion": "neutral"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Hmm?",
-                    "emotion": "concerned"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "I think the rose loosened those vines over there.",
-                    "emotion": "surprised"
-                },
-                {
-                    "speaker": "sol",
-                    "text": "Maybe there's more! And maybe if we find them, we can get through the vines!",
-                    "emotion": "happy"
-                },
-                {
-                    "speaker": "teddy",
-                    "text": "Yes, genius! Let's go look for more.",
-                    "emotion": "happy"
-                }
+            {
+                "text": "You investigate the flower closer. It's a rose with the brightest red petals you've ever seen."
+            },
+            {
+                "speaker": "sol",
+                "text": "Wow, that's... beautiful. I didn't even notice it before.",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Isn't it? Aaahhh, I love the forest. It's so much more colorful than the bed, haha!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Ahh, bed... sleepy... zzz...",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "sol",
+                "text": "What- hey, hey! Teddy!",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "zzz... UP, I'm up! I'm not asleep!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "Ha ha! You almost fell asleep standing up!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Ha ha... Yeah, um, I almost did.",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "Do you think mom would like the rose?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Well of course she would! We should bring it to her!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah, she would.",
+                "emotion": "happy"
+            },
+            {
+                "text": "You try to pluck the rose. As your fingers brush the petals, you hear a creaking of vines shifting from the other end of the clearing."
+            },
+            {
+                "speaker": "sol",
+                "text": "Did you hear that?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hmm?",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "I think the rose loosened those vines over there.",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "Maybe there's more! And maybe if we find them, we can get through the vines!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Yes, genius! Let's go look for more.",
+                "emotion": "happy"
+            }
         ],
         "1": [
             {

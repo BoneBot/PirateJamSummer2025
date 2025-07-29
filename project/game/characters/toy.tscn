@@ -10,6 +10,7 @@ size = Vector2(30, 30)
 size = Vector2(30, 30)
 
 [node name="Toy" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 4
 motion_mode = 1
 script = ExtResource("1_eykct")

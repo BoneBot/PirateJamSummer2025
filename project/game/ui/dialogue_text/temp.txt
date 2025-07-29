@@ -1,81 +1,90 @@
 {
-    "text": "You investigate the flower closer. It's a rose with the brightest red petals you've ever seen."
-},
-{
     "speaker": "sol",
-    "text": "Wow, that's... beautiful. I didn't even notice it before.",
-    "emotion": "surprised"
+    "text": "What?! There are so many roses! How are we going to find our way out?",
+    "emotion": "scared"
 },
 {
     "speaker": "teddy",
-    "text": "Isn't it? Aaahhh, I love the forest. It's so much more colorful than the bed, haha!",
+    "text": "Ooohhh, pretty!",
     "emotion": "happy"
 },
 {
-    "speaker": "teddy",
-    "text": "Ahh, bed... sleepy... zzz...",
-    "emotion": "sleepy"
-},
-{
     "speaker": "sol",
-    "text": "What- hey, hey! Teddy!",
+    "text": "Teddy, we need to find the right roses to get out of here! How are we going to tell the right ones apart?",
     "emotion": "determined"
 },
 {
     "speaker": "teddy",
-    "text": "zzz... UP, I'm up! I'm not asleep!",
-    "emotion": "surprised"
-},
-{
-    "speaker": "sol",
-    "text": "Ha ha! You almost fell asleep standing up!",
-    "emotion": "laughing"
-},
-{
-    "speaker": "teddy",
-    "text": "Ha ha... Yeah, um, I almost did.",
+    "text": "Hmm? Well-",
     "emotion": "concerned"
 },
 {
     "speaker": "sol",
-    "text": "Do you think mom would like the rose?",
-    "emotion": "neutral"
+    "text": "And what if we never find the right roses? What if we don't find mom and dad again?",
+    "emotion": "nervous"
 },
 {
     "speaker": "teddy",
-    "text": "Well of course she would! We should bring it to her!",
+    "text": "Hey, Sol-",
     "emotion": "happy"
 },
 {
     "speaker": "sol",
-    "text": "Yeah, she would.",
-    "emotion": "happy"
-},
-{
-    "text": "You try to pluck the rose. As your fingers brush the petals, you hear a creaking of vines shifting from the other end of the clearing."
-},
-{
-    "speaker": "sol",
-    "text": "Did you hear that?",
-    "emotion": "neutral"
+    "text": "Then we'll be stuck here forever and ever with no way out and-",
+    "emotion": "scared"
 },
 {
     "speaker": "teddy",
-    "text": "Hmm?",
-    "emotion": "happy"
-},
-{
-    "speaker": "sol",
-    "text": "I think the rose loosened those vines over there.",
+    "text": "Sol!",
     "emotion": "surprised"
 },
 {
     "speaker": "sol",
-    "text": "Maybe there's more! And maybe if we find them, we can get through the vines!",
+    "text": "Yeah?",
+    "emotion": "nervous"
+},
+{
+    "speaker": "teddy",
+    "text": "It'll all be ok. We'll find our way back.",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "You... really think so?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "teddy",
+    "text": "Sure! We made it this far, right? We just had to slow down, stop, and think for a little bit, yeah?",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Yeah, we just had to stop...",
+    "emotion": "neutral"
+},
+{
+    "speaker": "sol",
+    "text": "...and smell the roses...",
+    "emotion": "unamused"
+},
+{
+    "speaker": "sol",
+    "text": "Oh man, that was so corny!",
+    "emotion": "unamused"
+},
+{
+    "speaker": "teddy",
+    "text": "Aww, no it wasn't, it was sweet! Like the smell of roses!",
     "emotion": "happy"
 },
 {
     "speaker": "teddy",
-    "text": "Yes, genius! Let's go look for more.",
+    "text": "Or like apple pie...",
     "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Mmm... apple pie... ha ha!",
+    "emotion": "laughing"
 },

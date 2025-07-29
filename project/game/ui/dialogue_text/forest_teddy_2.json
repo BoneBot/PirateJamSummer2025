@@ -1,0 +1,339 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "W-what was that?!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hmm? Oh, I don't know...",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Hey! We should go look for more roses! We never did grab one for mom.",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "What? Teddy, no, we need to find our way out of here. The roses helped us earlier, but we don't have time for them right now.",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Oh, ok then. Whatever you say!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Right, so we should proba-",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Oooh, wow! Look at that tree! See how big the leaves are? They look bigger than my face!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "What? Teddy, we have to focus here. The trees are nice, but we have to get out of here.",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Right, right! Focus.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Focus...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Focus...",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Fooocusss......",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Fooocusss......",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Fooooocuuusssss.........",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Fooo... cuu... sss...",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "zzzzzz",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, Teddy?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "zzzzzz",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Teddy! TEDDY!!!",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "zzzzzz",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "sol",
+                "text": "...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "You've got to be kidding me... He fell asleep.",
+                "emotion": "unamused"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well, I might as well try looking for another way out.",
+                "emotion": "unamused"
+            },
+            {
+                "speaker": "teddy",
+                "text": "zzzzzz",
+                "emotion": "sleepy"
+            }
+        ]
+    },
+    "teddy": {
+        "0": [
+            {
+                "text": "You nudge teddy with your foot, but he doesn't wake. What a sleepy bear..."
+            }
+        ],
+        "1": [
+            {
+                "speaker": "sol",
+                "text": "Teddy?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Mmhmm...?",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Hey buddy, you gotta wake up. I think I found another way out.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "But.. five more... snoozes...",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "sol",
+                "text": "C'mon Teddy, I need your help here. We gotta find more roses.",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "More.. roses... zzz...",
+                "emotion": "sleepy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "UP! I'm up now.",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Oh no, did I fall asleep again?",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah, you did, but-",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Oh no no no! I'm sorry Sol, I didn't mean to do that.",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "teddy",
+                "text": "I'm not being very helpful, am I?",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well, um...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Ooohhh, I knew it. I'm just slowing you down. I can't focus. I'm just... useless.",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "Hey, no you aren't! You're my friend, and friends aren't useless.",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Do you really mean that?",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "Of course! And you helped us find the roses to open those vines, remember?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Oh yeah. I did, didn't I?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah, you did!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "sol",
+                "text": "Do you think you can help us find some more? We have some more vines blocking the way.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "I can try... But what if I get distracted, or fall asleep again?",
+                "emotion": "concerned"
+            },
+            {
+                "speaker": "sol",
+                "text": "Then I'll be right here to wake you up! We just have to focus, remember?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Right! Focus...",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Fooocusss...",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Fooooooocuuuuussssss...",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "Haha!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Haha!",
+                "emotion": "happy"
+            }
+        ]
+    },
+    "vine_door": {
+        "0": [
+            {
+                "text": "You see a glimmer of light through the branches, but the way is blocked by thorny vines. Wouldn't want to go in there."
+            }
+        ]
+    },
+    "rose": {
+        "0": [
+            {
+                "text": "You gently brush the rose's petals, soft as velvet. You hear the vines shift a little further. "
+            }
+        ],
+        "1": [
+            {
+                "text": "You gently brush the rose's petals, soft as velvet. You hear the vines shift and creak, and a pathway forward appears."
+            },
+            {
+                "speaker": "sol",
+                "text": "Look, we did it!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Yeah, we did it!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, you did it.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Aaahhh! You again?",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, indeed. How have you been enjoying the forest? I trust your experience so far has been... rejuvenating, yes?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "teddy",
+                "text": "Well, now that you mention it...",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, y-y-yes, it has. But, again, we really should be going.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, yes, you do need to be on your way, don't you? Well, don't worry, you're almost there.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Though I have left a bit of a... surprise... up ahead for you both. I truly hope you enjoy it.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, t-t-thank you?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "You're quite welcome, ha ha...",
+                "emotion": "neutral"
+            }
+        ]
+    }
+}
