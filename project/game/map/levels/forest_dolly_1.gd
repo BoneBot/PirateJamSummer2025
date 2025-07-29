@@ -1,6 +1,7 @@
 extends Node2D
 
 
+@onready var background: Sprite2D = $Background
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
 @onready var reset_point: Marker2D = $ResetPoint
@@ -13,7 +14,7 @@ signal level_exited(next_level:String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player.set_camera_limits(Vector2(0, 0), Vector2(640, 360))
+	player.set_camera_limits(background.position, background.texture.get_size())
 	
 	for sentry in get_tree().get_nodes_in_group("sentries"):
 		sentry.body_entered.connect(_on_sentry_triggered)
@@ -45,7 +46,7 @@ func _on_sentry_triggered(_body: Node2D) -> void:
 
 func _on_forest_exit_body_entered(_body: Node2D) -> void:
 	await dialogue_manager.start_dialogue("exit", 0)
-	level_exited.emit("forest_jack_1")
+	level_exited.emit("forest_dolly_2")
 
 
 func _on_dialogue_area_dialogue_triggered() -> void:

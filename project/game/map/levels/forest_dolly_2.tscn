@@ -1,6 +1,167 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2l5gdy3nx1e6"]
+[gd_scene load_steps=18 format=3 uid="uid://c2l5gdy3nx1e6"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_dolly_2.gd" id="1_7m376"]
+[ext_resource type="Texture2D" uid="uid://dkyoabcf4c8cm" path="res://art/Background Assets/forest_m.png" id="2_nmjsx"]
+[ext_resource type="PackedScene" uid="uid://dx3kx0dnsorh8" path="res://game/map/obstacles/sentry.tscn" id="3_s5bnv"]
+[ext_resource type="Texture2D" uid="uid://bg7uokk4gm7aw" path="res://art/Placeholders/EnemyFOVCone.png" id="4_fumdb"]
+[ext_resource type="PackedScene" uid="uid://egbrfcjg7p83" path="res://game/map/cosmetics/bush_side_end.tscn" id="5_g68s2"]
+[ext_resource type="PackedScene" uid="uid://brbcqo65qy71l" path="res://game/map/cosmetics/bush_side_middle.tscn" id="6_smsi2"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="8_jkplq"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="9_ug7al"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="10_mkmlk"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="11_n3xl2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6n0ly"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_45d4j"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx5t"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ktisg"]
+
+[sub_resource type="Animation" id="Animation_3itlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2miqn"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgu7v"]
+_data = {
+"RESET": SubResource("Animation_3itlt"),
+"fade_to_black": SubResource("Animation_2miqn")
+}
 
 [node name="ForestDolly2" type="Node2D"]
 script = ExtResource("1_7m376")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_nmjsx")
+centered = false
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_6n0ly")
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_45d4j")
+
+[node name="Right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(776, 450)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_4vx5t")
+
+[node name="Down" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(776, 450)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
+shape = SubResource("WorldBoundaryShape2D_ktisg")
+
+[node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Sentry" parent="Components" node_paths=PackedStringArray("field_of_view") groups=["sentries"] instance=ExtResource("3_s5bnv")]
+position = Vector2(352, 20)
+field_of_view = NodePath("Sprite2D")
+fov_visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Components/Sentry"]
+position = Vector2(1.23382e-05, 84)
+scale = Vector2(0.0962963, 0.153704)
+texture = ExtResource("4_fumdb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Components/Sentry"]
+polygon = PackedVector2Array(0, 1, 52, 167, -52, 167)
+
+[node name="LongBush" type="Node2D" parent="Components"]
+y_sort_enabled = true
+position = Vector2(348, 227)
+metadata/_edit_group_ = true
+
+[node name="BushSideEnd" parent="Components/LongBush" instance=ExtResource("5_g68s2")]
+position = Vector2(-124, 0)
+
+[node name="BushSideEnd2" parent="Components/LongBush" instance=ExtResource("5_g68s2")]
+position = Vector2(124, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="BushSideMiddle" parent="Components/LongBush" instance=ExtResource("6_smsi2")]
+position = Vector2(-64, 0)
+
+[node name="BushSideMiddle2" parent="Components/LongBush" instance=ExtResource("6_smsi2")]
+
+[node name="BushSideMiddle3" parent="Components/LongBush" instance=ExtResource("6_smsi2")]
+position = Vector2(64, 0)
+
+[node name="ForestExit" parent="Components" instance=ExtResource("8_jkplq")]
+position = Vector2(598, 168)
+
+[node name="ResetPoint" type="Marker2D" parent="."]
+position = Vector2(77, 191)
+
+[node name="Player" parent="." instance=ExtResource("9_ug7al")]
+position = Vector2(84, 148)
+
+[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_mkmlk")]
+position = Vector2(56, 184)
+target = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("11_n3xl2")]
+dialogue_file = "res://game/ui/dialogue_text/forest_dolly_2.json"
+portrait_directory = "res://art/Portraits"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_mgu7v")
+}
