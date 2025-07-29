@@ -4,6 +4,7 @@ extends Node2D
 @onready var background: Sprite2D = $Background
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
+@onready var shadow: Node2D = $Shadow
 @onready var reset_point: Marker2D = $ResetPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var dialogue_manager: Control = $CanvasLayer/DialogueManager
@@ -22,7 +23,7 @@ func _ready() -> void:
 	toy.interactable.interact = _on_toy_interact
 	
 	# Trigger starting dialogue
-	#await dialogue_manager.start_dialogue("start", 0)
+	await dialogue_manager.start_dialogue("start", 0)
 
 
 # Reset the player position to the reset point
@@ -51,5 +52,7 @@ func _on_toy_interact() -> void:
 
 
 func _on_forest_exit_body_entered(_body: Node2D) -> void:
+	shadow.visible = true
 	await dialogue_manager.start_dialogue("exit", 0)
+	shadow.visible = false
 	level_exited.emit("forest_dolly_3")

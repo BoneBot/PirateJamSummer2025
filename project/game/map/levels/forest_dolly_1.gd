@@ -4,6 +4,7 @@ extends Node2D
 @onready var background: Sprite2D = $Background
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
+@onready var shadow: Node2D = $Shadow
 @onready var reset_point: Marker2D = $ResetPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var dialogue_manager: Control = $CanvasLayer/DialogueManager
@@ -45,7 +46,9 @@ func _on_sentry_triggered(_body: Node2D) -> void:
 
 
 func _on_forest_exit_body_entered(_body: Node2D) -> void:
+	shadow.visible = true
 	await dialogue_manager.start_dialogue("exit", 0)
+	shadow.visible = false
 	level_exited.emit("forest_dolly_2")
 
 
