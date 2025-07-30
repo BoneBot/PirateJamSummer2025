@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://b42i5xcb14tan"]
 
 [ext_resource type="Script" path="res://game/demo_stuff/demo.gd" id="1_hs3yx"]
-[ext_resource type="Texture2D" uid="uid://oxi7lfyvyjm1" path="res://art/icon.svg" id="1_pqa7q"]
+[ext_resource type="Texture2D" uid="uid://c8nptgduigxv3" path="res://art/demo_stuff/icon.svg" id="1_pqa7q"]
 [ext_resource type="Texture2D" uid="uid://wmrv0ujv2s7c" path="res://art/demo_stuff/DemoBackground.png" id="2_1os8c"]
 [ext_resource type="AudioStream" uid="uid://cb7v7eyerrrq0" path="res://audio/effects/ding.mp3" id="3_hd0ch"]
 [ext_resource type="Texture2D" uid="uid://b0pxjkd7pjwu0" path="res://art/demo_stuff/DemoPlayer.png" id="5_xsk2e"]
