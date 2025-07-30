@@ -201,6 +201,7 @@ position = Vector2(102, 171)
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_mkmlk")]
 position = Vector2(75, 142)
 target = NodePath("../Player")
+follow_distance = 20.0
 
 [node name="Shadow" parent="." instance=ExtResource("12_yyrb3")]
 visible = false

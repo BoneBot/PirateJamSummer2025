@@ -132,6 +132,11 @@
             },
             {
                 "speaker": "shadow",
+                "text": "...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
                 "text": "BAHAHAHAHA!!!",
                 "emotion": "neutral"
             },
