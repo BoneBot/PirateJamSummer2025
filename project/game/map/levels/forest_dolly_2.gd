@@ -23,7 +23,11 @@ func _ready() -> void:
 	toy.interactable.interact = _on_toy_interact
 	
 	# Trigger starting dialogue
+	player.can_move = false
 	await dialogue_manager.start_dialogue("start", 0)
+	await get_tree().create_timer(3.0).timeout
+	await dialogue_manager.start_dialogue("start", 1)
+	player.can_move = true
 
 
 # Reset the player position to the reset point
@@ -48,6 +52,7 @@ func _on_sentry_triggered(_body: Node2D) -> void:
 
 
 func _on_toy_interact() -> void:
+	await dialogue_manager.start_dialogue("dolly", 0)
 	get_tree().call_group("sentries", "flash_fov")
 
 

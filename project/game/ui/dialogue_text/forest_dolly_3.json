@@ -1,0 +1,180 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "Oh no...",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "Look at all of the animals up ahead. It's gonna take us forever to make it out!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, n-n-not to scare you Dolly, sorry...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, Dolly? You ok?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "I... I think so...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "You sure? You're not scared?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh no, I'm still quite terrified. Our current circumstances certainly don't look good.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Oh...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "But, after that last part of the forest... Well, I think we can make it.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "You said before we just had to take it one step at a time. And we made it to the end! You led us out!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "So even though things aren't good, I trust you Sol. I'm glad that we can go through it together.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Aww, you really mean that Dolly?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Of course!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well gee, thanks!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "sol",
+                "text": "And you're absolutely right. We can make it! Just one step at a time.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Yes! Now, let's see what those bothersome squirrels see...",
+                "emotion": "happy"
+            }
+        ]
+    },
+    "exit": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "Hey, we found the way out! I can see mom and dad's car!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh goodie goodie! We should go let them know we're ok. I can't believe we made it out!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, I can't believe you made it out either. That was quite an... impressive feat.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Wh- hey! You again?",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh no...! You're not going to keep us from leaving, are you?",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Hmm...? Why would I do that?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "I've been encouraging you both to leave this whole time. Why would I want to hinder that?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Because you're a devilish creature of the dark who preys on the innocent, devours the weak, and subsists on the suffering of children and dolls alike?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "BAHAHAHAHA!!!",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "I've been called many things, but that is a new one.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "What else have you been called?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, Dolly? Maybe now isn't the best time for questions?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, you should listen to your friend. You are still in my domain, after all.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "I would encourage you to move along. You wouldn't want to overstay your welcome.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "U-um, of course not! We'll see ourselves out now.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Take care, ha ha...",
+                "emotion": "neutral"
+            }
+        ]
+    }
+}

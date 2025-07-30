@@ -2,14 +2,285 @@
     "start": {
         "0": [
             {
-                "text": "start"
+                "speaker": "sol",
+                "text": "What was that?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "I-I-I don't know! I don't remember seeing anything like that in the encyclopedia! I don't know if it's friendly or dangerous or deadly...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "A-a-and I think I see more forest squirrels up ahead!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh, and on top of that it's getting dark soon. I don't want to be stuck out here when it's dark! Do you know how many animals with teeth only come out at night?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "No, not really...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh no no no. We're going to get stuck here forever!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "dolly",
+                "text": "We're going to starve!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well, we might not-",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Or get eaten!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, Dolly?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Or... broken...!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "You ok?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "...NO...!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "O-ok... Um...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "How about we stop for a second, alright?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Let's take some deep breaths, like mom taught us.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "B-b-but...",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "In, 2, 3, 4...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Out, 2, 3, 4...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "In, 2, 3, 4...",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Out, 2, 3, 4...",
+                "emotion": "scared"
+            }
+        ],
+        "1": [
+            {
+                "speaker": "sol",
+                "text": "Better?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "A little bit...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Oh, but I don't know if I can keep going!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Hey, it's ok. We can take it slow.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "B-but it's getting dark! What if we don't make it out in time?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Well, I don't really know...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Eep!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "...but, I do know that the only chance we have of getting out is by moving forward.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "So how about we try to take it one step at a time, alright?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Ok... But I don't know if I can look.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Hey, it's ok, just hold my hand and focus on me.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "I'll need you to look a little bit to help me see the squirrels, but then you can go right back to looking at me.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "sol",
+                "text": "Can you do that?",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "I... I think I can...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Great! We'll take it slow and steady. One step at a time.",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Ok... Slow and steady...",
+                "emotion": "nervous"
+            },
+            {
+                "text": "Dolly can show you where animals can see you, but only for a short period of time."
+            },
+            {
+                "text": "Talk to Dolly any time you need her to show you where the animals can see."
+            }
+        ]
+    },
+    "dolly": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "Hey Dolly, can you give me a little help?",
+                "emotion": "neutral"
             }
         ]
     },
     "exit": {
         "0": [
             {
-                "text": "end"
+                "speaker": "sol",
+                "text": "Look, we made it to the other side!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "dolly",
+                "text": "We... we did? Already?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah, already! See? We just had to take one step at a time.",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Wow, you're right...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Maybe we will make it out!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Well, I'm not quite sure about that.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Aaahhh!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Eek!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "shadow",
+                "text": "You both have certainly made progress...",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "...but, at your current rate, the forest will be dark well before you find its exit.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "dolly",
+                "text": "Wait, what?!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "sol",
+                "text": "W-w-we'll make it out! You'll see!",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "dolly",
+                "text": "We... will?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "sol",
+                "text": "Yeah, we will!",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "shadow",
+                "text": "For your sakes, I certainly hope so. Ha ha...",
+                "emotion": "neutral"
             }
         ]
     }
