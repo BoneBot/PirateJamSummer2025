@@ -7,6 +7,20 @@ extends Area2D
 @export var fov_visible := false
 ## The duration, in seconds, it will take for the FOV to fade when flashed
 @export var flash_duration := 3.0
+## The type of turn movement the sentry makes. 
+## None means the sentry will not turn. 
+## Alternating means the sentry will sweep back and forth between two positions. 
+## Circular means the sentry will continue turning at the Turn Angle in a circular motion. 
+@export_enum("None", "Alternating", "Circular") var turn_type := "None"
+## How far the sentry will turn, in degrees, when a turn is triggered
+@export var turn_angle := 0.0
+
+@onready var sentry: Area2D = $"."
+
+# Used to flip the turn direction when the turn type is Alternating
+var flip_turn := false
+# Time it takes to turn, in seconds
+var turn_time := 1.0
 
 
 func _ready() -> void:
@@ -38,3 +52,24 @@ func flash_fov() -> void:
 		var tween = get_tree().create_tween()
 		tween.tween_property(field_of_view, "modulate", Color.TRANSPARENT, flash_duration)
 		tween.tween_callback(hide_fov)
+
+
+func trigger_turn() -> void:
+	if turn_type == "None":
+		return
+	
+	# Get the turn angle
+	var angle
+	if turn_type == "Alternating":
+		if flip_turn:
+			flip_turn = false
+			angle = 0
+		else:
+			flip_turn = true
+			angle = turn_angle
+	elif turn_type == "Circular":
+		angle = sentry.rotation_degrees + turn_angle
+	
+	# Tween the turn
+	var tween = get_tree().create_tween()
+	tween.tween_property(sentry, "rotation_degrees", angle, turn_time)
