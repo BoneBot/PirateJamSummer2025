@@ -14,13 +14,13 @@ extends Area2D
 @export_enum("None", "Alternating", "Circular") var turn_type := "None"
 ## How far the sentry will turn, in degrees, when a turn is triggered
 @export var turn_angle := 0.0
+## Time it takes to complete turn, in seconds
+@export var turn_time := 1.0
 
 @onready var sentry: Area2D = $"."
 
 # Used to flip the turn direction when the turn type is Alternating
 var flip_turn := false
-# Time it takes to turn, in seconds
-var turn_time := 1.0
 
 
 func _ready() -> void:
@@ -63,10 +63,10 @@ func trigger_turn() -> void:
 	if turn_type == "Alternating":
 		if flip_turn:
 			flip_turn = false
-			angle = 0
+			angle = sentry.rotation_degrees - turn_angle
 		else:
 			flip_turn = true
-			angle = turn_angle
+			angle = sentry.rotation_degrees + turn_angle
 	elif turn_type == "Circular":
 		angle = sentry.rotation_degrees + turn_angle
 	
