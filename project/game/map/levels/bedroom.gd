@@ -14,3 +14,7 @@ func _ready() -> void:
 
 func _on_forest_exit_body_entered(_body: Node2D) -> void:
 	level_exited.emit("forest_dolly_1")
+
+
+func _on_forest_exit_2_body_entered(_body: Node2D) -> void:
+	level_exited.emit("forest_teddy_1")
