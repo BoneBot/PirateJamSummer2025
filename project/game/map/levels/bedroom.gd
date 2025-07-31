@@ -53,6 +53,11 @@ func _on_teddy_interact():
 
 
 func _exit_bedroom(next_level:String):
+	# Disable any further interactions
+	dolly.interactable.is_interactable = false
+	jack.interactable.is_interactable = false
+	teddy.interactable.is_interactable = false
+	
 	# Fade to black
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished

@@ -15,13 +15,16 @@ var current_level
 var current_toy := ""
 var muted := false
 
-func _ready() -> void:
+func _on_start_game() -> void:
 	# Create starting level
 	current_level = starting_level.instantiate()
 	_connect_level_signals(current_level)
 	
 	# Add starting level to game tree
 	world.add_child(current_level)
+	
+	# Show mute icon
+	mute_icon.visible = true
 
 
 func _input(event: InputEvent) -> void:

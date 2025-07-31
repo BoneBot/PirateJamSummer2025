@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqcfv4th66b2w"]
 
-[ext_resource type="Texture2D" uid="uid://bwoduqpc2egmb" path="res://art/Aseprite Files/Shadow_Sprite.png" id="1_3dy8g"]
+[ext_resource type="Texture2D" uid="uid://dtmwkvkqimsae" path="res://art/Sprites/Shadow_Sprite.png" id="1_ciwx6"]
 
 [node name="Shadow" type="Node2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_3dy8g")
+texture = ExtResource("1_ciwx6")
