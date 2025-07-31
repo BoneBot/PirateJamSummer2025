@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+## Sprite to display for the toy
+@export_enum("dolly", "jack", "teddy") var toy_sprite := "dolly"
 ## Target for the toy to follow
 @export var target: Node2D
 ## Distance from the target the toy will follow at (px)
@@ -18,6 +21,17 @@ var ghost_mode := false
 
 @onready var collision: CollisionShape2D = $Collision
 @onready var interactable: Interactable = $Interactable
+
+
+func _process(delta: float) -> void:
+	var animation = toy_sprite
+	# Determine look direction
+	var dirs = [Vector2.DOWN, Vector2.UP, Vector2.LEFT, Vector2.RIGHT]
+	dirs = dirs.map(func(elem): elem.dot(velocity))
+	var facing = dirs.find(dirs.max())
+	# Determine if moving
+	# Apply appropriate animation
+	pass
 
 
 func _physics_process(_delta: float) -> void:
