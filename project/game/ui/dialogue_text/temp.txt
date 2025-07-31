@@ -1,90 +1,70 @@
 {
     "speaker": "sol",
-    "text": "What?! There are so many roses! How are we going to find our way out?",
-    "emotion": "scared"
-},
-{
-    "speaker": "teddy",
-    "text": "Ooohhh, pretty!",
-    "emotion": "happy"
-},
-{
-    "speaker": "sol",
-    "text": "Teddy, we need to find the right roses to get out of here! How are we going to tell the right ones apart?",
-    "emotion": "determined"
-},
-{
-    "speaker": "teddy",
-    "text": "Hmm? Well-",
-    "emotion": "concerned"
-},
-{
-    "speaker": "sol",
-    "text": "And what if we never find the right roses? What if we don't find mom and dad again?",
-    "emotion": "nervous"
-},
-{
-    "speaker": "teddy",
-    "text": "Hey, Sol-",
-    "emotion": "happy"
-},
-{
-    "speaker": "sol",
-    "text": "Then we'll be stuck here forever and ever with no way out and-",
-    "emotion": "scared"
-},
-{
-    "speaker": "teddy",
-    "text": "Sol!",
+    "text": "There's the exit!",
     "emotion": "surprised"
 },
 {
+    "speaker": "shadow",
+    "text": "So, it was you two who moved my things around.",
+    "emotion": "neutral"
+},
+{
     "speaker": "sol",
-    "text": "Yeah?",
+    "text": "Eek!!!",
+    "emotion": "scared"
+},
+{
+    "speaker": "jack",
+    "text": "Whoa! Who's this ugly mug?",
+    "emotion": "joking"
+},
+{
+    "speaker": "shadow",
+    "text": "...Ugly? Now that seems uncalled for.",
+    "emotion": "neutral"
+},
+{
+    "speaker": "sol",
+    "text": "I-I apologize for my friend, Mr. Forest-spirit-guy-sir!  We just wanted to get out of the forest.",
     "emotion": "nervous"
 },
 {
-    "speaker": "teddy",
-    "text": "It'll all be ok. We'll find our way back.",
-    "emotion": "happy"
+    "speaker": "jack",
+    "text": "Yeah! You left so much junk laying around we were trapped for ages!",
+    "emotion": "angry"
+},
+{
+    "speaker": "shadow",
+    "text": "Trapped? In the forest? Didn't you see the path I made?",
+    "emotion": "nervous"
 },
 {
     "speaker": "sol",
-    "text": "You... really think so?",
+    "text": "......PATH???",
+    "emotion": "surprised"
+},
+{
+    "speaker": "shadow",
+    "text": "Well of course. It even had a machine for concessions on the way out.",
     "emotion": "neutral"
 },
 {
-    "speaker": "teddy",
-    "text": "Sure! We made it this far, right? We just had to slow down, stop, and think for a little bit, yeah?",
-    "emotion": "happy"
-},
-{
-    "speaker": "sol",
-    "text": "Yeah, we just had to stop...",
+    "speaker": "shadow",
+    "text": "The miniature donuts are quite... delicious. Perfect for a pair of travelers like you.",
     "emotion": "neutral"
 },
 {
-    "speaker": "sol",
-    "text": "...and smell the roses...",
-    "emotion": "unamused"
+    "speaker": "jack",
+    "text": "Weeeeellll this was a fun chit chat, but it's really time we get goin'.",
+    "emotion": "smug"
 },
 {
     "speaker": "sol",
-    "text": "Oh man, that was so corny!",
-    "emotion": "unamused"
-},
-{
-    "speaker": "teddy",
-    "text": "Aww, no it wasn't, it was sweet! Like the smell of roses!",
-    "emotion": "happy"
-},
-{
-    "speaker": "teddy",
-    "text": "Or like apple pie...",
-    "emotion": "happy"
-},
-{
-    "speaker": "sol",
-    "text": "Mmm... apple pie... ha ha!",
+    "text": "Maybe next time we can visit the vending machine, Mr. Shadow Guy!",
     "emotion": "laughing"
+},
+{
+    "speaker": "shadow",
+    "text": "Yes, yes, next time. Perhaps...",
+    "emotion": "neutral"
 },

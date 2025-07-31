@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cxt2kq60nakfn"]
 
 [ext_resource type="Script" path="res://game/characters/player.gd" id="1_nxhj6"]
+[ext_resource type="Texture2D" uid="uid://bae1qdcqwykuu" path="res://art/Sprites/sol_sprite_sheet.png" id="2_3vb4j"]
 [ext_resource type="Script" path="res://game/common/interact_range.gd" id="2_4edn2"]
-[ext_resource type="Texture2D" uid="uid://qpml2hqtog4v" path="res://art/Placeholders/Rough Walkcycle-Sheet.png" id="2_h6x85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuqfn"]
 size = Vector2(28, 18)
@@ -269,7 +269,7 @@ script = ExtResource("1_nxhj6")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
-texture = ExtResource("2_h6x85")
+texture = ExtResource("2_3vb4j")
 hframes = 12
 region_rect = Rect2(16, 7, 32, 50)
 

@@ -1,10 +1,148 @@
 {
-    "rose": {
+    "start": {
         "0": [
             {
-                "speaker": "",
-                "text": "A luscious red rose",
-                "portrait": ""
+                "speaker": "sol",
+                "text": "Um, hey Jack?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "Yeah? Whadaya want?",
+                "emotion": "annoyed"
+            },
+            {
+                "speaker": "sol",
+                "text": "Do you know where we are?",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "Well by the looks of it, we're in the middle of some kinda cursed jungle with no hope of escape",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "S-Stop trying to scare me, Jack!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "jack",
+                "text": "Heh heh! Don't get your diaper in a twist, kid. There's probably a way out. Maybe.",
+                "emotion": "joking"
+            },
+            {
+                "speaker": "sol",
+                "text": "I don't wear diapers anymore...",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "jack",
+                "text": "Well let's hurry and find a way outta here before you get so old you need 'em again!",
+                "emotion": "smug"
+            }
+        ]
+    },
+    "jack": {
+        "0": [
+            {
+                "text": "Jack is pushing on the block with all his might. He looks like he could use a little help."
+            }
+        ]
+    },
+    "block": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "I think this block could be pushed out of the way!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "jack",
+                "text": "Alright now we're gettin' somewhere! Get a move on and push it, kid!",
+                "emotion": "smug"
+            }
+        ],
+        "1": [
+            {
+                "speaker": "sol",
+                "text": "It's no use... It must weigh, like, a thousand pounds.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "Aw c'mon! Don't tell me you're too wimpy to push a little rock a few inches?",
+                "emotion": "angry"
+            },
+            {
+                "speaker": "sol",
+                "text": "You know, this would be a lot easier if you would just help me out a little...",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "Pffft! I could probably lift that block myself with THESE muscles! Step aside kiddo.",
+                "emotion": "joking"
+            }
+        ],
+        "2": [
+            {
+                "speaker": "jack",
+                "text": "HA! See? I did it!",
+                "emotion": "joking"
+            },
+            {
+                "speaker": "sol",
+                "text": "I think it's more like WE did it...",
+                "emotion": "unamused"
+            },
+            {
+                "speaker": "jack",
+                "text": "Whatever! Now how do we get outta this dump?",
+                "emotion": "smug"
+            }
+        ]
+    },
+    "button": {
+        "0": [
+            {
+                "text": "It's a button! Looks like you and Jack are too light to press it."
+            }
+        ],
+        "1": [
+            {
+                "text": "CLICK!"
+            },
+            {
+                "speaker": "jack",
+                "text": "Hey look! The vines opened up when we pressed the button!",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "What kind of forest has buttons that can control vines?!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "jack",
+                "text": "Eh, don't think about it too hard, kid. We gotta get back before lunch or I'm gonna flip my lid!",
+                "emotion": "joking"
+            }
+        ]
+    },
+    "vine_door": {
+        "0": [
+            {
+                "text": "You see a glimmer of light through the branches, but the way is blocked by thorny vines. Wouldn't want to go in there."
+            }
+        ]
+    },
+    "exit": {
+        "0": [
+            {
+                "speaker": "shadow",
+                "text": "Hmm? Someone moved my block. I finally had this place... organized...",
+                "emotion": "neutral"
             }
         ]
     }

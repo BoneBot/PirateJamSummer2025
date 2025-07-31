@@ -1,0 +1,142 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "jack",
+                "text": "Well would ya look at that, more junk to move around!",
+                "emotion": "annoyed"
+            },
+            {
+                "speaker": "sol",
+                "text": "This room looks even more complicated... I hope mom and dad aren't getting too worried.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "...",
+                "emotion": "annoyed"
+            },
+            {
+                "speaker": "sol",
+                "text": "What if they got lost too and can't find their way back to the car?",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "jack",
+                "text": "Hey, I'm sure they're doin' just fine. Besides, it shouldn't take us long to get outta here with us workin' together and all.",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "You actually want to work together now?!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "jack",
+                "text": "Yeah well, I figure bein' stubborn wasn't really helping much. And Ol' Jack is mature enough to know this isn't the time to worry about my pride. That can wait till I rematch Teddy to another game of Blackjack.",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "jack",
+                "text": "He's gonna get what's comin' to him, that cheating son of a-",
+                "emotion": "angry"
+            },
+            {
+                "speaker": "sol",
+                "text": "Jack!!! I'm still a kid you know!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "jack",
+                "text": "Fine, fine.",
+                "emotion": "annoyed"
+            },
+            {
+                "speaker": "jack",
+                "text": "Let's get a move on!",
+                "emotion": "smug"
+            }
+        ]
+    },
+    "vine_door": {
+        "0": [
+            {
+                "text": "You see a glimmer of light through the branches, but the way is blocked by thorny vines. Wouldn't want to go in there."
+            }
+        ]
+    },
+    "button": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "There's the exit!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "shadow",
+                "text": "So, it was you two who moved my things around.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "Eek!!!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "jack",
+                "text": "Whoa! Who's this ugly mug?",
+                "emotion": "joking"
+            },
+            {
+                "speaker": "shadow",
+                "text": "...Ugly? Now that seems uncalled for.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "I-I apologize for my friend, Mr. Forest-spirit-guy-sir!  We just wanted to get out of the forest.",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "Yeah! You left so much junk laying around we were trapped for ages!",
+                "emotion": "angry"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Trapped? In the forest? Didn't you see the path I made?",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "sol",
+                "text": "......PATH???",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Well of course. It even had a machine for concessions on the way out.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "shadow",
+                "text": "The miniature donuts are quite... delicious. Perfect for a pair of travelers like you.",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "jack",
+                "text": "Weeeeellll this was a fun chit chat, but it's really time we get goin'.",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "Maybe next time we can visit the vending machine, Mr. Shadow Guy!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "shadow",
+                "text": "Yes, yes, next time. Perhaps...",
+                "emotion": "neutral"
+            }
+        ]
+    }
+}

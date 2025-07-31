@@ -1,0 +1,105 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "jack",
+                "text": "Whoa! Who put so much junk in this forest anyway?",
+                "emotion": "annoyed"
+            },
+            {
+                "speaker": "sol",
+                "text": "There's so many more blocks! What are we going to do? It'll take forever to get back to mom and dad!",
+                "emotion": "nervous"
+            },
+            {
+                "speaker": "jack",
+                "text": "Yeah, your folks might even forget you exist by the time we get outta here.",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "T-That's not funny Jack!",
+                "emotion": "scared"
+            },
+            {
+                "speaker": "jack",
+                "text": "HA! Lighten up, kid. I'll get these blocks shoved over real quick!",
+                "emotion": "joking"
+            }
+        ]
+    },
+    "jack": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "Here, let me-",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "jack",
+                "text": "Hey! I don't need no help from some snot-nosed kid! I coulda handled that last block by myself if ya let me.",
+                "emotion": "angry"
+            },
+            {
+                "speaker": "sol",
+                "text": "Um, I'm sure you could... but didn't you say you wanted to get back before lunch? We could move the blocks a lot faster if we work together!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "jack",
+                "text": "...",
+                "emotion": "annoyed"
+            },
+            {
+                "speaker": "sol",
+                "text": "...",
+                "emotion": "determined"
+            },
+            {
+                "speaker": "jack",
+                "text": "Uuuuuugh, fine. Just don't get in my way, alright?",
+                "emotion": "annoyed"
+            }
+        ]
+    },
+    "vine_door": {
+        "0": [
+            {
+                "text": "You see a glimmer of light through the branches, but the way is blocked by thorny vines. Wouldn't want to go in there."
+            }
+        ]
+    },
+    "button": {
+        "0": [
+            {
+                "speaker": "jack",
+                "text": "And easy as that, the way's open again!",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "We did it!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "jack",
+                "text": "Yeah, I guess you helped out a LITTLE at the end there.",
+                "emotion": "smug"
+            },
+            {
+                "speaker": "sol",
+                "text": "...",
+                "emotion": "determined"
+            }
+        ]
+    },
+    "exit": {
+        "0": [
+            {
+                "speaker": "shadow",
+                "text": "Here too, hmm? Now how would be so... rude... as to move my belongings?",
+                "emotion": "neutral"
+            }
+        ]
+    }
+}

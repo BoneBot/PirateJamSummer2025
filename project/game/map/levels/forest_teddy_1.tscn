@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cq1fnh4s2evgm"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_teddy_1.gd" id="1_i7m7p"]
-[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_bcnua"]
+[ext_resource type="Texture2D" uid="uid://cxx7tklv1cjeq" path="res://art/Background Assets/forest_s.png" id="2_bcnua"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_lhq3y"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_r4o1w"]
 [ext_resource type="PackedScene" uid="uid://bud0dm577h017" path="res://game/map/interactables/dialogue_area.tscn" id="4_33mel"]
@@ -69,11 +69,13 @@ shape = SubResource("WorldBoundaryShape2D_p0ybf")
 [node name="Components" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="ForestExit" parent="Components" instance=ExtResource("4_b8xtx")]
-position = Vector2(557, 88)
+[node name="VineDoor" parent="Components" node_paths=PackedStringArray("forest_exit") instance=ExtResource("7_adyi6")]
+position = Vector2(528, 73)
+forest_exit = NodePath("ForestExit")
 
-[node name="VineDoor" parent="Components" instance=ExtResource("7_adyi6")]
-position = Vector2(558, 111)
+[node name="ForestExit" parent="Components/VineDoor" instance=ExtResource("4_b8xtx")]
+visible = false
+position = Vector2(2, 12)
 
 [node name="DialogueArea" parent="Components" instance=ExtResource("4_33mel")]
 position = Vector2(187, 204)
@@ -83,27 +85,33 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_s21nm")
 
 [node name="BushSingle" parent="Components" instance=ExtResource("5_layg7")]
+y_sort_enabled = true
 position = Vector2(314, 329)
 metadata/_edit_group_ = true
 
 [node name="FadingRose" parent="Components/BushSingle" groups=["roses"] instance=ExtResource("6_8gp2q")]
-position = Vector2(-23, -21)
+position = Vector2(-5, -45)
+rotation = -1.16105
+scale = Vector2(-1, 1)
 fades = false
 
 [node name="BushSingle2" parent="Components" instance=ExtResource("5_layg7")]
+y_sort_enabled = true
 position = Vector2(394, 132)
 metadata/_edit_group_ = true
 
 [node name="FadingRose" parent="Components/BushSingle2" groups=["roses"] instance=ExtResource("6_8gp2q")]
-position = Vector2(-23, -11)
+position = Vector2(-44, -18)
+rotation = -0.708767
 fades = false
 
 [node name="BushSingle3" parent="Components" instance=ExtResource("5_layg7")]
+y_sort_enabled = true
 position = Vector2(562, 314)
 metadata/_edit_group_ = true
 
 [node name="FadingRose2" parent="Components/BushSingle3" groups=["roses"] instance=ExtResource("6_8gp2q")]
-position = Vector2(-20, -19)
+position = Vector2(1, -49)
 fades = false
 
 [node name="Player" parent="." instance=ExtResource("2_lhq3y")]
@@ -124,5 +132,5 @@ position = Vector2(540, 154)
 dialogue_file = "res://game/ui/dialogue_text/forest_teddy_1.json"
 portrait_directory = "res://art/Portraits"
 
-[connection signal="body_entered" from="Components/ForestExit" to="." method="_on_forest_exit_body_entered"]
+[connection signal="body_entered" from="Components/VineDoor/ForestExit" to="." method="_on_forest_exit_body_entered"]
 [connection signal="dialogue_triggered" from="Components/DialogueArea" to="." method="_on_dialogue_area_dialogue_triggered"]

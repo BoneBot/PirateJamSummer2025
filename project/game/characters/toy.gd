@@ -28,7 +28,7 @@ func _ready() -> void:
 	sprite.play(toy_sprite + "_down")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var animation = toy_sprite
 	
 	# Determine if moving

@@ -4,21 +4,26 @@ extends RigidBody2D
 ## Whether or not the boulder can be pushed. When set to false, it cannot be pushed.
 @export var can_push := true
 
-@onready var boulder_interactable: Interactable = $BoulderInteractable
+@onready var interactable: Interactable = $Interactable
 @onready var contact_up: Area2D = $ContactRegions/ContactUp
 @onready var contact_down: Area2D = $ContactRegions/ContactDown
 @onready var contact_left: Area2D = $ContactRegions/ContactLeft
 @onready var contact_right: Area2D = $ContactRegions/ContactRight
+
+## Emitted when the block is interacted with
+signal interacted
 
 # The impulse applied each time the boulder is pushed
 const PUSH_IMPULSE := 200
 
 
 func _ready() -> void:
-	boulder_interactable.interact = _on_boulder_interacted
+	interactable.interact = _on_block_interacted
 
 
-func _on_boulder_interacted() -> void:
+func _on_block_interacted() -> void:
+	interacted.emit()
+	
 	if not can_push:
 		return
 	

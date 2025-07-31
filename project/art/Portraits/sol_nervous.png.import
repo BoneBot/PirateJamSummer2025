@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj7pt0mv1nuck"
-path="res://.godot/imported/Bush 1.png-f9a0e585e8c85dfe656f032777cc5990.ctex"
+uid="uid://b0mxhr5hh4c0u"
+path="res://.godot/imported/sol_nervous.png-c22d53213b61c923b601ca6321c2a158.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Background Assets/Bush 1.png"
-dest_files=["res://.godot/imported/Bush 1.png-f9a0e585e8c85dfe656f032777cc5990.ctex"]
+source_file="res://art/Portraits/sol_nervous.png"
+dest_files=["res://.godot/imported/sol_nervous.png-c22d53213b61c923b601ca6321c2a158.ctex"]
 
 [params]
 

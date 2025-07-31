@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://egbrfcjg7p83"]
 
-[ext_resource type="Texture2D" uid="uid://bshg3lyi6evpn" path="res://art/Background Assets/modular bush side end.png" id="1_dgj6o"]
+[ext_resource type="Texture2D" uid="uid://mtwg5asdwkql" path="res://art/Background Assets/modular bush side end.png" id="1_dgj6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6dpi"]
 size = Vector2(56, 30)
