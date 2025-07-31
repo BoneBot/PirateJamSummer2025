@@ -7,8 +7,12 @@ extends Node
 @export_dir var level_directory: String
 
 @onready var world = $World
+@onready var mute_icon: Control = $UI/MuteIcon
+@onready var forest_music: AudioStreamPlayer = $MusicPlayers/ForestMusic
+@onready var shadow_music: AudioStreamPlayer = $MusicPlayers/ShadowMusic
 
 var current_level
+var muted := false
 
 func _ready() -> void:
 	# Create starting level
@@ -19,6 +23,14 @@ func _ready() -> void:
 	world.add_child(current_level)
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("mute"):
+		muted = not muted
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), muted)
+		mute_icon.set_muted(muted)
+
+
+# Advances to the next specified level
 func _advance_level(next_level_name:String) -> void:
 	print("Advancing level to %s" % next_level_name)
 	_unload_current_level()
@@ -50,15 +62,35 @@ func _load_level(level_name:String) -> void:
 		print("ERROR: Could not find level scene located at: " + path)
 
 
+# Plays the specified music track. If an empty string is passed in, all music is stopped. 
+func _play_music(track:String):
+	forest_music.stop()
+	shadow_music.stop()
+	
+	if track == "forest":
+		forest_music.play()
+	elif track == "shadow":
+		shadow_music.play()
+	elif track != "":
+		print("WARN: Unrecognized music track %s" % track)
+
+
 # Connects all important signals to the given level instance
 func _connect_level_signals(level_instance:Node):
 	if level_instance.has_signal("level_exited"):
 		level_instance.level_exited.connect(_advance_level)
 	else:
 		print("WARN: Level %s has no level_exited signal to connect" % level_instance.name)
+	
+	if level_instance.has_signal("play_music"):
+		level_instance.play_music.connect(_play_music)
+	else:
+		print("WARN: Level %s has no play_music signal to connect" % level_instance.name)
 
 
 # Disconnects all important signals from the given level instance
 func _disconnect_level_signals(level_instance:Node):
 	if level_instance.has_signal("level_exited") and level_instance.level_exited.is_connected(_advance_level):
 		level_instance.level_exited.disconnect(_advance_level)
+	if level_instance.has_signal("play_music") and level_instance.play_music.is_connected(_play_music):
+		level_instance.play_music.disconnect(_play_music)

@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+## Sprite to display for the toy
+@export_enum("dolly", "jack", "teddy") var toy_sprite := "dolly"
 ## Target for the toy to follow
 @export var target: Node2D
 ## Distance from the target the toy will follow at (px)
@@ -16,8 +19,44 @@ const GHOST_MODE_SPEED_MULT := 1.5
 # When enabled, the toy has no collision
 var ghost_mode := false
 
+@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var collision: CollisionShape2D = $Collision
 @onready var interactable: Interactable = $Interactable
+
+
+func _ready() -> void:
+	sprite.play(toy_sprite + "_down")
+
+
+func _process(delta: float) -> void:
+	var animation = toy_sprite
+	
+	# Determine if moving
+	if velocity.length() == 0:
+		animation = sprite.animation.get_slice("_walk", 0)
+		sprite.play(animation)
+		return
+	
+	# Determine look direction
+	var dirs = [Vector2.DOWN, Vector2.UP, Vector2.LEFT, Vector2.RIGHT]
+	dirs = dirs.map(func(elem): return elem.dot(velocity))
+	var facing = dirs.find(dirs.max())
+	match facing:
+		0:
+			animation += "_down"
+		1:
+			animation += "_up"
+		2:
+			animation += "_left"
+		3:
+			animation += "_right"
+	
+	# Apply walking
+	animation += "_walk"
+	
+	# Apply appropriate animation
+	if sprite.animation != animation:
+		sprite.play(animation)
 
 
 func _physics_process(_delta: float) -> void:

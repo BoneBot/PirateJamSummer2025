@@ -111,6 +111,7 @@ position = Vector2(127, 167)
 
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_r4o1w")]
 position = Vector2(74, 198)
+toy_sprite = "teddy"
 target = NodePath("../Player")
 
 [node name="Shadow" parent="." instance=ExtResource("8_ahvii")]
