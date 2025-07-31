@@ -12,6 +12,7 @@ extends Node
 @onready var shadow_music: AudioStreamPlayer = $MusicPlayers/ShadowMusic
 
 var current_level
+var current_toy := ""
 var muted := false
 
 func _ready() -> void:
@@ -32,9 +33,22 @@ func _input(event: InputEvent) -> void:
 
 # Advances to the next specified level
 func _advance_level(next_level_name:String) -> void:
+	# Set current toy
+	if next_level_name.contains("dolly"):
+		current_toy = "dolly"
+	elif next_level_name.contains("jack"):
+		current_toy = "jack"
+	elif next_level_name.contains("teddy"):
+		current_toy = "teddy"
+	
+	# Advance level
 	print("Advancing level to %s" % next_level_name)
 	_unload_current_level()
 	_load_level(next_level_name)
+	
+	# If we're at the ending, let the ending know what the current toy is
+	if next_level_name == "ending":
+		current_level.call_deferred("set_toy", current_toy)
 
 
 # Unloads the current game level 

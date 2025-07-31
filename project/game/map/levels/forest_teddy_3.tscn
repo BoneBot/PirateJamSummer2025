@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cwhoogwxh3cgl"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_teddy_3.gd" id="1_khh8j"]
-[ext_resource type="Texture2D" uid="uid://prc3lbeka52y" path="res://art/Background Assets/forest_l_bright.png" id="2_pi4sb"]
+[ext_resource type="Texture2D" uid="uid://dbpu56lvb11lj" path="res://art/Background Assets/forest_l_bright.png" id="2_pi4sb"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_88mpo"]
 [ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="4_na60x"]
 [ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush_single.tscn" id="5_33so4"]
