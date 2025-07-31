@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm4xqlc144gxx"]
+[gd_scene load_steps=6 format=3 uid="uid://dm4xqlc144gxx"]
 
 [ext_resource type="Script" path="res://game/characters/toy.gd" id="1_eykct"]
+[ext_resource type="Texture2D" uid="uid://c2imhgp5yvw40" path="res://art/Sprites/Toy_Sprite_Sheet-Sheet.png" id="2_duatk"]
 [ext_resource type="Script" path="res://game/common/interactable.gd" id="2_gj584"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4m4u"]
-size = Vector2(30, 30)
+size = Vector2(31, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkcj3"]
-size = Vector2(30, 30)
+size = Vector2(31, 31)
 
 [node name="Toy" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -16,20 +17,14 @@ motion_mode = 1
 script = ExtResource("1_eykct")
 catch_up_distance = 100.0
 
-[node name="Sprite" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 15.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, -17)
+texture = ExtResource("2_duatk")
+hframes = 8
+vframes = 3
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 7.5)
 shape = SubResource("RectangleShape2D_o4m4u")
 
 [node name="Interactable" type="Area2D" parent="."]
@@ -38,5 +33,6 @@ collision_mask = 0
 script = ExtResource("2_gj584")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_kkcj3")
 debug_color = Color(0, 0.643455, 0.299706, 0.42)
