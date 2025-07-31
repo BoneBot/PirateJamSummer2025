@@ -77,6 +77,7 @@ position = Vector2(130, 201)
 
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_opt1u")]
 position = Vector2(80, 211)
+toy_sprite = "jack"
 target = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -4,12 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c2imhgp5yvw40" path="res://art/Sprites/Toy_Sprite_Sheet-Sheet.png" id="2_duatk"]
 [ext_resource type="Script" path="res://game/common/interactable.gd" id="2_gj584"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4m4u"]
-size = Vector2(31, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkcj3"]
-size = Vector2(31, 31)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1svo0"]
 atlas = ExtResource("2_duatk")
 region = Rect2(0, 0, 64, 64)
@@ -162,7 +156,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -173,7 +167,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_down_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -181,7 +175,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,7 +186,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_left_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -200,7 +194,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -211,7 +205,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_right_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -219,7 +213,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -230,7 +224,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dolly_up_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -238,7 +232,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -249,7 +243,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_down_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -257,7 +251,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -268,7 +262,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_left_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -276,7 +270,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,7 +281,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_right_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -295,7 +289,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -306,7 +300,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jack_up_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -314,7 +308,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -325,7 +319,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_down_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -333,7 +327,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -344,7 +338,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_left_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -352,7 +346,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -363,7 +357,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_right_walk",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -371,7 +365,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -382,8 +376,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"teddy_up_walk",
-"speed": 5.0
+"speed": 8.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4m4u"]
+size = Vector2(31, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkcj3"]
+size = Vector2(31, 31)
 
 [node name="Toy" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -392,12 +392,11 @@ motion_mode = 1
 script = ExtResource("1_eykct")
 catch_up_distance = 100.0
 
-[node name="Sprite" type="Sprite2D" parent="."]
-visible = false
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, -17)
-texture = ExtResource("2_duatk")
-hframes = 8
-vframes = 3
+sprite_frames = SubResource("SpriteFrames_qibl2")
+animation = &"dolly_down_walk"
+frame_progress = 0.571974
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 7.5)
@@ -412,8 +411,3 @@ script = ExtResource("2_gj584")
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_kkcj3")
 debug_color = Color(0, 0.643455, 0.299706, 0.42)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, -17)
-sprite_frames = SubResource("SpriteFrames_qibl2")
-animation = &"jack_right_walk"
