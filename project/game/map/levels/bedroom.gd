@@ -24,5 +24,5 @@ func _on_forest_exit_2_body_entered(_body: Node2D) -> void:
 	level_exited.emit("forest_teddy_1")
 
 
-func _on_jack_exit_body_entered(body: Node2D) -> void:
+func _on_jack_exit_body_entered(_body: Node2D) -> void:
 	level_exited.emit("forest_jack_1")

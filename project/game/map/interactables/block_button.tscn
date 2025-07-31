@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0xbrb221dj6h"]
+[gd_scene load_steps=3 format=3 uid="uid://b0xbrb221dj6h"]
+
+[ext_resource type="Texture2D" uid="uid://0lcpjmiy5mgn" path="res://art/Background Assets/Button.png" id="1_ysxf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbtyt"]
 
 [node name="BlockButton" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ysxf1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lbtyt")

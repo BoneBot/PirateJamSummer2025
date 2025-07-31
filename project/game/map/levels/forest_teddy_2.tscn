@@ -70,11 +70,13 @@ shape = SubResource("WorldBoundaryShape2D_i8x2n")
 [node name="Components" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="ForestExit" parent="Components" instance=ExtResource("3_175tn")]
-position = Vector2(437, 107)
+[node name="VineDoor" parent="Components" node_paths=PackedStringArray("forest_exit") instance=ExtResource("4_iuj2q")]
+position = Vector2(437, 97)
+forest_exit = NodePath("ForestExit")
 
-[node name="VineDoor" parent="Components" instance=ExtResource("4_iuj2q")]
-position = Vector2(438, 130)
+[node name="ForestExit" parent="Components/VineDoor" instance=ExtResource("3_175tn")]
+visible = false
+position = Vector2(0, -4)
 
 [node name="BushSingle" parent="Components" instance=ExtResource("6_aibsi")]
 position = Vector2(686, 401)
@@ -163,5 +165,5 @@ position = Vector2(414, 174)
 dialogue_file = "res://game/ui/dialogue_text/forest_teddy_2.json"
 portrait_directory = "res://art/Portraits"
 
-[connection signal="body_entered" from="Components/ForestExit" to="." method="_on_forest_exit_body_entered"]
+[connection signal="body_entered" from="Components/VineDoor/ForestExit" to="." method="_on_forest_exit_body_entered"]
 [connection signal="dialogue_triggered" from="Components/DialogueArea" to="." method="_on_dialogue_area_dialogue_triggered"]

@@ -31,41 +31,33 @@ def convert_to_json(plain_text):
 # Example usage
 if __name__ == "__main__":
     plain_text = """
-SOL (scared): What?! There are so many roses! How are we going to find our way out? 
+SOL (Surprised): There's the exit!
 
-TEDDY (happy): Ooohhh, pretty! 
+SHADOW (neutral): So, it was you two who moved my things around. 
 
-SOL (determined): Teddy, we need to find the right roses to get out of here! How are we going to tell the right ones apart? 
+SOL (scared): Eek!!!
 
-TEDDY (concerned): Hmm? Well- 
+JACK (Joking): Whoa! Who's this ugly mug?
 
-SOL (nervous): And what if we never find the right roses? What if we don't find mom and dad again? 
+SHADOW (neutral): ...Ugly? Now that seems uncalled for. 
 
-TEDDY (happy): Hey, Sol- 
+SOL (Nervous): I-I apologize for my friend, Mr. Forest-spirit-guy-sir!  We just wanted to get out of the forest.
 
-SOL (scared): Then we'll be stuck here forever and ever with no way out and-
+JACK (Angry): Yeah! You left so much junk laying around we were trapped for ages!
 
-TEDDY (surprised): Sol! 
+SHADOW (nervous): Trapped? In the forest? Didn't you see the path I made?
 
-SOL (nervous): Yeah? 
+SOL (Surprised): ......PATH???
 
-TEDDY (happy): It'll all be ok. We'll find our way back. 
+SHADOW (neutral): Well of course. It even had a machine for concessions on the way out. 
 
-SOL (neutral): You... really think so? 
+SHADOW (neutral): The miniature donuts are quite... delicious. Perfect for a pair of travelers like you. 
 
-TEDDY (happy): Sure! We made it this far, right? We just had to slow down, stop, and think for a little bit, yeah? 
+JACK (Smug): Weeeeellll this was a fun chit chat, but it's really time we get goin'. 
 
-SOL (neutral): Yeah, we just had to stop... 
+SOL (Laughing): Maybe next time we can visit the vending machine, Mr. Shadow Guy!
 
-SOL (unamused): ...and smell the roses... 
-
-SOL (unamused): Oh man, that was so corny! 
-
-TEDDY (happy): Aww, no it wasn't, it was sweet! Like the smell of roses! 
-
-TEDDY (happy): Or like apple pie... 
-
-SOL (laughing): Mmm... apple pie... ha ha! 
+SHADOW (neutral): Yes, yes, next time. Perhaps... 
 
 """
 
