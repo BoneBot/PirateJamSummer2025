@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cwhoogwxh3cgl"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_teddy_3.gd" id="1_khh8j"]
-[ext_resource type="Texture2D" uid="uid://cs4rjn8b5ybqu" path="res://art/Background Assets/forest_l_bright.png" id="2_pi4sb"]
+[ext_resource type="Texture2D" uid="uid://prc3lbeka52y" path="res://art/Background Assets/forest_l_bright.png" id="2_pi4sb"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_88mpo"]
 [ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="4_na60x"]
 [ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush_single.tscn" id="5_33so4"]
@@ -69,12 +69,12 @@ shape = SubResource("WorldBoundaryShape2D_vg1xt")
 y_sort_enabled = true
 
 [node name="VineDoor" parent="Components" node_paths=PackedStringArray("forest_exit") instance=ExtResource("4_na60x")]
-position = Vector2(774, 97)
+position = Vector2(774, 73)
 forest_exit = NodePath("ForestExit")
 
 [node name="ForestExit" parent="Components/VineDoor" instance=ExtResource("3_88mpo")]
 visible = false
-position = Vector2(2, -5)
+position = Vector2(2, 20)
 
 [node name="BushSingle" parent="Components" instance=ExtResource("5_33so4")]
 position = Vector2(706, 424)
@@ -142,7 +142,8 @@ position = Vector2(0, 60)
 y_sort_enabled = true
 
 [node name="FakeRose" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(92, 109)
+position = Vector2(96, 108)
+rotation = 0.757878
 
 [node name="FakeRose2" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(327, 94)
@@ -155,66 +156,77 @@ position = Vector2(446, 94)
 
 [node name="FakeRose5" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(339, 205)
+rotation = 1.45714
 
 [node name="FakeRose6" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(549, 177)
 
 [node name="FakeRose7" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(834, 206)
+position = Vector2(877, 202)
 
 [node name="FakeRose8" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(633, 202)
 
 [node name="FakeRose9" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(327, 276)
+scale = Vector2(-1, 1)
 
 [node name="FakeRose10" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(383, 298)
 
 [node name="FakeRose11" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(339, 323)
+rotation = -1.24575
 
 [node name="FakeRose12" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(488, 395)
+position = Vector2(429, 369)
+scale = Vector2(-1, 1)
 
 [node name="FakeRose13" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(166, 501)
+rotation = -1.02042
 
 [node name="FakeRose14" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
 position = Vector2(867, 480)
 
 [node name="FakeRose15" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(681, 430)
+position = Vector2(688, 382)
 
 [node name="FakeRose16" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(737, 414)
+position = Vector2(727, 383)
 
 [node name="FakeRose17" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(89, 279)
+position = Vector2(66, 257)
+rotation = -1.14901
 
 [node name="FakeRose18" parent="Components/FakeRoses" instance=ExtResource("8_43ah5")]
-position = Vector2(128, 285)
+position = Vector2(134, 282)
+rotation = 1.9917
 
 [node name="RealRoses" type="Node2D" parent="Components"]
 y_sort_enabled = true
 
 [node name="FadingRose" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
-position = Vector2(486, 349)
+position = Vector2(486, 339)
 
 [node name="FadingRose2" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
 position = Vector2(677, 249)
+rotation = 1.28854
 
 [node name="FadingRose3" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
 position = Vector2(910, 428)
 
 [node name="FadingRose4" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
-position = Vector2(891, 250)
+position = Vector2(822, 230)
+rotation = -0.811354
+scale = Vector2(-1, 1)
 
 [node name="FadingRose5" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
 position = Vector2(468, 151)
 
 [node name="FadingRose6" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
 position = Vector2(58, 131)
+rotation = 1.93669
 
 [node name="FadingRose7" parent="Components/RealRoses" groups=["roses"] instance=ExtResource("6_wtf4w")]
 position = Vector2(220, 335)

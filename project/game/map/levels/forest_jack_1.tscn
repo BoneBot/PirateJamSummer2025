@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game/map/levels/forest_jack_1.gd" id="1_qp3s0"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_3qudn"]
 [ext_resource type="PackedScene" uid="uid://dd0kl255gfdkd" path="res://game/map/interactables/block.tscn" id="2_jganh"]
-[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_r3cgq"]
+[ext_resource type="Texture2D" uid="uid://cxx7tklv1cjeq" path="res://art/Background Assets/forest_s.png" id="2_r3cgq"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_opt1u"]
 [ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="3_p1av2"]
 [ext_resource type="PackedScene" uid="uid://b0xbrb221dj6h" path="res://game/map/interactables/block_button.tscn" id="4_b62as"]
@@ -72,12 +72,12 @@ shape = SubResource("WorldBoundaryShape2D_csdmp")
 y_sort_enabled = true
 
 [node name="VineDoor" parent="Components" node_paths=PackedStringArray("forest_exit") instance=ExtResource("3_p1av2")]
-position = Vector2(503, 97)
+position = Vector2(503, 73)
 forest_exit = NodePath("ForestExit")
 
 [node name="ForestExit" parent="Components/VineDoor" instance=ExtResource("6_0wnkg")]
 visible = false
-position = Vector2(1, -5)
+position = Vector2(1, 11)
 
 [node name="Block" parent="Components" groups=["blocks"] instance=ExtResource("2_jganh")]
 position = Vector2(270, 236)

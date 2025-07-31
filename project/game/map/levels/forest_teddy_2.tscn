@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://cdr7oh13wgny"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_teddy_2.gd" id="1_6a830"]
-[ext_resource type="Texture2D" uid="uid://dkyoabcf4c8cm" path="res://art/Background Assets/forest_m.png" id="2_785fb"]
+[ext_resource type="Texture2D" uid="uid://cnaiiwxmsl06a" path="res://art/Background Assets/forest_m.png" id="2_785fb"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_175tn"]
 [ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="4_iuj2q"]
 [ext_resource type="PackedScene" uid="uid://bud0dm577h017" path="res://game/map/interactables/dialogue_area.tscn" id="5_67xdl"]
@@ -71,12 +71,12 @@ shape = SubResource("WorldBoundaryShape2D_i8x2n")
 y_sort_enabled = true
 
 [node name="VineDoor" parent="Components" node_paths=PackedStringArray("forest_exit") instance=ExtResource("4_iuj2q")]
-position = Vector2(437, 97)
+position = Vector2(437, 73)
 forest_exit = NodePath("ForestExit")
 
 [node name="ForestExit" parent="Components/VineDoor" instance=ExtResource("3_175tn")]
 visible = false
-position = Vector2(0, -4)
+position = Vector2(0, 12)
 
 [node name="BushSingle" parent="Components" instance=ExtResource("6_aibsi")]
 position = Vector2(686, 401)
@@ -91,7 +91,8 @@ position = Vector2(645, 170)
 metadata/_edit_group_ = true
 
 [node name="FadingRose" parent="Components/BushSingle2" groups=["roses"] instance=ExtResource("7_5lww7")]
-position = Vector2(-23, -11)
+position = Vector2(23, -8)
+rotation = 0.398286
 fades = false
 
 [node name="BushSingle3" parent="Components" instance=ExtResource("6_aibsi")]
@@ -124,7 +125,8 @@ position = Vector2(-64, -2)
 position = Vector2(-128, -2)
 
 [node name="FadingRose" parent="Components/LBush" groups=["roses"] instance=ExtResource("7_5lww7")]
-position = Vector2(-30, 52)
+position = Vector2(-38, 52)
+rotation = -1.05905
 fades = false
 
 [node name="IBush" type="Node2D" parent="Components"]
@@ -138,6 +140,8 @@ position = Vector2(0, 60)
 
 [node name="FadingRose" parent="Components/IBush" groups=["roses"] instance=ExtResource("7_5lww7")]
 position = Vector2(-36, 4)
+rotation = -0.501912
+scale = Vector2(-1, 1)
 fades = false
 
 [node name="DialogueArea" parent="Components" instance=ExtResource("5_67xdl")]
