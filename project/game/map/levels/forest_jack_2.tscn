@@ -186,6 +186,7 @@ toy_sprite = "jack"
 target = NodePath("../Components/Block")
 
 [node name="Shadow" parent="." instance=ExtResource("12_8sp7f")]
+visible = false
 position = Vector2(549, 153)
 scale = Vector2(-1, 1)
 

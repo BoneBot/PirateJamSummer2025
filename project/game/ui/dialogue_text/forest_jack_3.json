@@ -58,7 +58,14 @@
             }
         ]
     },
-    "block": {
+    "vine_door": {
+        "0": [
+            {
+                "text": "You see a glimmer of light through the branches, but the way is blocked by thorny vines. Wouldn't want to go in there."
+            }
+        ]
+    },
+    "button": {
         "0": [
             {
                 "speaker": "sol",
@@ -98,7 +105,7 @@
             {
                 "speaker": "shadow",
                 "text": "Trapped? In the forest? Didn't you see the path I made?",
-                "emotion": "nervous"
+                "emotion": "neutral"
             },
             {
                 "speaker": "sol",
