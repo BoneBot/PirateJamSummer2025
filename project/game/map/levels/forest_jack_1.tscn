@@ -61,19 +61,16 @@ shape = SubResource("WorldBoundaryShape2D_csdmp")
 y_sort_enabled = true
 
 [node name="Boulder" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(596, 229)
+position = Vector2(569, 259)
 
 [node name="Boulder2" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(554, 216)
+position = Vector2(485, 199)
 
 [node name="Boulder3" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(589, 139)
-
-[node name="Boulder4" parent="Components" instance=ExtResource("2_jganh")]
-position = Vector2(553, 176)
+position = Vector2(565, 139)
 
 [node name="ForestExit" parent="." instance=ExtResource("6_0wnkg")]
-position = Vector2(601, 187)
+position = Vector2(589, 200)
 
 [node name="Player" parent="." instance=ExtResource("2_3qudn")]
 position = Vector2(130, 201)
