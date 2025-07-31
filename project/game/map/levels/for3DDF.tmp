@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3 uid="uid://cdr7oh13wgny"]
+
+[ext_resource type="Script" path="res://game/map/levels/forest_teddy_2.gd" id="1_6a830"]
+[ext_resource type="Texture2D" uid="uid://dkyoabcf4c8cm" path="res://art/Background Assets/forest_m.png" id="2_785fb"]
+[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_175tn"]
+[ext_resource type="PackedScene" uid="uid://mkoy0yv4trc6" path="res://game/map/obstacles/vine_door.tscn" id="4_iuj2q"]
+[ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush_single.tscn" id="6_aibsi"]
+[ext_resource type="PackedScene" uid="uid://cjnhxuf3e0307" path="res://game/map/interactables/fading_rose.tscn" id="7_5lww7"]
+[ext_resource type="PackedScene" uid="uid://cbd1bti25e811" path="res://game/map/cosmetics/bush_forward_end.tscn" id="7_w1v5e"]
+[ext_resource type="PackedScene" uid="uid://dfs7qkxlas2oe" path="res://game/map/cosmetics/bush_forward_middle.tscn" id="8_exhcu"]
+[ext_resource type="PackedScene" uid="uid://bbkexgwatal2p" path="res://game/map/cosmetics/bush_t_junction.tscn" id="9_b5gf8"]
+[ext_resource type="PackedScene" uid="uid://brbcqo65qy71l" path="res://game/map/cosmetics/bush_side_middle.tscn" id="10_mor3v"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="11_kgb43"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="12_tfbea"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="13_f0vuw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxcjf"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_el26i"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yvusi"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i8x2n"]
+
+[node name="ForestTeddy2" type="Node2D"]
+script = ExtResource("1_6a830")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_785fb")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Boundaries" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_lxcjf")
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_el26i")
+
+[node name="Right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(776, 450)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_yvusi")
+
+[node name="Down" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(776, 450)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
+shape = SubResource("WorldBoundaryShape2D_i8x2n")
+
+[node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ForestExit" parent="Components" instance=ExtResource("3_175tn")]
+position = Vector2(437, 107)
+
+[node name="VineDoor" parent="Components" instance=ExtResource("4_iuj2q")]
+position = Vector2(438, 130)
+
+[node name="BushSingle" parent="Components" instance=ExtResource("6_aibsi")]
+position = Vector2(736, 329)
+metadata/_edit_group_ = true
+
+[node name="FadingRose" parent="Components/BushSingle" groups=["roses"] instance=ExtResource("7_5lww7")]
+position = Vector2(-23, -21)
+fades = false
+
+[node name="BushSingle2" parent="Components" instance=ExtResource("6_aibsi")]
+position = Vector2(622, 159)
+metadata/_edit_group_ = true
+
+[node name="FadingRose" parent="Components/BushSingle2" groups=["roses"] instance=ExtResource("7_5lww7")]
+position = Vector2(-23, -11)
+fades = false
+
+[node name="LBush" type="Node2D" parent="Components"]
+y_sort_enabled = true
+
+[node name="BushForwardEnd" parent="Components/LBush" instance=ExtResource("7_w1v5e")]
+position = Vector2(190, 350)
+
+[node name="BushForwardMiddle" parent="Components/LBush" instance=ExtResource("8_exhcu")]
+position = Vector2(190, 290)
+
+[node name="BushTJunction" parent="Components/LBush" instance=ExtResource("9_b5gf8")]
+position = Vector2(190, 241)
+
+[node name="BushSideMiddle" parent="Components/LBush" instance=ExtResource("10_mor3v")]
+position = Vector2(126, 239)
+
+[node name="BushSideMiddle2" parent="Components/LBush" instance=ExtResource("10_mor3v")]
+position = Vector2(62, 239)
+
+[node name="Player" parent="." instance=ExtResource("11_kgb43")]
+position = Vector2(461, 396)
+
+[node name="Toy" parent="." instance=ExtResource("12_tfbea")]
+position = Vector2(379, 420)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueManager" parent="." instance=ExtResource("13_f0vuw")]

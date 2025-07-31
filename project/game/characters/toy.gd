@@ -17,17 +17,18 @@ const GHOST_MODE_SPEED_MULT := 1.5
 var ghost_mode := false
 
 @onready var collision: CollisionShape2D = $Collision
+@onready var interactable: Interactable = $Interactable
 
 
 func _physics_process(_delta: float) -> void:
-	var dist_to_target = (target.position - position).length()
+	var dist_to_target = (target.global_position - global_position).length()
 	if dist_to_target > follow_distance:
 		# Check if outside the catch up range
 		if not ghost_mode and dist_to_target > catch_up_distance:
 			ghost_mode = true
 			collision.disabled = true
 		# Move towards target
-		velocity = (target.position - position).normalized() * follow_speed
+		velocity = (target.global_position - global_position).normalized() * follow_speed
 		if ghost_mode:
 			velocity *= GHOST_MODE_SPEED_MULT
 	else:

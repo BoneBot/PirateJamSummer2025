@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn8anuivgeq5n"]
+
+[ext_resource type="Script" path="res://game/ui/mute_icon.gd" id="1_2xgqj"]
+[ext_resource type="Texture2D" uid="uid://dvinawstnijru" path="res://art/UI/unmuted.png" id="2_h1acd"]
+[ext_resource type="Texture2D" uid="uid://c12sc64l4hcag" path="res://art/UI/muted.png" id="2_sdhab"]
+
+[node name="MuteIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2xgqj")
+unmuted_img = ExtResource("2_h1acd")
+muted_img = ExtResource("2_sdhab")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_h1acd")

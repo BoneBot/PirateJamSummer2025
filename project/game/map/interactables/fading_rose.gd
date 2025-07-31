@@ -1,6 +1,8 @@
 extends Node2D
 
-## Whether or not the rose will fade. When set false, it is always visible.
+## Whether or not the rose starts faded. When set false, it will start invisible, When true, it will start visible. 
+@export var start_visible := false
+## Whether or not the rose will fade. When set false, it will remain in its current state.
 @export var fades := true
 ## Multiplier for the fade duration. E.g. if set to 2, the fade animation plays twice as fast.
 @export var fade_speed_scale := 1.0
@@ -19,7 +21,7 @@ var has_interacted := false
 func _ready() -> void:
 	interactable.interact = _on_fading_rose_interact
 	
-	if fades:
+	if not start_visible:
 		sprite.modulate = Color(sprite.modulate, 0)
 		interactable.is_interactable = false
 	
@@ -29,13 +31,11 @@ func _ready() -> void:
 func _on_visibility_body_entered(_body: Node2D) -> void:
 	if fades:
 		animation_player.play("fade")
-		#animation_player.play("fade", -1, fade_speed_scale)
 
 
 func _on_visibility_body_exited(_body: Node2D) -> void:
 	if fades:
 		animation_player.play_backwards("fade")
-		#animation_player.play("fade", -1, -fade_speed_scale)
 
 
 func _on_fading_rose_interact() -> void:

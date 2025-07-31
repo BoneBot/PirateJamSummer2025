@@ -5,6 +5,7 @@ extends StaticBody2D
 
 @onready var collision: CollisionShape2D = $Collision
 @onready var sprite: Label = $Sprite
+@onready var interactable: Interactable = $Interactable
 
 
 func _ready() -> void:
@@ -19,6 +20,7 @@ func open_door() -> void:
 	is_open = true
 	sprite.text = "OPEN"
 	collision.disabled = true
+	interactable.is_interactable = false
 
 
 func close_door() -> void:
@@ -27,3 +29,4 @@ func close_door() -> void:
 	is_open = false
 	sprite.text = "LOCKED"
 	collision.disabled = false
+	interactable.is_interactable = true

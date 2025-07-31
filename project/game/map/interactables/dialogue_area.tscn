@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bud0dm577h017"]
+
+[ext_resource type="Script" path="res://game/map/interactables/dialogue_area.gd" id="1_ej7df"]
+
+[node name="DialogueArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ej7df")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

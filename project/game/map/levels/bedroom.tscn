@@ -63,7 +63,39 @@ target = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource("3_jiuq5")]
 position = Vector2(333, 188)
 
-[node name="ForestExit" parent="." instance=ExtResource("5_imofy")]
+[node name="DollyExit" parent="." instance=ExtResource("5_imofy")]
 position = Vector2(498, 185)
 
-[connection signal="body_entered" from="ForestExit" to="." method="_on_forest_exit_body_entered"]
+[node name="Label" type="Label" parent="DollyExit"]
+offset_left = 29.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Dolly"
+
+[node name="TeddyExit" parent="." instance=ExtResource("5_imofy")]
+position = Vector2(500, 249)
+
+[node name="Label" type="Label" parent="TeddyExit"]
+offset_left = 29.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Teddy"
+
+[node name="JackExit" parent="." instance=ExtResource("5_imofy")]
+position = Vector2(504, 305)
+
+[node name="Label" type="Label" parent="JackExit"]
+offset_left = 29.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jack"
+
+[connection signal="body_entered" from="DollyExit" to="." method="_on_forest_exit_body_entered"]
+[connection signal="body_entered" from="TeddyExit" to="." method="_on_forest_exit_2_body_entered"]
+[connection signal="body_entered" from="JackExit" to="." method="_on_jack_exit_body_entered"]

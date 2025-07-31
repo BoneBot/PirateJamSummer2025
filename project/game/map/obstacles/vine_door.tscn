@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://mkoy0yv4trc6"]
+[gd_scene load_steps=5 format=3 uid="uid://mkoy0yv4trc6"]
 
 [ext_resource type="Script" path="res://game/map/obstacles/vine_door.gd" id="1_bmd33"]
+[ext_resource type="Script" path="res://game/common/interactable.gd" id="2_qmfq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqo3o"]
+size = Vector2(56, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr3mk"]
 size = Vector2(56, 65)
 
 [node name="VineDoor" type="StaticBody2D"]
@@ -19,3 +23,13 @@ text = "LOCKED"
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -32.5)
 shape = SubResource("RectangleShape2D_xqo3o")
+
+[node name="Interactable" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("2_qmfq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, -32.5)
+shape = SubResource("RectangleShape2D_pr3mk")
+debug_color = Color(0, 0.647109, 0.219991, 0.42)

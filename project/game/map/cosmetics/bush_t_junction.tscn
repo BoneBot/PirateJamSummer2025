@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbkexgwatal2p"]
+
+[ext_resource type="Texture2D" uid="uid://7dvx81pbe448" path="res://art/Background Assets/modular bush T junction.png" id="1_rgqun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sve7t"]
+size = Vector2(64, 34)
+
+[node name="BushTJunction" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("1_rgqun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sve7t")

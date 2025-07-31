@@ -1,13 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccukhny0e1iho"]
+[gd_scene load_steps=21 format=3 uid="uid://ccukhny0e1iho"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_dolly_1.gd" id="1_bwr08"]
+[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_e1g65"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_h84bs"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_85l45"]
+[ext_resource type="Texture2D" uid="uid://bg7uokk4gm7aw" path="res://art/Placeholders/EnemyFOVCone.png" id="3_85wjt"]
+[ext_resource type="PackedScene" uid="uid://egbrfcjg7p83" path="res://game/map/cosmetics/bush_side_end.tscn" id="3_bfshp"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="3_inr1c"]
 [ext_resource type="PackedScene" uid="uid://dx3kx0dnsorh8" path="res://game/map/obstacles/sentry.tscn" id="4_4r5f8"]
+[ext_resource type="PackedScene" uid="uid://brbcqo65qy71l" path="res://game/map/cosmetics/bush_side_middle.tscn" id="4_t1c5w"]
+[ext_resource type="PackedScene" uid="uid://bud0dm577h017" path="res://game/map/interactables/dialogue_area.tscn" id="6_buvpi"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="6_s5m3k"]
+[ext_resource type="PackedScene" uid="uid://dqcfv4th66b2w" path="res://game/characters/shadow.tscn" id="11_ya51y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoxb4"]
-size = Vector2(50, 56)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3imgb"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gq2to"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ydwr4"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xpm5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80hrq"]
+size = Vector2(6, 344)
 
 [sub_resource type="Animation" id="Animation_3itlt"]
 length = 0.001
@@ -49,46 +67,101 @@ _data = {
 y_sort_enabled = true
 script = ExtResource("1_bwr08")
 
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_e1g65")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_3imgb")
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_gq2to")
+
+[node name="Right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(616, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_ydwr4")
+
+[node name="Down" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(616, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
+shape = SubResource("WorldBoundaryShape2D_xpm5u")
+
 [node name="Components" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Sentry" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
-position = Vector2(277, 43)
+[node name="Sentry" parent="Components" node_paths=PackedStringArray("field_of_view") groups=["sentries"] instance=ExtResource("4_4r5f8")]
+position = Vector2(352, 20)
+field_of_view = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Components/Sentry"]
+position = Vector2(1.23382e-05, 84)
+scale = Vector2(0.0962963, 0.153704)
+texture = ExtResource("3_85wjt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Components/Sentry"]
+polygon = PackedVector2Array(0, 1, 52, 167, -52, 167)
+
+[node name="LongBush" type="Node2D" parent="Components"]
+y_sort_enabled = true
+position = Vector2(348, 227)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry"]
-position = Vector2(0, 39)
-shape = SubResource("RectangleShape2D_uoxb4")
+[node name="BushSideEnd" parent="Components/LongBush" instance=ExtResource("3_bfshp")]
+position = Vector2(-124, 0)
 
-[node name="Sentry2" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
-position = Vector2(445, 40)
+[node name="BushSideEnd2" parent="Components/LongBush" instance=ExtResource("3_bfshp")]
+position = Vector2(124, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="BushSideMiddle" parent="Components/LongBush" instance=ExtResource("4_t1c5w")]
+position = Vector2(-64, 0)
+
+[node name="BushSideMiddle2" parent="Components/LongBush" instance=ExtResource("4_t1c5w")]
+
+[node name="BushSideMiddle3" parent="Components/LongBush" instance=ExtResource("4_t1c5w")]
+position = Vector2(64, 0)
+
+[node name="DialogueArea" parent="Components" instance=ExtResource("6_buvpi")]
+position = Vector2(182, 199)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry2"]
-position = Vector2(0, 39)
-shape = SubResource("RectangleShape2D_uoxb4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/DialogueArea"]
+shape = SubResource("RectangleShape2D_80hrq")
 
-[node name="Sentry3" parent="Components" groups=["sentries"] instance=ExtResource("4_4r5f8")]
-position = Vector2(368, 260)
-rotation = -3.14159
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Sentry3"]
-position = Vector2(0, 39)
-shape = SubResource("RectangleShape2D_uoxb4")
-
-[node name="ForestExit" parent="." instance=ExtResource("3_85l45")]
-position = Vector2(522, 164)
+[node name="ForestExit" parent="Components" instance=ExtResource("3_85l45")]
+position = Vector2(598, 168)
 
 [node name="ResetPoint" type="Marker2D" parent="."]
-position = Vector2(111, 123)
+position = Vector2(77, 191)
 
 [node name="Player" parent="." instance=ExtResource("2_h84bs")]
-position = Vector2(188, 180)
+position = Vector2(84, 148)
 
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_inr1c")]
-position = Vector2(143, 206)
+position = Vector2(56, 184)
 target = NodePath("../Player")
+
+[node name="Shadow" parent="." instance=ExtResource("11_ya51y")]
+visible = false
+position = Vector2(483, 110)
+scale = Vector2(-1, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -101,10 +174,15 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
 
+[node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("6_s5m3k")]
+dialogue_file = "res://game/ui/dialogue_text/forest_dolly_1.json"
+portrait_directory = "res://art/Portraits"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_mgu7v")
 }
 
-[connection signal="body_entered" from="ForestExit" to="." method="_on_forest_exit_body_entered"]
+[connection signal="dialogue_triggered" from="Components/DialogueArea" to="." method="_on_dialogue_area_dialogue_triggered"]
+[connection signal="body_entered" from="Components/ForestExit" to="." method="_on_forest_exit_body_entered"]

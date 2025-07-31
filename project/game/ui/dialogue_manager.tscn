@@ -39,17 +39,16 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="DialogueText" type="RichTextLabel" parent="TextBox/MarginContainer"]
+texture_filter = 2
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/normal_font_size = 14
 text = "Dialogue"
 scroll_active = false
 
 [node name="Portrait" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 239.0
-offset_bottom = 279.0
+offset_right = 240.0
+offset_bottom = 280.0
 
 [node name="OptionBox" type="Control" parent="."]
 anchors_preset = 0

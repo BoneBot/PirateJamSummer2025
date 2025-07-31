@@ -1,0 +1,90 @@
+{
+    "speaker": "sol",
+    "text": "What?! There are so many roses! How are we going to find our way out?",
+    "emotion": "scared"
+},
+{
+    "speaker": "teddy",
+    "text": "Ooohhh, pretty!",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Teddy, we need to find the right roses to get out of here! How are we going to tell the right ones apart?",
+    "emotion": "determined"
+},
+{
+    "speaker": "teddy",
+    "text": "Hmm? Well-",
+    "emotion": "concerned"
+},
+{
+    "speaker": "sol",
+    "text": "And what if we never find the right roses? What if we don't find mom and dad again?",
+    "emotion": "nervous"
+},
+{
+    "speaker": "teddy",
+    "text": "Hey, Sol-",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Then we'll be stuck here forever and ever with no way out and-",
+    "emotion": "scared"
+},
+{
+    "speaker": "teddy",
+    "text": "Sol!",
+    "emotion": "surprised"
+},
+{
+    "speaker": "sol",
+    "text": "Yeah?",
+    "emotion": "nervous"
+},
+{
+    "speaker": "teddy",
+    "text": "It'll all be ok. We'll find our way back.",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "You... really think so?",
+    "emotion": "neutral"
+},
+{
+    "speaker": "teddy",
+    "text": "Sure! We made it this far, right? We just had to slow down, stop, and think for a little bit, yeah?",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Yeah, we just had to stop...",
+    "emotion": "neutral"
+},
+{
+    "speaker": "sol",
+    "text": "...and smell the roses...",
+    "emotion": "unamused"
+},
+{
+    "speaker": "sol",
+    "text": "Oh man, that was so corny!",
+    "emotion": "unamused"
+},
+{
+    "speaker": "teddy",
+    "text": "Aww, no it wasn't, it was sweet! Like the smell of roses!",
+    "emotion": "happy"
+},
+{
+    "speaker": "teddy",
+    "text": "Or like apple pie...",
+    "emotion": "happy"
+},
+{
+    "speaker": "sol",
+    "text": "Mmm... apple pie... ha ha!",
+    "emotion": "laughing"
+},

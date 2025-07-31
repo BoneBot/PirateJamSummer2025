@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbd1bti25e811"]
+
+[ext_resource type="Texture2D" uid="uid://dcv7xjb2dt8lr" path="res://art/Background Assets/modular bush forward facing end.png" id="1_4nkar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvx3a"]
+size = Vector2(54, 56)
+
+[node name="BushForwardEnd" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("1_4nkar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nvx3a")
