@@ -1,25 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx3kx0dnsorh8"]
+[gd_scene load_steps=8 format=3 uid="uid://dx3kx0dnsorh8"]
 
-[ext_resource type="Texture2D" uid="uid://dc5k02o35tupp" path="res://art/Placeholders/EnvironmentSpritesPlaceholder.png" id="1_11dhl"]
 [ext_resource type="Script" path="res://game/map/obstacles/sentry.gd" id="1_x57vu"]
+[ext_resource type="Texture2D" uid="uid://dv00yvicodpfa" path="res://art/Sprites/Squirrel_Front.png" id="2_nddy5"]
+[ext_resource type="Texture2D" uid="uid://b2c701oarfka" path="res://art/Sprites/Squirrel_Left.png" id="3_d5lkv"]
+[ext_resource type="Texture2D" uid="uid://ch3i3fwfpjkpo" path="res://art/Sprites/Squirrel_Right.png" id="4_7250q"]
+[ext_resource type="Texture2D" uid="uid://dxvi0hsqa4jgp" path="res://art/Sprites/Squirrel_Back.png" id="5_bato2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mevy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nddy5")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d5lkv")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7250q")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bato2")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7gn1"]
-size = Vector2(44, 26)
+size = Vector2(44, 31)
 
 [node name="Sentry" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_x57vu")
 
-[node name="SpriteSentry" type="Sprite2D" parent="."]
-texture = ExtResource("1_11dhl")
-region_enabled = true
-region_rect = Rect2(503, 281, 44, 26)
+[node name="SpriteSentry" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 9)
+sprite_frames = SubResource("SpriteFrames_mevy0")
+animation = &"down"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_i7gn1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
