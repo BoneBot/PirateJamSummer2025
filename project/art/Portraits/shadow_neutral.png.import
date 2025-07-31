@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c380sgipplnwr"
-path="res://.godot/imported/pushable_block.png-ccb5bb265c6298b1f9c92575bb8fd4be.ctex"
+uid="uid://c8m1v3om0osv7"
+path="res://.godot/imported/shadow_neutral.png-66811a52287aec4c4f864efd72932859.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Background Assets/pushable_block.png"
-dest_files=["res://.godot/imported/pushable_block.png-ccb5bb265c6298b1f9c92575bb8fd4be.ctex"]
+source_file="res://art/Portraits/shadow_neutral.png"
+dest_files=["res://.godot/imported/shadow_neutral.png-66811a52287aec4c4f864efd72932859.ctex"]
 
 [params]
 

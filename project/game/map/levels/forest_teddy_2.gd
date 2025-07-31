@@ -10,6 +10,8 @@ extends Node2D
 
 ## Emitted when the level is exited. Contains the name of the next level to load.
 signal level_exited(next_level:String)
+## Emitted to play music in the level. Contains the name of the music track to play.
+signal play_music(track:String)
 
 # Total number of roses in the level
 var total_num_roses:int
@@ -34,6 +36,8 @@ func _ready() -> void:
 	vine_door.interactable.interact = _on_vine_door_interact
 	
 	await dialogue_manager.start_dialogue("start", 0)
+	
+	play_music.emit("forest")
 
 
 func _on_rose_interacted() -> void:
@@ -43,8 +47,10 @@ func _on_rose_interacted() -> void:
 	if rose_count == total_num_roses:
 		vine_door.open_door()
 		shadow.visible = true
+		play_music.emit("shadow")
 		await dialogue_manager.start_dialogue("rose", 1)
 		shadow.visible = false
+		play_music.emit("")
 	else:
 		await dialogue_manager.start_dialogue("rose", 0)
 
