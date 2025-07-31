@@ -5,6 +5,7 @@ extends Node2D
 @onready var vine_door: StaticBody2D = $Components/VineDoor
 @onready var block: RigidBody2D = $Components/Block
 @onready var button_interactable: Interactable = $Components/BlockButton/Interactable
+@onready var reset_point: Marker2D = $ResetPoint
 @onready var player: CharacterBody2D = $Player
 @onready var toy: CharacterBody2D = $Toy
 @onready var shadow: Node2D = $Shadow
@@ -16,7 +17,7 @@ signal level_exited(next_level:String)
 signal play_music(track:String)
 
 # The starting position of all blocks in the level
-var block_starting_positions:Array[Vector2] = []
+var block_starting_positions:Dictionary
 # The current dialogue state
 # 0 - No one has tried to push the block
 # 1 - Jack is trying to push the block on his own
@@ -30,7 +31,7 @@ func _ready() -> void:
 	player.set_camera_limits(background.position, background.texture.get_size())
 	
 	for block_item in get_tree().get_nodes_in_group("blocks"):
-		block_starting_positions.append(block_item.global_position)
+		block_starting_positions[block_item] = Vector2(block_item.global_position)
 	
 	toy.interactable.interact = _on_toy_interact
 	vine_door.interactable.interact = _on_vine_door_interacted
@@ -40,6 +41,22 @@ func _ready() -> void:
 	await dialogue_manager.start_dialogue("start", 0)
 	
 	play_music.emit("forest")
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("reset"):
+		# Change character positions
+		var toy_offset = player.position - toy.position
+		player.position = reset_point.position
+		toy.position = player.position - toy_offset
+		
+		# Change block positions
+		for blk in block_starting_positions:
+			blk.linear_velocity = Vector2.ZERO
+			PhysicsServer2D.body_set_state(
+				blk.get_rid(),
+				PhysicsServer2D.BODY_STATE_TRANSFORM,
+				Transform2D.IDENTITY.translated(block_starting_positions[blk]))
 
 
 func _on_toy_interact() -> void:
@@ -84,7 +101,9 @@ func _on_block_interacted() -> void:
 		# Trigger dialogue
 		player.can_move = false
 		await dialogue_manager.start_dialogue("block", 0)
+		block.interactable.is_interactable = false
 		await get_tree().create_timer(2.0).timeout
+		block.interactable.is_interactable = true
 		await dialogue_manager.start_dialogue("block", 1)
 		player.can_move = true
 		

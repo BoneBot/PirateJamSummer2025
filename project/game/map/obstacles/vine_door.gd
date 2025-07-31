@@ -24,7 +24,7 @@ func open_door() -> void:
 	is_open = true
 	sprite_closed.visible = false
 	sprite_open.visible = true
-	collision.disabled = true
+	collision.set_deferred("disabled", true)
 	interactable.is_interactable = false
 	forest_exit.monitoring = true
 
@@ -35,6 +35,6 @@ func close_door() -> void:
 	is_open = false
 	sprite_closed.visible = true
 	sprite_open.visible = false
-	collision.disabled = false
+	collision.set_deferred("disabled", false)
 	interactable.is_interactable = true
 	forest_exit.monitoring = false
