@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ww2l6g0ot35s"]
+[gd_scene load_steps=20 format=3 uid="uid://ww2l6g0ot35s"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_jack_2.gd" id="1_2k5s3"]
 [ext_resource type="Texture2D" uid="uid://dkyoabcf4c8cm" path="res://art/Background Assets/forest_m.png" id="2_2ihq0"]
@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="4_andg2"]
 [ext_resource type="PackedScene" uid="uid://dd0kl255gfdkd" path="res://game/map/interactables/block.tscn" id="5_r0fct"]
 [ext_resource type="PackedScene" uid="uid://b0xbrb221dj6h" path="res://game/map/interactables/block_button.tscn" id="6_6awmb"]
-[ext_resource type="Script" path="res://game/common/interactable.gd" id="7_nae5s"]
+[ext_resource type="PackedScene" uid="uid://uxjeys74s857" path="res://game/map/cosmetics/bush_single.tscn" id="7_ivtvj"]
 [ext_resource type="PackedScene" uid="uid://cbd1bti25e811" path="res://game/map/cosmetics/bush_forward_end.tscn" id="8_vr3fn"]
 [ext_resource type="PackedScene" uid="uid://dfs7qkxlas2oe" path="res://game/map/cosmetics/bush_forward_middle.tscn" id="9_ut8wc"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="10_cowqq"]
+[ext_resource type="PackedScene" uid="uid://egbrfcjg7p83" path="res://game/map/cosmetics/bush_side_end.tscn" id="10_wjr7f"]
+[ext_resource type="PackedScene" uid="uid://brbcqo65qy71l" path="res://game/map/cosmetics/bush_side_middle.tscn" id="11_fduus"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="11_mnfxk"]
 [ext_resource type="PackedScene" uid="uid://dqcfv4th66b2w" path="res://game/characters/shadow.tscn" id="12_8sp7f"]
 [ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="13_n03jd"]
@@ -25,10 +27,8 @@ normal = Vector2(-1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qyicb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0r7s"]
-size = Vector2(56, 36)
-
 [node name="ForestJack2" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_2k5s3")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -71,7 +71,7 @@ shape = SubResource("WorldBoundaryShape2D_qyicb")
 y_sort_enabled = true
 
 [node name="VineDoor" parent="Components" node_paths=PackedStringArray("forest_exit") instance=ExtResource("3_ur1or")]
-position = Vector2(503, 97)
+position = Vector2(631, 97)
 forest_exit = NodePath("ForestExit")
 
 [node name="ForestExit" parent="Components/VineDoor" instance=ExtResource("4_andg2")]
@@ -79,25 +79,31 @@ visible = false
 position = Vector2(1, -5)
 
 [node name="Block" parent="Components" groups=["blocks"] instance=ExtResource("5_r0fct")]
-position = Vector2(673, 240)
+position = Vector2(278, 383)
+can_push = false
+
+[node name="Block2" parent="Components" groups=["blocks"] instance=ExtResource("5_r0fct")]
+position = Vector2(608, 275)
+can_push = false
+
+[node name="Block3" parent="Components" groups=["blocks"] instance=ExtResource("5_r0fct")]
+position = Vector2(608, 318)
 can_push = false
 
 [node name="BlockButton" parent="Components" instance=ExtResource("6_6awmb")]
 z_index = -1
-position = Vector2(568, 301)
+position = Vector2(334, 119)
 
-[node name="Interactable" type="Area2D" parent="Components/BlockButton"]
-collision_layer = 8
-collision_mask = 0
-script = ExtResource("7_nae5s")
+[node name="BlockButton2" parent="Components" instance=ExtResource("6_6awmb")]
+z_index = -1
+position = Vector2(720, 401)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/BlockButton/Interactable"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_f0r7s")
-debug_color = Color(0, 0.643979, 0.289855, 0.42)
+[node name="BushSingle" parent="Components" instance=ExtResource("7_ivtvj")]
+position = Vector2(305, 324)
 
 [node name="IBush" type="Node2D" parent="Components"]
-position = Vector2(376, 179)
+y_sort_enabled = true
+position = Vector2(402, 183)
 metadata/_edit_group_ = true
 
 [node name="BushForwardEnd" parent="Components/IBush" instance=ExtResource("8_vr3fn")]
@@ -106,31 +112,91 @@ metadata/_edit_group_ = true
 position = Vector2(0, -60)
 
 [node name="IBush2" type="Node2D" parent="Components"]
-position = Vector2(366, 379)
+y_sort_enabled = true
+position = Vector2(403, 393)
 metadata/_edit_group_ = true
 
+[node name="BushForwardMiddle2" parent="Components/IBush2" instance=ExtResource("9_ut8wc")]
+
 [node name="BushForwardEnd" parent="Components/IBush2" instance=ExtResource("8_vr3fn")]
+position = Vector2(0, 60)
 
 [node name="BushForwardMiddle" parent="Components/IBush2" instance=ExtResource("9_ut8wc")]
 position = Vector2(0, -49)
 
-[node name="LBush" type="Node2D" parent="Components"]
+[node name="BushForwardMiddle3" parent="Components/IBush2" instance=ExtResource("9_ut8wc")]
+position = Vector2(0, -113)
+
+[node name="LongBush" type="Node2D" parent="Components"]
+y_sort_enabled = true
+position = Vector2(682, 339)
+metadata/_edit_group_ = true
+
+[node name="BushSideEnd" parent="Components/LongBush" instance=ExtResource("10_wjr7f")]
+
+[node name="BushSideMiddle" parent="Components/LongBush" instance=ExtResource("11_fduus")]
+position = Vector2(60, 0)
+
+[node name="IBush3" type="Node2D" parent="Components"]
+y_sort_enabled = true
+position = Vector2(458, 183)
+metadata/_edit_group_ = true
+
+[node name="BushForwardEnd" parent="Components/IBush3" instance=ExtResource("8_vr3fn")]
+
+[node name="BushForwardMiddle" parent="Components/IBush3" instance=ExtResource("9_ut8wc")]
+position = Vector2(0, -60)
+
+[node name="IBush4" type="Node2D" parent="Components"]
+y_sort_enabled = true
+position = Vector2(459, 393)
+metadata/_edit_group_ = true
+
+[node name="BushForwardMiddle2" parent="Components/IBush4" instance=ExtResource("9_ut8wc")]
+
+[node name="BushForwardEnd" parent="Components/IBush4" instance=ExtResource("8_vr3fn")]
+position = Vector2(0, 60)
+
+[node name="BushForwardMiddle" parent="Components/IBush4" instance=ExtResource("9_ut8wc")]
+position = Vector2(0, -49)
+
+[node name="BushForwardMiddle3" parent="Components/IBush4" instance=ExtResource("9_ut8wc")]
+position = Vector2(0, -113)
+
+[node name="LongBush2" type="Node2D" parent="Components"]
+y_sort_enabled = true
+position = Vector2(519, 433)
+metadata/_edit_group_ = true
+
+[node name="BushSideEnd" parent="Components/LongBush2" instance=ExtResource("10_wjr7f")]
+position = Vector2(60, 0)
+scale = Vector2(-1, 1)
+
+[node name="BushSideMiddle" parent="Components/LongBush2" instance=ExtResource("11_fduus")]
+
+[node name="ResetPoint" type="Marker2D" parent="."]
+position = Vector2(103, 221)
 
 [node name="Player" parent="." instance=ExtResource("10_cowqq")]
 position = Vector2(103, 208)
 
 [node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_mnfxk")]
-position = Vector2(69, 211)
+position = Vector2(155, 240)
 toy_sprite = "jack"
-target = NodePath("")
+target = NodePath("../Components/Block")
 
 [node name="Shadow" parent="." instance=ExtResource("12_8sp7f")]
-visible = false
-position = Vector2(404, 135)
+position = Vector2(549, 153)
 scale = Vector2(-1, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("13_n03jd")]
-dialogue_file = "res://game/ui/dialogue_text/forest_jack_1.json"
+dialogue_file = "res://game/ui/dialogue_text/forest_jack_2.json"
 portrait_directory = "res://art/Portraits"
+
+[connection signal="body_entered" from="Components/VineDoor/ForestExit" to="." method="_on_forest_exit_body_entered"]
+[connection signal="body_entered" from="Components/BlockButton" to="." method="_on_block_button_body_entered"]
+[connection signal="body_exited" from="Components/BlockButton" to="." method="_on_block_button_body_exited"]
+[connection signal="body_entered" from="Components/BlockButton2" to="." method="_on_block_button_2_body_entered"]
+[connection signal="body_exited" from="Components/BlockButton2" to="." method="_on_block_button_2_body_exited"]

@@ -60,7 +60,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_toy_interact() -> void:
-	print("Toy interact")
 	if dialogue_state == 1:
 		await dialogue_manager.start_dialogue("jack", 0)
 		# Disable further interactable on Jack to avoid duplicate interactions
@@ -111,7 +110,6 @@ func _on_block_interacted() -> void:
 		toy.target = block
 		block.can_push = true
 		dialogue_state = 1
-		print("Dialogue state 1")
 	elif dialogue_state == 1:
 		# Trigger dialogue
 		await get_tree().create_timer(0.5).timeout
@@ -120,4 +118,3 @@ func _on_block_interacted() -> void:
 		# Advance state
 		toy.target = player
 		dialogue_state = 2
-		print("Dialogue state 2")
