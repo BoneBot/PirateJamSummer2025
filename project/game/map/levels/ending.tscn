@@ -1,6 +1,157 @@
-[gd_scene load_steps=2 format=3 uid="uid://dght1ajxggubf"]
+[gd_scene load_steps=17 format=3 uid="uid://dght1ajxggubf"]
 
 [ext_resource type="Script" path="res://game/map/levels/ending.gd" id="1_4qcjf"]
+[ext_resource type="Texture2D" uid="uid://d35mw6lc8l81h" path="res://art/Background Assets/car_scene.png" id="2_kekgd"]
+[ext_resource type="Script" path="res://game/common/interactable.gd" id="3_pck2s"]
+[ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="3_qouw3"]
+[ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="4_03vfk"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="5_8h3c3"]
+[ext_resource type="PackedScene" uid="uid://dqcfv4th66b2w" path="res://game/characters/shadow.tscn" id="6_spcyu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_io2fw"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rnui0"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f8i4e"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eplqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u7tv"]
+size = Vector2(74, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqf7w"]
+size = Vector2(20, 42)
+
+[sub_resource type="Animation" id="Animation_3itlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2miqn"]
+resource_name = "fade_to_black"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BlackScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgu7v"]
+_data = {
+"RESET": SubResource("Animation_3itlt"),
+"fade_to_black": SubResource("Animation_2miqn")
+}
 
 [node name="Ending" type="Node2D"]
 script = ExtResource("1_4qcjf")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_kekgd")
+centered = false
+region_rect = Rect2(84, 0, 459, 360)
+
+[node name="Boundaries" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_io2fw")
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(24, 88)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_rnui0")
+
+[node name="Right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(382, 362)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_f8i4e")
+
+[node name="Down" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(382, 362)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
+shape = SubResource("WorldBoundaryShape2D_eplqi")
+
+[node name="ObjectBounds" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(336, 218)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/StaticBody2D"]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_0u7tv")
+
+[node name="CarDoor" type="Area2D" parent="ObjectBounds"]
+position = Vector2(301, 247)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_pck2s")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/CarDoor"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_gqf7w")
+debug_color = Color(1.29953e-06, 0.641802, 0.328391, 0.42)
+
+[node name="Player" parent="." instance=ExtResource("3_qouw3")]
+position = Vector2(111, 196)
+
+[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_03vfk")]
+position = Vector2(70, 210)
+target = NodePath("../Player")
+
+[node name="Shadow" parent="." instance=ExtResource("6_spcyu")]
+visible = false
+position = Vector2(64, 120)
+scale = Vector2(-1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("5_8h3c3")]
+dialogue_file = "res://game/ui/dialogue_text/ending.json"
+portrait_directory = "res://art/Portraits"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_mgu7v")
+}

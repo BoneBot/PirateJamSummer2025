@@ -1,0 +1,104 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "mom",
+                "text": "Sol, it's time to go!"
+            },
+            {
+                "speaker": "sol",
+                "text": "Just a second, I'm packing my toys!",
+                "emotion": "neutral"
+            },
+            {
+                "speaker": "mom",
+                "text": "Sol, we need to go now! Just pick one!"
+            },
+            {
+                "speaker": "sol",
+                "text": "What?! Just one?!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "mom",
+                "text": "Yes! Only one!"
+            }
+        ]
+    },
+    "dolly": {
+        "0": [
+            {
+                "text": "A delicate doll with a frilly dress and a smooth porcelain face. Try not to drop her.",
+                "options": [
+                    "Bring",
+                    "Don't bring"
+                ]
+            }
+        ]
+    },
+    "teddy": {
+        "0": [
+            {
+                "text": "A well-worn teddy bear with floppy arms and legs. He's quite huggable.",
+                "options": [
+                    "Bring",
+                    "Don't bring"
+                ]
+            }
+        ]
+    },
+    "jack": {
+        "0": [
+            {
+                "text": "A brightly colored jack in the box with a clown hiding inside. He looks a little creepy...",
+                "options": [
+                    "Bring",
+                    "Don't bring"
+                ]
+            }
+        ]
+    },
+    "succulent": {
+        "0": [
+            {
+                "speaker": "sexy succulent",
+                "text": "Hey baby, thanks for playing this wonderful little game I call home."
+            },
+            {
+                "speaker": "sexy succulent",
+                "text": "Let's give some credit to the ones who made it."
+            },
+            {
+                "text": "Wanderlost, created for the July 2025 Pirate Software Game Jam"
+            },
+            {
+                "text": "Credit to Wendy for all of the amazing art and putting faces to the characters in this wonderful story."
+            },
+            {
+                "text": "Credit to Colin for the programming, music, and designing the mechanisms of this little world."
+            },
+            {
+                "text": "Thanks so much for playing! <3"
+            }
+        ]
+    },
+    "exit": {
+        "0": [
+            {
+                "speaker": "mom",
+                "text": "Sol! We're leaving!"
+            },
+            {
+                "speaker": "sol",
+                "text": "Coming!",
+                "emotion": "happy"
+            },
+            {
+                "text": "And thus Sol sets off on their journey."
+            },
+            {
+                "text": "But, all does not go as planned..."
+            }
+        ]
+    }
+}

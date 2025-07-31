@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ps2barn6o12m"]
+[gd_scene load_steps=3 format=3 uid="uid://ps2barn6o12m"]
 
 [ext_resource type="Script" path="res://game/ui/main_menu.gd" id="1_arycg"]
+[ext_resource type="Texture2D" uid="uid://j01ovokvtbor" path="res://art/Title.png" id="2_fr580"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,27 +16,16 @@ script = ExtResource("1_arycg")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_fr580")
 metadata/_edit_lock_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 48
-
-[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer"]
+[node name="StartGameButton" type="Button" parent="."]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="StartGameButton" type="Button" parent="MarginContainer/ButtonsVBox"]
-layout_mode = 2
+offset_left = 288.0
+offset_top = 61.0
+offset_right = 398.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 16
 text = "Start Game"
 
-[connection signal="pressed" from="MarginContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]

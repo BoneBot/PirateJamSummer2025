@@ -18,7 +18,6 @@ extends Area2D
 @export var turn_time := 1.0
 
 @onready var sentry: Area2D = $"."
-@onready var sprite: AnimatedSprite2D = $Sprite
 
 # Used to flip the turn direction when the turn type is Alternating
 var flip_turn := false
@@ -29,7 +28,7 @@ func _ready() -> void:
 		field_of_view.visible = fov_visible
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# I couldn't get the sprite to rotate properly. Maybe one day it will. RIP 
 	pass
 	#var rotation = fmod(rotation_degrees, 360)

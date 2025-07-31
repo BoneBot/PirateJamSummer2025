@@ -1,0 +1,51 @@
+{
+    "start": {
+        "0": [
+            {
+                "speaker": "sol",
+                "text": "Mom! Dad! I made it back!",
+                "emotion": "happy"
+            },
+            {
+                "speaker": "mom",
+                "text": "Sol, come on! Your dad finally got the tire fixed. We need to be back on the road."
+            },
+            {
+                "speaker": "sol",
+                "text": "Coming!",
+                "emotion": "happy"
+            }
+        ]
+    },
+    "car": {
+        "0": [
+            {
+                "speaker": "mom",
+                "text": "So, how was playing in the forest?"
+            },
+            {
+                "speaker": "sol",
+                "text": "It was a little scary. I thought I got lost!",
+                "emotion": "surprised"
+            },
+            {
+                "speaker": "sol",
+                "text": "But luckily, I had my toy to help me get back. They were the only one who could help. I don't know what I would've done without them!",
+                "emotion": "laughing"
+            },
+            {
+                "speaker": "mom",
+                "text": "Aww, that's sweet honey. You'll have to tell me all about your adventures. Now buckle up, and let's hit the road!"
+            },
+            {
+                "text": "Now that Sol has escaped the forest, their adventure is over. All is well once again."
+            },
+            {
+                "text": "But, that's ONLY ONE story that could have happened here."
+            },
+            {
+                "text": "What would have happened if someone else had come with Sol?"
+            }
+        ]
+    }
+}
