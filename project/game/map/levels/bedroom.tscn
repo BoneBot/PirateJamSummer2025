@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckyw3xmol7iso"]
+[gd_scene load_steps=20 format=3 uid="uid://ckyw3xmol7iso"]
 
 [ext_resource type="Script" path="res://game/map/levels/bedroom.gd" id="1_gfn1s"]
-[ext_resource type="Texture2D" uid="uid://wmrv0ujv2s7c" path="res://art/demo_stuff/DemoBackground.png" id="2_wcblf"]
+[ext_resource type="Texture2D" uid="uid://d1hk667pwace7" path="res://art/Background Assets/Room.png" id="2_flq77"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="3_jiuq5"]
 [ext_resource type="PackedScene" uid="uid://dm4xqlc144gxx" path="res://game/characters/toy.tscn" id="4_s2dnn"]
-[ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="5_imofy"]
+[ext_resource type="PackedScene" uid="uid://baupxuhlutjnh" path="res://game/ui/dialogue_manager.tscn" id="5_jepcp"]
+[ext_resource type="Script" path="res://game/common/interactable.gd" id="5_mw4sl"]
+[ext_resource type="Texture2D" uid="uid://bgf0lpetw0aor" path="res://art/Sprites/Queen.png" id="6_t4egt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p1h2a"]
 normal = Vector2(1, 0)
@@ -17,85 +19,162 @@ normal = Vector2(-1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w84ai"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvffm"]
+size = Vector2(82, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg0cu"]
+size = Vector2(28, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7bp7"]
+size = Vector2(28, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvk1k"]
+size = Vector2(42, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gisfe"]
+size = Vector2(58, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q042l"]
+size = Vector2(29, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dumdd"]
+size = Vector2(74, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si2gr"]
+size = Vector2(26, 53)
+
 [node name="Bedroom" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_gfn1s")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(-16, -19)
-texture = ExtResource("2_wcblf")
+texture = ExtResource("2_flq77")
 centered = false
-metadata/_edit_lock_ = true
+region_rect = Rect2(84, 0, 459, 360)
 
 [node name="Boundaries" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(85, 120)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
 shape = SubResource("WorldBoundaryShape2D_p1h2a")
 
 [node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(85, 120)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
 shape = SubResource("WorldBoundaryShape2D_qd7eo")
 
 [node name="Right" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(928, 506)
+position = Vector2(542, 362)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
 shape = SubResource("WorldBoundaryShape2D_sbkek")
 
 [node name="Down" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(928, 506)
+position = Vector2(542, 362)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down"]
 shape = SubResource("WorldBoundaryShape2D_w84ai")
 
-[node name="Toy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_s2dnn")]
-position = Vector2(287, 199)
-target = NodePath("../Player")
+[node name="ObjectBounds" type="Node2D" parent="."]
+
+[node name="Bed" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(184, 146)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Bed"]
+shape = SubResource("RectangleShape2D_qvffm")
+
+[node name="Bedstand" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(123, 132)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Bedstand"]
+shape = SubResource("RectangleShape2D_xg0cu")
+
+[node name="Bedstand2" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(244, 132)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Bedstand2"]
+shape = SubResource("RectangleShape2D_e7bp7")
+
+[node name="Chest" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(106, 282)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Chest"]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_hvk1k")
+
+[node name="Desk" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(512, 271)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Desk"]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_gisfe")
+
+[node name="Chair" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(473, 236)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Chair"]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_q042l")
+
+[node name="Bookshelf" type="StaticBody2D" parent="ObjectBounds"]
+position = Vector2(452, 97)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectBounds/Bookshelf"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_dumdd")
+
+[node name="Dolly" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_s2dnn")]
+position = Vector2(511, 185)
+collision_mask = 0
+target = NodePath(".")
+
+[node name="Jack" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_s2dnn")]
+position = Vector2(159, 287)
+collision_mask = 0
+toy_sprite = "jack"
+target = NodePath(".")
+
+[node name="Teddy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_s2dnn")]
+position = Vector2(209, 160)
+collision_mask = 0
+toy_sprite = "teddy"
+target = NodePath(".")
 
 [node name="Player" parent="." instance=ExtResource("3_jiuq5")]
 position = Vector2(333, 188)
 
-[node name="DollyExit" parent="." instance=ExtResource("5_imofy")]
-position = Vector2(498, 185)
+[node name="SexySucculent" type="Area2D" parent="."]
+position = Vector2(244, 100)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("5_mw4sl")
+metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="DollyExit"]
-offset_left = 29.0
-offset_top = -10.0
-offset_right = 69.0
-offset_bottom = 13.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Dolly"
+[node name="Sprite2D" type="Sprite2D" parent="SexySucculent"]
+texture = ExtResource("6_t4egt")
 
-[node name="TeddyExit" parent="." instance=ExtResource("5_imofy")]
-position = Vector2(500, 249)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SexySucculent"]
+position = Vector2(1, 11.5)
+shape = SubResource("RectangleShape2D_si2gr")
+debug_color = Color(1.20327e-06, 0.64196, 0.325785, 0.42)
 
-[node name="Label" type="Label" parent="TeddyExit"]
-offset_left = 29.0
-offset_top = -10.0
-offset_right = 69.0
-offset_bottom = 13.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Teddy"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="JackExit" parent="." instance=ExtResource("5_imofy")]
-position = Vector2(504, 305)
-
-[node name="Label" type="Label" parent="JackExit"]
-offset_left = 29.0
-offset_top = -10.0
-offset_right = 69.0
-offset_bottom = 13.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Jack"
-
-[connection signal="body_entered" from="DollyExit" to="." method="_on_forest_exit_body_entered"]
-[connection signal="body_entered" from="TeddyExit" to="." method="_on_forest_exit_2_body_entered"]
-[connection signal="body_entered" from="JackExit" to="." method="_on_jack_exit_body_entered"]
+[node name="DialogueManager" parent="CanvasLayer" instance=ExtResource("5_jepcp")]
+dialogue_file = "res://game/ui/dialogue_text/bedroom.json"
+portrait_directory = "res://art/Portraits"

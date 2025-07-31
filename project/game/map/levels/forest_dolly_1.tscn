@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://ccukhny0e1iho"]
 
 [ext_resource type="Script" path="res://game/map/levels/forest_dolly_1.gd" id="1_bwr08"]
-[ext_resource type="Texture2D" uid="uid://by8cb06jr4pm1" path="res://art/Background Assets/forest_s.png" id="2_e1g65"]
+[ext_resource type="Texture2D" uid="uid://bngjl3ws6clql" path="res://art/Background Assets/forest_s.png" id="2_e1g65"]
 [ext_resource type="PackedScene" uid="uid://cxt2kq60nakfn" path="res://game/characters/player.tscn" id="2_h84bs"]
 [ext_resource type="PackedScene" uid="uid://b2i6551t30h8f" path="res://game/map/interactables/forest_exit.tscn" id="3_85l45"]
 [ext_resource type="Texture2D" uid="uid://bg7uokk4gm7aw" path="res://art/Placeholders/EnemyFOVCone.png" id="3_85wjt"]
